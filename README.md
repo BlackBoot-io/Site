@@ -1,5 +1,3 @@
-# nft
-
 ## Build Setup
 
 ```bash
