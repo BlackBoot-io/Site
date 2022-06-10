@@ -18,9 +18,9 @@
         </div>
         <div class="center">
           <div v-for="link in $store.state.menu" :key="link.name">
-            <NuxtLink v-if="!link.items" :to="link.route" class="header-link">{{
-              link.name
-            }}</NuxtLink>
+            <NuxtLink v-if="!link.items" :to="link.route" class="header-link">
+              {{ link.name }}
+            </NuxtLink>
             <v-menu
               v-else
               open-on-hover
@@ -53,12 +53,22 @@
           </div>
         </div>
         <div class="left">
-          <a href="https://web.mobexi.net/al/signup">
+          <a href="#">
             <v-btn
-              outlined
               depressed
               class="btn-main"
             >
+             {{ content.lang }}
+              <v-icon class="ml-1">mdi-web</v-icon>
+            </v-btn>
+          </a>
+          <a href="#">
+            <v-btn
+              outlined
+              depressed
+              class="btn-main btn-connect ml-3"
+            >
+              <v-icon class="mr-1">mdi-wallet-outline</v-icon>
               {{ content.register }}
             </v-btn>
           </a>
@@ -78,9 +88,7 @@
             <v-list-item
               v-if="!link.items"
               class="pa-0 mb-2"
-              :class="{
-                'v-list-item--active': $nuxt.$route.path == link.route,
-              }"
+              :class="{'v-list-item--active': $nuxt.$route.path == link.route}"
             >
               <NuxtLink :to="link.route" class="d-flex py-2 pr-8 list-link">
                 <v-list-item-icon class="ml-5">
@@ -129,7 +137,7 @@
 export default {
   data: () => ({
     content: {
-      login: "ورود",
+      lang: "en",
       register: "Connect",
     },
     scrolled: false,
@@ -232,8 +240,17 @@ header {
     .v-btn {
       transition: 0.5s !important;
       font-size: 16px !important;
-      min-width: 116px!important;
       min-height: 46px!important;
+      color: #023047!important;
+
+      .v-icon {
+      }
+
+      &.btn-connect {
+        min-width: 116px!important;
+        border: 1px solid #023047!important;
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25)!important;
+      }
     }
   }
 
@@ -312,8 +329,7 @@ header {
     transition: 0.5s !important;
     transition-delay: 0s !important;
     padding: 5px 0 !important;
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
-      0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12) !important;
 
     .header-link,
     .header-sub {

@@ -66,7 +66,7 @@
     font-size: 18px;
     line-height: 35px;
     color: #000000;
-    width: 532px;
+    max-width: 532px;
   }
 }
 
