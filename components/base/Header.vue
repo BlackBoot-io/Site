@@ -243,9 +243,6 @@ header {
       min-height: 46px!important;
       color: #023047!important;
 
-      .v-icon {
-      }
-
       &.btn-connect {
         min-width: 116px!important;
         border: 1px solid #023047!important;
@@ -292,14 +289,14 @@ header {
     }
 
     &:before {
-      left: calc(58% - 20px);
+      left: calc(55% - 20px);
       bottom: -10px;
       height: 0;
       border-radius: 50%;
     }
 
     &:after {
-      left: 58%;
+      left: 55%;
       bottom: -9px;
       height: 4px;
       border-radius: 30px;
