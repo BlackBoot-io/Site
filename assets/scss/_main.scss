@@ -1,0 +1,136 @@
+/*////////////////////// PARTIALS //////////////////////*/
+
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+
+/*////////////////////// VUE JS //////////////////////*/
+
+[v-cloak] {
+	display: none!important;
+}
+
+.fade-enter  {
+	opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s;
+	transition: 2s;
+}
+
+.fade-leave {
+	opacity: 0;
+}
+
+/*////////////////////// VUETIFY //////////////////////*/
+
+.container {
+	@include res(xl) {
+		max-width: 1140px!important;
+	}
+}
+
+.container--fluid {
+	max-width: 100%!important;
+}
+
+.v-menu__content {
+
+	@include res(sm) {
+		margin-top: 57px!important;
+	}
+
+	@media only screen and (min-width: $sm) {
+		min-width: 200px!important;
+	}
+}
+
+.v-list {
+	margin-bottom: 0px!important;
+}
+
+/*////////////////////// GENERAL CLASSES AND COMPONENTS //////////////////////*/
+
+.dir-ltr {
+	direction: $dir-o;
+	text-align: $align-o;
+}
+
+.btn-main {
+	cursor: pointer;
+	border-radius: 10px!important;
+	font-family: $f-m!important;
+	font-size: 16px!important;
+	background: transparent!important;
+	line-height: 30px!important;
+	text-transform: none!important;
+	border: 1px solid #023047!important;
+	box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25)!important;
+}
+
+.title-main {
+	font-family: $f-m;
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	line-height: 50px;
+	max-width: 800px;
+	margin: 0 auto!important;
+
+	@include res(sm) {
+		font-size: 20px!important;
+		line-height: 50px;
+	}
+
+	&.title-small {
+		font-size: 16px!important;
+	}
+
+	&.title-right {
+		margin: 0!important;
+		max-width: max-content!important;
+	}
+}
+
+.title-sub {
+	color: #626262;
+	width: 100%;
+	text-align: center;
+	font-size: 17px;
+	line-height: 36px;
+	max-width: 800px;
+	margin: 10px auto 30px auto!important;
+
+	@include res(sm) {
+		font-size: 16px;
+		line-height: 33px;
+	}
+}
+
+.text-main {
+	font-size: 16px!important;
+	line-height: 35px;
+
+	a {
+		color: $c1!important;
+	}
+}
+
+.list-main {
+	
+	li {
+		font-size: 18px!important;
+		line-height: 35px;
+		margin-bottom: 10px;
+
+		i {
+			font-size: 28px!important;
+			color: $c1!important;
+		}
+	}
+}
+
+/*////////////////////// SECTIONS //////////////////////*/

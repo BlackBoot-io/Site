@@ -1,4 +1,6 @@
-
+export { default as BaseHeader } from '../../components/base/Header.vue'
+export { default as BaseLogo } from '../../components/base/Logo.vue'
+export { default as SectionSpotlight } from '../../components/section/Spotlight.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

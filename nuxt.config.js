@@ -1,8 +1,8 @@
 export default {
   target: 'server',
   head: {
-    titleTemplate: 'Token',
-    title: 'Token',
+    titleTemplate: 'Black Boot',
+    title: 'Black Boot',
     htmlAttrs: {
       lang: 'en'
     },
@@ -17,10 +17,19 @@ export default {
     ]
   },
   css: [
+    '@/assets/scss/style-ltr.scss'
   ],
   plugins: [
   ],
-  components: true,
+  components: {
+    dirs: [
+      '~/components',
+      {
+        path: '~/components/base/',
+        prefix: 'Base'
+      },
+    ]
+  },
   buildModules: [
     '@nuxtjs/vuetify',
   ],

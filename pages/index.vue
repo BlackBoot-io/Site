@@ -1,9 +1,7 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col class="text-center">
-      Index Page
-    </v-col>
-  </v-row>
+  <div>
+    <SectionSpotlight />
+  </div>
 </template>
 
 <script>
@@ -11,3 +9,12 @@ export default {
   name: 'IndexPage'
 }
 </script>
+
+
+<style lang="scss">
+@import "~/assets/scss/_variables.scss";
+@import "~/assets/scss/_mixins.scss";
+
+
+
+</style>

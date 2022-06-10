@@ -1,1 +1,11 @@
-{}
+{
+  "BaseHeader": {
+    "description": "Auto imported from components/base/Header.vue"
+  },
+  "BaseLogo": {
+    "description": "Auto imported from components/base/Logo.vue"
+  },
+  "SectionSpotlight": {
+    "description": "Auto imported from components/section/Spotlight.vue"
+  }
+}
