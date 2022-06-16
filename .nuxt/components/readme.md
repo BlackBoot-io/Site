@@ -8,4 +8,5 @@ You can directly use them in pages and other components without the need to impo
 
 - `<BaseHeader>` | `<base-header>` (components/base/Header.vue)
 - `<BaseLogo>` | `<base-logo>` (components/base/Logo.vue)
+- `<SectionFutures>` | `<section-futures>` (components/section/Futures.vue)
 - `<SectionSpotlight>` | `<section-spotlight>` (components/section/Spotlight.vue)

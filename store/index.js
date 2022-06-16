@@ -44,7 +44,7 @@ export const state = () => ({
 			icon: "mdi-lifebuoy",
 		},
 		{
-			name: "Our team",
+			name: "Our Team",
 			route: "#4",
 			icon: "mdi-information-outline",
 		},

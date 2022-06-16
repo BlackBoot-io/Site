@@ -214,9 +214,9 @@ header {
 
     .logo-text {
       color: $cb;
-      font-family: $f-m;
       font-size: 18px;
       transition: 0.5s;
+      font-weight: 600;
 
       @include res(md) {
         font-size: 15px;
@@ -266,16 +266,12 @@ header {
     color: $cb !important;
     font-family: $f!important;
     transition: 0.5s;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 19px;
 
     @include res(md) {
       font-size: 13px !important;
-    }
-
-    .v-btn__content {
-      font-family: $f-m !important;
     }
 
     &:before,
@@ -289,15 +285,15 @@ header {
     }
 
     &:before {
-      left: calc(55% - 20px);
-      bottom: -10px;
+      left: calc(57% - 20px);
+      bottom: -12px;
       height: 0;
       border-radius: 50%;
     }
 
     &:after {
-      left: 55%;
-      bottom: -9px;
+      left: 57%;
+      bottom: -11px;
       height: 4px;
       border-radius: 30px;
     }
@@ -307,7 +303,7 @@ header {
     }
 
     &.nuxt-link-exact-active {
-      font-weight: 900;
+      font-weight: 700;
 
       &:before {
         width: 5px;

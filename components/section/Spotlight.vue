@@ -12,7 +12,7 @@
         </v-col>
       </v-row>
       <v-row class="stats">
-        <v-col v-for="(stat, index) in stats" :key="index">
+        <v-col cols="12" md="3" v-for="(stat, index) in stats" :key="index">
           <span :class="'s-num num-'+index">
             {{ stat.num }}
           </span>
@@ -77,14 +77,14 @@
 
     span {
       position: relative;
+      font-weight: 700;
       z-index: 5;
-      font-family: $f-bl-en;
 
       &:before {
         content: "";
         position: absolute;
         z-index: -1;
-        top: 45%;
+        top: 60%;
         left: 0;
         background: linear-gradient(to right, #FFB55F 0%, #FFE183 50%, #FFDA7B 98%, #FFFFFF 100%);
         transition: 0.2s;
@@ -97,6 +97,7 @@
   .s-text {
     font-style: normal;
     font-size: 18px;
+    font-weight: 400;
     line-height: 35px;
     color: #000000;
     max-width: 532px;
@@ -104,12 +105,12 @@
 }
 
 .stats {
+  padding-bottom: 50px;
 
   .s-num {
     position: relative;
     z-index: 5;
     display: block;
-    font-family: $f-b-en;
     font-weight: 700;
     font-size: 30px;
     color: #023047;

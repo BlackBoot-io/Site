@@ -1,6 +1,7 @@
 <template>
   <div>
     <SectionSpotlight />
+    <SectionFutures />
   </div>
 </template>
 

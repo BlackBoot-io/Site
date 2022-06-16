@@ -5,6 +5,9 @@
   "BaseLogo": {
     "description": "Auto imported from components/base/Logo.vue"
   },
+  "SectionFutures": {
+    "description": "Auto imported from components/section/Futures.vue"
+  },
   "SectionSpotlight": {
     "description": "Auto imported from components/section/Spotlight.vue"
   }
