@@ -5,8 +5,8 @@
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
         <NuxtLink to="/" class="logo-holder">
-          <span class="ml-3">{{ $store.state.title }}</span>
-          <BaseLogo class="logo" width="25" height="40" />
+          <BaseLogo class="logo mr-2" width="25" height="40" />
+          <span>{{ $store.state.title }}</span>
         </NuxtLink>
       </v-container>
       <v-container class="main-bar d-none d-md-flex">
@@ -80,7 +80,6 @@
       v-model="drawer"
       absolute
       temporary
-      right
     >
       <v-list nav dense>
         <v-list-item-group v-model="group" :color="$store.state.cPrimary">
@@ -327,14 +326,6 @@ header {
     .header-link,
     .header-sub {
       color: $c2 !important;
-
-      &.nuxt-link-exact-active {
-        &:after {
-          width: 30px !important;
-          background: $c2 !important;
-          box-shadow: 0px 5px 5px rgba(255, 255, 255, 0.25) !important;
-        }
-      }
     }
 
     .right {
@@ -353,7 +344,7 @@ header {
   z-index: 99;
 
   .v-btn__content {
-    justify-content: right;
+    justify-content: left;
   }
 
   .list-link,
@@ -380,4 +371,5 @@ header {
 .v-list-item__title {
   font-size: 14px !important;
 }
+
 </style>

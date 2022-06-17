@@ -1,6 +1,8 @@
 export { default as BaseHeader } from '../../components/base/Header.vue'
 export { default as BaseLogo } from '../../components/base/Logo.vue'
+export { default as SectionBenefits } from '../../components/section/Benefits.vue'
 export { default as SectionFutures } from '../../components/section/Futures.vue'
+export { default as SectionServices } from '../../components/section/Services.vue'
 export { default as SectionSpotlight } from '../../components/section/Spotlight.vue'
 
 // nuxt/nuxt.js#8607

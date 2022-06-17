@@ -3,9 +3,9 @@
     <v-container>
       <v-row>
         <v-col cols="12" lg="6" class="d-flex flex-column justify-center">
-          <h1 class="f-title">
+          <h2 class="f-title">
             We support both <span>NFTs and SoulBound Tokens.</span>
-          </h1>
+          </h2>
           <ul class="f-list">
             <li v-for="(future, index) in futures" :key="index">
               <v-icon>mdi-check-circle-outline</v-icon>
@@ -17,7 +17,7 @@
             </li>
           </ul>
         </v-col>
-        <v-col cols="12" lg="4 offset-lg-2">
+        <v-col cols="12" lg="5 offset-lg-1" class="text-right">
           <img src="../../static/img/globe.png" alt="">
         </v-col>
       </v-row>
