@@ -1,4 +1,7 @@
 {
+  "BaseFooter": {
+    "description": "Auto imported from components/base/Footer.vue"
+  },
   "BaseHeader": {
     "description": "Auto imported from components/base/Header.vue"
   },

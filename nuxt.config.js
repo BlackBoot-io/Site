@@ -17,7 +17,8 @@ export default {
     ]
   },
   css: [
-    '@/assets/scss/style-ltr.scss'
+    '@/assets/scss/style-ltr.scss',
+    '@mdi/font/css/materialdesignicons.css'
   ],
   plugins: [
   ],

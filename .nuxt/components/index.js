@@ -1,3 +1,4 @@
+export { default as BaseFooter } from '../../components/base/Footer.vue'
 export { default as BaseHeader } from '../../components/base/Header.vue'
 export { default as BaseLogo } from '../../components/base/Logo.vue'
 export { default as SectionBenefits } from '../../components/section/Benefits.vue'
