@@ -10,6 +10,7 @@ You can directly use them in pages and other components without the need to impo
 - `<BaseHeader>` | `<base-header>` (components/base/Header.vue)
 - `<BaseLogo>` | `<base-logo>` (components/base/Logo.vue)
 - `<SectionBenefits>` | `<section-benefits>` (components/section/Benefits.vue)
+- `<SectionDetails>` | `<section-details>` (components/section/Details.vue)
 - `<SectionFutures>` | `<section-futures>` (components/section/Futures.vue)
 - `<SectionServices>` | `<section-services>` (components/section/Services.vue)
 - `<SectionSpotlight>` | `<section-spotlight>` (components/section/Spotlight.vue)

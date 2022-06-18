@@ -4,6 +4,7 @@
     <SectionFutures />
     <SectionServices />
     <SectionBenefits />
+    <SectionDetails />
   </div>
 </template>
 

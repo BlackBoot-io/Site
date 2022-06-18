@@ -237,14 +237,6 @@ footer {
   flex-direction: column;
   overflow: hidden;
 
-  @include res($sm) {
-    margin-top: -145px;
-  }
-
-  @include res(510px) {
-    margin-top: -175px;
-  }
-
   &:before,
   &:after {
     content: "";

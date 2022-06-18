@@ -11,6 +11,9 @@
   "SectionBenefits": {
     "description": "Auto imported from components/section/Benefits.vue"
   },
+  "SectionDetails": {
+    "description": "Auto imported from components/section/Details.vue"
+  },
   "SectionFutures": {
     "description": "Auto imported from components/section/Futures.vue"
   },
