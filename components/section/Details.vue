@@ -88,10 +88,8 @@
 
     .v-data-table {
       line-height: 1.5;
-      max-width: 946px;
-
-      border: 1px solid #EFEFF0;
-      border-radius: 10px;
+      box-shadow: 0px 8.14286px 32.5714px rgba(0, 0, 0, 0.1);
+      border-radius: 24.4286px;
       padding: 20px;
       flex: 1;
 
@@ -118,7 +116,7 @@
           &:first-child {
             font-weight: 600;
             font-size: 16px;
-            min-width: 40%;
+            min-width: 50%;
           }
 
           &:nth-child(2) {
