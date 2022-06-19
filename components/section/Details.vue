@@ -88,8 +88,8 @@
 
     .v-data-table {
       line-height: 1.5;
-      box-shadow: 0px 8.14286px 32.5714px rgba(0, 0, 0, 0.1);
-      border-radius: 24.4286px;
+      border: 1px solid #F0F1F4;
+      border-radius: 15px;
       padding: 20px;
       flex: 1;
 

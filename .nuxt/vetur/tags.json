@@ -8,6 +8,9 @@
   "BaseLogo": {
     "description": "Auto imported from components/base/Logo.vue"
   },
+  "SwiperSlideshow": {
+    "description": "Auto imported from components/swiper/Slideshow.vue"
+  },
   "SectionBenefits": {
     "description": "Auto imported from components/section/Benefits.vue"
   },

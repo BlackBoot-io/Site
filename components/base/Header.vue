@@ -56,7 +56,7 @@
           <a href="#">
             <v-btn
               depressed
-              class="btn-main"
+              class="btn-main btn-lang"
             >
              {{ content.lang }}
               <v-icon class="ml-1">mdi-web</v-icon>
@@ -241,6 +241,7 @@ header {
       font-size: 16px !important;
       min-height: 46px!important;
       color: #023047!important;
+	    background: transparent!important;
 
       &.btn-connect {
         min-width: 116px!important;

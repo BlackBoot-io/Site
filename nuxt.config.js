@@ -21,6 +21,7 @@ export default {
     '@mdi/font/css/materialdesignicons.css'
   ],
   plugins: [
+    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
   ],
   components: {
     dirs: [
