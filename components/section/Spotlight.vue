@@ -20,7 +20,26 @@
                 </v-btn>
               </v-col>
               <v-col class="right">
-                <p>Token Price</p>
+                <div>
+                  <div class="d-flex align-center justify-space-between mb-3">
+                    <p>Token Price</p>
+                    <div class="p-details">
+                      <span class="dollar-amount">$214</span><span class="almost-eq">≃</span><span class="token-amount">0.012</span><span><img :src="ethereumIcon" alt="ethereumIcon" /></span>
+                    </div>
+                  </div>
+                  <div class="d-flex align-center justify-space-between">
+                    <p>Tokens for sale</p>
+                    <div class="p-details">
+                    <span class="token-amount">900m</span><span><img :src="busdIcon" alt="ethereumIcon" /></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="count-down d-flex align-center justify-space-between">
+                  <span>10</span>
+                  <span>14</span>
+                  <span>54</span>
+                  <span>32</span>
+                </div>
                 <v-btn dark outlined class="btn-main" :color="$store.state.cPrimary">
                   <v-icon>mdi-arrow-down</v-icon>
                   Download white paper
@@ -50,6 +69,8 @@
 <script>
   export default {
     data: () => ({
+      ethereumIcon: require('../../static/img/ethereum.svg'),
+      busdIcon: require('../../static/img/busd.svg'),
       slides: [
         {
           img: "../img/slides/1.svg",
@@ -123,12 +144,20 @@
   }
 
   .s-head {
+    position: relative;
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
     line-height: 57px;
     color: #424242;
     margin-bottom: 10px;
+
+    &:before {
+      content: url('~static/img/dashed-line.svg');
+      position: absolute;
+      top: 20px;
+      left: 100%;
+    }
 
     span {
       position: relative;
@@ -219,6 +248,106 @@
         line-height: 10px;
         text-transform: capitalize;
         color: #000000;
+      }
+    }
+
+    .right {
+      .p-details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .dollar-amount {
+          background: #EAF4FB;
+          border-radius: 5px;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 5px;
+          text-transform: capitalize;
+          color: #3498DB;
+          padding: 8px;
+          margin: 0 5px;
+        }
+      
+        .token-amount {
+          font-weight: 500;
+          font-size: 16px;
+          text-transform: capitalize;
+          color: #000000;
+          margin: 0 5px;
+        }
+      
+        .almost-eq {
+          font-weight: 500;
+          font-size: 20px;
+          text-transform: capitalize;
+          color: #8C8C8C;
+        }
+      }
+
+      .count-down {
+        margin-top: 10px;
+
+        span {
+          position: relative;
+          width: 44.86px;
+          height: 44.86px;
+          background: #F9F9F9;
+          border: 0.89725px solid #F2F1F1;
+          border-radius: 7.178px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 9px;
+            text-transform: capitalize;
+            color: #7A808B;
+          }
+          &:after {
+            content: ':';
+            position: absolute;
+            top: 45%;
+            right: -17px;
+            transform: translate(-50%, -50%);
+            font-weight: 900;
+            font-size: 22.4313px;
+            line-height: 9px;
+            text-transform: capitalize;
+            color: #7A808B;
+          }
+
+          &:nth-child(1) {
+            &:before {
+              content: 'days';
+            }
+          }
+          &:nth-child(2) {
+            &:before {
+              content: 'hours';
+            }
+          }
+          &:nth-child(3) {
+            &:before {
+              content: 'minutes';
+            }
+          }
+          &:nth-child(4) {
+            &:before {
+              content: 'seconds';
+            }
+            &:after {
+              display: none;
+            }
+          }
+        }
       }
     }
   }

@@ -62,14 +62,14 @@
               <v-icon class="ml-1">mdi-web</v-icon>
             </v-btn>
           </a>
-          <a href="#">
+          <a href="https://dashboard.avanod.com/">
             <v-btn
               outlined
               depressed
               class="btn-main btn-connect ml-3"
             >
               <v-icon class="mr-1">mdi-wallet-outline</v-icon>
-              {{ content.register }}
+              {{ content.connect }}
             </v-btn>
           </a>
         </div>
@@ -137,7 +137,7 @@ export default {
   data: () => ({
     content: {
       lang: "en",
-      register: "Connect",
+      connect: "Connect",
     },
     scrolled: false,
     drawer: false,
