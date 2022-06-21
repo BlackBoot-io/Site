@@ -1,5 +1,5 @@
 <template>
-  <div v-swiper="swiperOption" dir="rtl">
+  <div v-swiper="swiperOption">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
         <a class="ss-link" :href="slide.link">
@@ -41,8 +41,6 @@ export default {
         clickable: true,
       },
     },
-
-    defaultAnalysis: "",
   }),
   created: function () {},
 };

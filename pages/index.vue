@@ -5,6 +5,8 @@
     <SectionServices />
     <SectionBenefits />
     <SectionDetails />
+    <SectionCrowdsale />
+    <SectionRoadmap />
   </div>
 </template>
 

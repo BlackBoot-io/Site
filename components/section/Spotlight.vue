@@ -74,15 +74,15 @@
       slides: [
         {
           img: "../img/slides/1.svg",
-          link: "https://web.mobexi.net/al/signup",
+          link: "#",
         },
         {
           img: "../img/slides/1.svg",
-          link: "https://web.mobexi.net/al/signup",
+          link: "#",
         },
         {
           img: "../img/slides/1.svg",
-          link: "https://web.mobexi.net/al/signup",
+          link: "#",
         },
       ],
       stats: [

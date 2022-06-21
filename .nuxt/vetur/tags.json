@@ -11,17 +11,26 @@
   "SectionBenefits": {
     "description": "Auto imported from components/section/Benefits.vue"
   },
+  "SectionCrowdsale": {
+    "description": "Auto imported from components/section/Crowdsale.vue"
+  },
   "SectionDetails": {
     "description": "Auto imported from components/section/Details.vue"
   },
   "SectionFutures": {
     "description": "Auto imported from components/section/Futures.vue"
   },
+  "SectionRoadmap": {
+    "description": "Auto imported from components/section/Roadmap.vue"
+  },
   "SectionServices": {
     "description": "Auto imported from components/section/Services.vue"
   },
   "SectionSpotlight": {
     "description": "Auto imported from components/section/Spotlight.vue"
+  },
+  "SwiperCrowdsale": {
+    "description": "Auto imported from components/swiper/Crowdsale.vue"
   },
   "SwiperSlideshow": {
     "description": "Auto imported from components/swiper/Slideshow.vue"

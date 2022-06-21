@@ -12,21 +12,19 @@
     </v-row>
     <v-row>
       <v-col cols="12" class="details-table">
-        <template>
-          <v-simple-table>
-            <template v-slot:default>
-              <tbody>
-                <tr
-                  v-for="item in details"
-                  :key="item.name"
-                >
-                  <td>{{ item.name }}</td>
-                  <td v-html="item.value"></td>
-                </tr>
-              </tbody>
-            </template>
-          </v-simple-table>
-        </template>
+        <v-simple-table>
+          <template v-slot:default>
+            <tbody>
+              <tr
+                v-for="item in details"
+                :key="item.name"
+              >
+                <td><v-icon>mdi-check</v-icon>{{ item.name }}</td>
+                <td v-html="item.value"></td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
       </v-col>
     </v-row>
   </v-container>
@@ -45,16 +43,12 @@
           value: '145200 Tokens',
         },
         {
-          name: 'Sale period',
-          value: '<span>Registration opens:</span> 10 June 2022<br><span>Registration deadline:</span> 13 July 2022<br><span>Sale period begins:</span> 1 August 2022<br><span>Sale period ends:</span> 1 September 2022<br>',
-        },
-        {
           name: 'Fixed sale price',
-          value: '0.012',
+          value: '0.012 eth ≃ $ 121',
         },
         {
           name: 'minimum and maximum purchase',
-          value: '<span>Minimum purchase:</span> $10',
+          value: '<span>Minimum purchase:</span> $10<span class="ml-15">Minimum purchase:</span> $10',
         },
         {
           name: 'Loockup and release',
@@ -95,6 +89,7 @@
 
       tr {
         transition: 0.2s;
+        border-radius: 50px!important;
 
         &:hover {
           background: #f9f9f9!important;
@@ -102,7 +97,7 @@
 
         &:not(:last-child) {
           td {
-            border-bottom: 1px solid #EFEFF0!important;
+            border-bottom: none!important;
           }
         }
 
@@ -110,13 +105,18 @@
           text-transform: capitalize;
           color: #000000;
           height: auto;
-          padding: 12px;
+          padding: 15px 12px;
           vertical-align: top;
 
           &:first-child {
             font-weight: 600;
             font-size: 16px;
             min-width: 50%;
+
+            .v-icon {
+              color: #30B38C;
+              margin-right: 10px;
+            }
           }
 
           &:nth-child(2) {

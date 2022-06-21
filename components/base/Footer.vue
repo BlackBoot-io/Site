@@ -4,13 +4,14 @@
       <v-container class="top">
         <v-row>
           <v-col cols="12" sm="12" md="12" lg="3">
-            <h5 class="d-flex align-center"><BaseLogo class="logo mr-2" width="25" height="40" /> {{ $store.state.title }}</h5>
+            <h5 class="d-flex align-center">{{ $store.state.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="(item, index) in content.contactInfo" :key="index">
                 <v-icon>{{ item.icon }}</v-icon>
                 {{ item.text }}
               </li>
             </ul>
+            <img src="../../static/img/built-on-eth.svg" alt="Built On Eth" class="mt-3" />
           </v-col>
           <v-col cols="12" sm="4" md="4" lg="2">
             <h5>{{ content.menu.first.title }}</h5>
@@ -81,6 +82,7 @@
 export default {
   data: () => ({
     content: {
+      builtOnEth: require('../../static/img/built-on-eth.svg'),
       contactInfo: [
         {
           text: "Somebody, PO Box 12345, Dubai, UAE",
@@ -244,25 +246,48 @@ footer {
     top: 50px;
     left: 50px;
     transform: translate(-50%, -50%);
-    width: 392px;
-    height: 392px;
     border-radius: 50%;
-    border: 28.3908px solid rgba(245, 245, 247, 0.7);
-
+    z-index: 9;
   }
 
   &:before {
     width: 247px;
     height: 247px;
+    border: 15px solid rgba(245, 245, 247, 0.14);
   }
 
   &:after {
-    width: 392px;
-    height: 392px;
+    width: 356px;
+    height: 356px;
+    border: 10px solid rgba(245, 245, 247, 0.09);
   }
 
   .main {
-    background: #FAFAFB!important;
+    position: relative;
+    background: #412971!important;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: 9;
+    }
+
+    &:before {
+      width: 468px;
+      height: 468px;
+      border: 7px solid rgba(245, 245, 247, 0.06);
+    }
+
+    &:after {
+      width: 587px;
+      height: 587px;
+      border: 5px solid rgba(245, 245, 247, 0.03);
+    }
 
     .top {
       padding: 60px 15px 45px 15px;
@@ -286,7 +311,7 @@ footer {
         font-weight: 700;
         font-size: 20px;
         line-height: 24px;
-        color: #000000;
+        color: $cw;
         margin-bottom: 15px;
         min-height: 40px;
         display: flex;
@@ -303,18 +328,12 @@ footer {
           font-weight: 400;
           font-size: 18px;
           line-height: 30px;
-          color: #424242;
+          color: $cw;
           margin-bottom: 15px;
           
           i {
-            color: #292D32;
-          }
-
-          a {
-
-            &:hover {
-              color: $cb !important;
-            }
+            color: $cw;
+            margin-right: 5px;
           }
         }
       }
@@ -333,14 +352,14 @@ footer {
         transform: translate(-50%, -50%);
         width: 80%;
         height: 1px;
-        background: #D1D1D166;
+        background: #5A4684;
       }
 
       p {
         font-weight: 400;
         font-size: 14px;
         line-height: 21px;
-        color: #5B626E;
+        color: $cw;
       }
 
       .social {
@@ -368,7 +387,7 @@ footer {
 
               i {
                 font-size: 25px;
-                color: #424242;
+                color: $cw;
               }
             }
           }
