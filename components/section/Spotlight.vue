@@ -18,7 +18,7 @@
                   <v-icon>mdi-basket-outline</v-icon>
                   Buy Token
                 </v-btn>
-              </v-col>
+              </v-col>  
               <v-col class="right">
                 <div>
                   <div class="d-flex align-center justify-space-between mb-3">
@@ -111,18 +111,6 @@
 @import '~/assets/scss/_variables.scss';
 @import '~/assets/scss/_mixins.scss';
 
-.slider {
-  position: absolute;
-  top: 50%;
-  right: -86px;
-  transform: translate(0%, -50%);
-  width: 590px;
-
-  @include res($md) {
-    display: none;
-  }
-}
-
 .spotlight {
   background: #8de0f8;
   background-image: url('../../static/img/spotlight-bg.png');
@@ -132,14 +120,37 @@
 
   .s-inside {
     position: relative;
-    height: 65vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    padding-top: 120px;
 
     @include res($md) {
       height: auto;
-      padding-top: 100px;
-      padding-bottom: 50px;
+      padding-top: 80px;
+    }
+  }
+
+
+  .slider {
+    position: absolute;
+    bottom: 0%;
+    right: -86px;
+    width: 590px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 57px;
+      width: 76.2%;
+      height: 91.5%;
+      background: linear-gradient(180deg, rgba(8, 55, 101, 0.4) 0%, rgba(166, 119, 86, 0.4) 33.49%, rgba(147, 6, 134, 0.4) 103.09%);
+      backdrop-filter: blur(15px);
+      border-radius: 24px;
+    }
+
+    @include res($md) {
+      display: none;
     }
   }
 
@@ -354,6 +365,7 @@
 }
 
 .stats {
+  padding-top: 80px;
   padding-bottom: 50px;
 
   .stat-num {

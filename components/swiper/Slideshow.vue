@@ -1,5 +1,5 @@
 <template>
-  <div v-swiper="swiperOption">
+  <div v-swiper="swiperOption" class="slideshow-swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
         <a class="ss-link" :href="slide.link">
@@ -50,43 +50,39 @@ export default {
 @import "~/assets/scss/_variables.scss";
 @import "~/assets/scss/_mixins.scss";
 
-.swiper-container {
-  padding-bottom: 40px!important;
-}
+.slideshow-swiper {
+  padding-bottom: 30px!important;
 
-.ss-link {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-
-.swiper-pagination {
-  @media screen and (min-width: 1904px) and (max-height: 880px) {
-    display: none;
+  .ss-link {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 
-  @media screen and (max-height: 800px) {
-    display: none;
+  .swiper-container-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    width: 35px!important;
+    height: 3px!important;
+    background: $cw!important;
+    border-radius: 30px!important;
+    margin: 0!important;
+    border-radius: 0!important;
+
+    &:first-child {
+      border-radius: 30px 0 0 30px!important;
+    }
+
+    &:last-child {
+      border-radius: 0 30px 30px 0!important;
+    }
   }
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  bottom: 0;
-}
 
-.swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background: #6A1A7C!important;
-  border-radius: 30px!important;
-}
-
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 24px;
-  height: 7px;
-}
 
 </style>

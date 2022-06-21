@@ -31,7 +31,7 @@
 @import '~/assets/scss/_mixins.scss';
 
 .crowdsale {
-  padding: 40px 50px 80px 50px;
+  padding: 40px 50px 100px 50px;
 }
 
 </style>
