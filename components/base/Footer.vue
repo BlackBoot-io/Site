@@ -13,7 +13,7 @@
             </ul>
             <img src="../../static/img/built-on-eth.svg" alt="Built On Eth" class="mt-3" />
           </v-col>
-          <v-col cols="12" sm="4" md="4" lg="2">
+          <v-col cols="6" sm="6" md="3" lg="2">
             <h5>{{ content.menu.first.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="link in content.menu.first.items" :key="link.name">
@@ -26,7 +26,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col cols="12" sm="4" md="4" lg="2">
+          <v-col cols="6" sm="6" md="3" lg="2">
             <h5>{{ content.menu.second.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="link in content.menu.second.items" :key="link.name">
@@ -36,7 +36,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col cols="12" sm="4" md="4" lg="3">
+          <v-col cols="6" sm="6" md="3" lg="3">
             <h5>{{ content.menu.third.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="link in content.menu.third.items" :key="link.name">
@@ -46,7 +46,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col cols="12" sm="4" md="4" lg="2">
+          <v-col cols="6" sm="6" md="3" lg="2">
             <h5>{{ content.menu.fourth.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="link in content.menu.fourth.items" :key="link.name">
@@ -61,7 +61,7 @@
       <v-container class="bottom">
         <v-row>
           <v-col cols="12" sm="12" md="7" class="copyright">
-            <p>{{ content.copyright }}</p>
+            <p>{{ `©${new Date().getFullYear()} ${content.copyright}` }}</p>
           </v-col>
           <v-col cols="12" sm="12" md="5" class="social">
             <ul>
@@ -221,7 +221,7 @@ export default {
           },
         ],
       },
-      copyright: "©2022 BlackBoot. All rights reserved",
+      copyright: "BlackBoot. All rights reserved",
     },
   }),
 };
@@ -290,11 +290,11 @@ footer {
     }
 
     .top {
-      padding: 60px 15px 45px 15px;
+      padding: 60px 15px 25px 15px;
       position: relative;
       z-index: 9;
 
-      @include res(md) {
+      @include res($md) {
         padding: 25px 15px;
         text-align: center;
       }
@@ -317,7 +317,11 @@ footer {
         display: flex;
         align-items: center;
 
-        @include res(sm) {
+        @include res($md) {
+          justify-content: center;
+        }
+
+        @include res($sm) {
           font-size: 20px;
           margin-bottom: 10px;
         }
@@ -326,7 +330,7 @@ footer {
       ul {
         li {
           font-weight: 400;
-          font-size: 18px;
+          font-size: 16px;
           line-height: 30px;
           color: $cw;
           margin-bottom: 15px;
@@ -365,7 +369,7 @@ footer {
       .social {
         text-align: right;
 
-        @include res(sm) {
+        @include res($sm) {
           padding-top: 0;
           text-align: center;
         }
@@ -381,7 +385,7 @@ footer {
               display: inline-block;
               margin-left: 10px;
 
-              @include res(xs) {
+              @include res($xs) {
                 margin: 0 10px;
               }
 

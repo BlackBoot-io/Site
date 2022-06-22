@@ -72,6 +72,12 @@
       padding: 35px;
       border-radius: 10px;
 
+      &:hover {
+        .b-img {
+          transform: scale(1.1);
+        }
+      }
+
       .b-text {
         flex: 0.57;
 
@@ -97,6 +103,7 @@
         flex: 0.2;
         max-width: 170px;
         max-height: 133px;
+        transition: 0.2s;
       }
     }
   }

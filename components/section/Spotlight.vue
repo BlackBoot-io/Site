@@ -144,6 +144,7 @@
       right: 57px;
       width: 76.2%;
       height: 91.5%;
+      min-height: 482px;
       background: linear-gradient(180deg, rgba(8, 55, 101, 0.4) 0%, rgba(166, 119, 86, 0.4) 33.49%, rgba(147, 6, 134, 0.4) 103.09%);
       backdrop-filter: blur(15px);
       border-radius: 24px;
@@ -202,12 +203,14 @@
     display: flex;
     width: 560px;
     height: 296px;
-    left: 150px;
-    top: 367px;
     background: #FFFFFF;
     box-shadow: 3.20857e-15px 20px 104.8px rgba(51, 51, 51, 0.0835);
     border-radius: 10px;
-    padding: 30px;
+    padding: 25px 30px 30px 30px;
+
+    @include res($sm) {
+      width: 100%;
+    }
 
     .left,
     .right {
@@ -237,6 +240,7 @@
         text-transform: capitalize;
         color: #412971;
         padding-left: 30px;
+        margin-top: 10px;
 
         &:before {
           content: '#';

@@ -37,8 +37,7 @@ export default {
   },
   data: () => ({
     swiperOption: {
-      slidesPerView: 3,
-      spaceBetween: 60,
+      spaceBetween: 70,
       loop: false,
       autoplay: {
         delay: 4000,
@@ -49,10 +48,10 @@ export default {
 				prevEl: ".swiper-button-prev",
 			},
 			breakpoints: {
-				1024: {
+				1264: {
 					slidesPerView: 3
 				},
-				959: {
+				756: {
 					slidesPerView: 2
 				},
 				599: {
@@ -169,6 +168,7 @@ export default {
   .swiper-slide {
     
     &.swiper-slide-active,
+    &.swiper-slide-next,
     &.swiper-slide-next + div {
       &:after {
         content: '';
@@ -183,13 +183,23 @@ export default {
     }
     &.swiper-slide-active {
       &:after {
-        background: linear-gradient(to right, $cw 0%, transparent 80%);
+        background: linear-gradient(to right, $cw 10%, transparent 40%);
+
+        @include res(756px) {
+          background: linear-gradient(to right, $cw 10%, transparent 20%, transparent 80%, $cw 90%);
+        }
       }
     }
-
+    &.swiper-slide-next {
+      &:after {
+        @include res(1264px) {
+          background: linear-gradient(to left, $cw 10%, transparent 40%);
+        }
+      }
+    }
     &.swiper-slide-next + div {
       &:after {
-        background: linear-gradient(to left, $cw 0%, transparent 80%);
+        background: linear-gradient(to left, $cw 10%, transparent 40%);
       }
     }
   }
@@ -199,6 +209,11 @@ export default {
     color: #818286!important;
     width: 20px!important;
     height: 25px!important;
+    top: 45%!important;
+
+    @include res($sm) {
+      top: 50%!important;
+    }
 
     &:after {
       font-size: 16px!important;

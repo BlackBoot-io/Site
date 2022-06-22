@@ -30,23 +30,23 @@ export const state = () => ({
 		// },
 		{
 			name: "Token",
-			route: "#1",
-			icon: "mdi-currency-usd",
+			route: "#futures",
+			icon: "mdi-circle-multiple-outline",
 		},
 		{
 			name: "Services",
-			route: "#2",
-			icon: "mdi-comment-text-multiple-outline",
+			route: "#services",
+			icon: "mdi-layers-outline",
 		},
 		{
 			name: "Roadmap",
-			route: "#3",
-			icon: "mdi-lifebuoy",
+			route: "#roadmap",
+			icon: "mdi-map-marker-path",
 		},
 		{
 			name: "Our Team",
-			route: "#4",
-			icon: "mdi-information-outline",
+			route: "#1",
+			icon: "mdi-account-group-outline",
 		},
 	],
 })

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="services">
+  <v-container id="services" class="services">
     <v-row>
       <v-col cols="12" lg="12" class="text-center">
         <h3 class="title-main dot-yellow">
@@ -12,7 +12,7 @@
     </v-row>
     <v-row class="services-items">
       <v-col cols="6" md="4" class="service" v-for="(service, index) in services" :key="index">
-        <img class="s-img" :src="service.image" :alt="service.text">
+        <div class="s-img" v-html="service.image"></div>
         <p class="s-desc">{{ service.text }}</p>
       </v-col>
     </v-row>
@@ -24,27 +24,27 @@
     data: () => ({
       services: [
         {
-          image: require('../../static/img/services/nft.svg'),
+          image: require('../../static/img/services/nft.svg?raw'),
           text: 'We create NFTs for you.'
         },
         {
-          image: require('../../static/img/services/sbt.svg'),
+          image: require('../../static/img/services/sbt.svg?raw'),
           text: 'We create Soulbound Tokens  for you.'
         },
         {
-          image: require('../../static/img/services/explore.svg'),
+          image: require('../../static/img/services/explore.svg?raw'),
           text: 'Allow others to explore your expertise.'
         },
         {
-          image: require('../../static/img/services/nft-update.svg'),
+          image: require('../../static/img/services/nft-update.svg?raw'),
           text: 'Update your NFTs authomatically.'
         },
         {
-          image: require('../../static/img/services/collection.svg'),
+          image: require('../../static/img/services/collection.svg?raw'),
           text: 'Create a collection of tokens.'
         },
         {
-          image: require('../../static/img/services/blockchain.svg'),
+          image: require('../../static/img/services/blockchain.svg?raw'),
           text: 'Store everything on blockchain.'
         },
       ]

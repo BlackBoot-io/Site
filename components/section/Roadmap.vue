@@ -1,5 +1,5 @@
 <template>
-  <v-container class="roadmap">
+  <v-container id="roadmap" class="roadmap">
     <v-row>
       <v-col cols="12" lg="12" class="text-center">
         <h3 class="title-main dot-green">
@@ -11,8 +11,11 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" class="roadmap-img">
-        <img :src="roadmap" alt="roadmap" />
+      <v-col
+        cols="12"
+        class="roadmap-img"
+        v-html="roadmap"
+      >
       </v-col>
     </v-row>
   </v-container>
@@ -21,7 +24,7 @@
 <script>
   export default {
     data: () => ({
-      roadmap: require('../../static/img/roadmap.svg'),
+      roadmap: require('../../static/img/roadmap.svg?raw'),
     }),
   }
 </script>
@@ -31,14 +34,11 @@
 @import '~/assets/scss/_mixins.scss';
 
 .roadmap {
+  padding-top: 50px;
   padding-bottom: 100px;
 
   .roadmap-img {
     margin-top: 35px;
-
-    img {
-      max-width: 100%;
-    }
   }
 }
 

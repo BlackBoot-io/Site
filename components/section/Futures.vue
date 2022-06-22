@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="futures">
+  <v-container fluid id="futures" class="futures">
     <v-container>
       <v-row>
         <v-col cols="12" lg="6" class="d-flex flex-column justify-center">
