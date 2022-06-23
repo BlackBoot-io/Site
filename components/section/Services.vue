@@ -1,7 +1,7 @@
 <template>
   <v-container id="services" class="services">
     <v-row>
-      <v-col cols="12" lg="12" class="text-center">
+      <v-col cols="12" class="text-center">
         <h3 class="title-main dot-yellow">
           What We <span>Do For You</span>
         </h3>
@@ -11,7 +11,7 @@
       </v-col>
     </v-row>
     <v-row class="services-items">
-      <v-col cols="6" md="4" class="service" v-for="(service, index) in services" :key="index">
+      <v-col cols="12" md="4" class="service" v-for="(service, index) in services" :key="index">
         <div class="s-img" v-html="service.image"></div>
         <p class="s-desc">{{ service.text }}</p>
       </v-col>

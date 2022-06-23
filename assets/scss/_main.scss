@@ -78,6 +78,11 @@
   margin-bottom: 0;
   display: inline-block;
 
+  @include res($sm) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -90,6 +95,11 @@
     height: 40px;
     border-radius: 50%;
     background: #FFEDBA;
+
+    @include res($sm) {
+      width: 30px;
+      height: 30px;
+    }
   }
   
   &.dot-yellow {
@@ -128,6 +138,11 @@
   max-width: 613px;
   margin: 20px auto 0 auto!important;
   display: block;
+
+  @include res($sm) {
+    font-size: 15px;
+    line-height: 22px;
+  }
 }
 
 

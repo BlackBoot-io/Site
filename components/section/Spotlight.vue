@@ -11,7 +11,7 @@
           </p>
           <div class="public-sale">
             <v-row>
-              <v-col class="left">
+              <v-col cols="12" sm="12" md="6" class="left">
                 <h5 class="p-title"> Public Sale</h5>
                 <p class="p-text">Remaining time to buy</p>
                 <v-btn dark depressed class="btn-main" :color="$store.state.cPrimary">
@@ -19,7 +19,7 @@
                   Buy Token
                 </v-btn>
               </v-col>  
-              <v-col class="right">
+              <v-col cols="12" sm="12" md="6" class="right">
                 <div>
                   <div class="d-flex align-center justify-space-between mb-3">
                     <p>Token Price</p>
@@ -53,7 +53,7 @@
         </div>
       </v-row>
       <v-row class="stats">
-        <v-col cols="12" md="3" v-for="(stat, index) in stats" :key="index">
+        <v-col cols="6" md="3" v-for="(stat, index) in stats" :key="index">
           <span :class="'stat-num num-'+index">
             {{ stat.num }}
           </span>
@@ -164,6 +164,12 @@
     color: #424242;
     margin-bottom: 10px;
 
+    @include res($sm) {
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+    }
+
     &:before {
       content: url('~static/img/dashed-line.svg');
       position: absolute;
@@ -176,6 +182,10 @@
       font-weight: 700;
       font-size: 38px;
       z-index: 5;
+
+      @include res($sm) {
+        font-size: 32px;
+      }
 
       &:before {
         content: "";
@@ -197,6 +207,10 @@
     line-height: 33px;
     color: #606060;
     margin-bottom: 25px!important;
+
+    @include res($sm) {
+      text-align: center;
+    }
   }
 
   .public-sale {
@@ -208,8 +222,14 @@
     border-radius: 10px;
     padding: 25px 30px 30px 30px;
 
-    @include res($sm) {
+    @include res($md) {
       width: 100%;
+    }
+
+    @include res($sm) {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .left,
@@ -218,6 +238,10 @@
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+
+      @include res($sm) {
+        height: 300px;
+      }
 
       .v-btn {
         height: 48px!important;

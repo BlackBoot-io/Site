@@ -1,7 +1,7 @@
 <template>
   <v-container class="details">
     <v-row>
-      <v-col cols="12" lg="12" class="text-center">
+      <v-col cols="12" class="text-center">
         <h3 class="title-main dot-pink">
           <span>Token Details</span>
         </h3>
