@@ -3,7 +3,7 @@
     <v-container fluid class="main">
       <v-container class="top">
         <v-row>
-          <v-col cols="12" sm="12" md="12" lg="3">
+          <v-col cols="12" sm="6" md="12" lg="4">
             <h5 class="d-flex align-center">{{ $store.state.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="(item, index) in content.contactInfo" :key="index">
@@ -13,7 +13,7 @@
             </ul>
             <img src="../../static/img/built-on-eth.svg" alt="Built On Eth" class="mt-3" />
           </v-col>
-          <v-col cols="6" sm="6" md="3" lg="2">
+          <v-col cols="12" sm="6" md="4" lg="3">
             <h5>{{ content.menu.first.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="link in content.menu.first.items" :key="link.name">
@@ -26,17 +26,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col cols="6" sm="6" md="3" lg="2">
-            <h5>{{ content.menu.second.title }}</h5>
-            <ul class="footer-default-list">
-              <li v-for="link in content.menu.second.items" :key="link.name">
-                <NuxtLink :to="link.route">
-                  {{ link.name }}
-                </NuxtLink>
-              </li>
-            </ul>
-          </v-col>
-          <v-col cols="6" sm="6" md="3" lg="3">
+          <v-col cols="12" sm="6" md="4" lg="3">
             <h5>{{ content.menu.third.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="link in content.menu.third.items" :key="link.name">
@@ -46,7 +36,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col cols="6" sm="6" md="3" lg="2">
+          <v-col cols="12" sm="6" md="4" lg="2">
             <h5>{{ content.menu.fourth.title }}</h5>
             <ul class="footer-default-list">
               <li v-for="link in content.menu.fourth.items" :key="link.name">
@@ -117,31 +107,6 @@ export default {
               name: "Buy SoulBound Tokens",
               route: "#",
               targetBlank: false,
-              icon: "",
-            },
-          ],
-        },
-        second: {
-          title: "Networks",
-          items: [
-            {
-              name: "Bitcoin",
-              route: "#",
-              icon: "",
-            },
-            {
-              name: "Etherium",
-              route: "#",
-              icon: "",
-            },
-            {
-              name: "Solana",
-              route: "#",
-              icon: "",
-            },
-            {
-              name: "BscScan",
-              route: "#",
               icon: "",
             },
           ],
@@ -264,7 +229,7 @@ footer {
 
   .main {
     position: relative;
-    background: #412971!important;
+    background: #231739!important;
 
     &:before,
     &:after {
@@ -356,7 +321,7 @@ footer {
         transform: translate(-50%, -50%);
         width: 80%;
         height: 1px;
-        background: #5A4684;
+        background: #3E2865;
       }
 
       p {

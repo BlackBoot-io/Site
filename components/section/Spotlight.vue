@@ -14,8 +14,8 @@
               <v-col cols="12" sm="12" md="6" class="left">
                 <h5 class="p-title"> Public Sale</h5>
                 <p class="p-text">Remaining time to buy</p>
-                <v-btn dark depressed class="btn-main" :color="$store.state.cPrimary">
-                  <v-icon>mdi-basket-outline</v-icon>
+                <v-btn dark depressed height="48" class="btn-main" :color="$store.state.cPrimary">
+                  <v-icon size="21" class="mr-1">mdi-basket-outline</v-icon>
                   Buy Token
                 </v-btn>
               </v-col>  
@@ -40,8 +40,8 @@
                   <span>54</span>
                   <span>32</span>
                 </div>
-                <v-btn dark outlined class="btn-main" :color="$store.state.cPrimary">
-                  <v-icon>mdi-arrow-down</v-icon>
+                <v-btn dark outlined height="48" class="btn-main" :color="$store.state.cPrimary">
+                  <v-icon size="21" class="mr-1">mdi-arrow-down</v-icon>
                   Download white paper
                 </v-btn>
               </v-col>
@@ -133,22 +133,23 @@
 
   .slider {
     position: absolute;
-    bottom: 0%;
-    right: -86px;
-    width: 590px;
+    bottom: 14px;
+    right: -92px;
+    width: 633px;
+    height: 532px;
 
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 57px;
-      width: 76.2%;
-      height: 91.5%;
-      min-height: 482px;
-      background: linear-gradient(180deg, rgba(8, 55, 101, 0.4) 0%, rgba(166, 119, 86, 0.4) 33.49%, rgba(147, 6, 134, 0.4) 103.09%);
-      backdrop-filter: blur(15px);
-      border-radius: 24px;
-    }
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 57px;
+    //   width: 76.2%;
+    //   height: 91.5%;
+    //   min-height: 482px;
+    //   background: linear-gradient(180deg, rgba(8, 55, 101, 0.4) 0%, rgba(166, 119, 86, 0.4) 33.49%, rgba(147, 6, 134, 0.4) 103.09%);
+    //   backdrop-filter: blur(15px);
+    //   border-radius: 24px;
+    // }
 
     @include res($md) {
       display: none;
@@ -241,15 +242,6 @@
 
       @include res($sm) {
         height: 300px;
-      }
-
-      .v-btn {
-        height: 48px!important;
-
-        .v-icon {
-          margin-right: 5px;
-          font-size: 21px;
-        }
       }
     }
 

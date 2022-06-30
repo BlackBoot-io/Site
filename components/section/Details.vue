@@ -11,8 +11,8 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" class="details-table">
-        <v-simple-table>
+      <v-col cols="12" md="7" class="details-table">
+        <!-- <v-simple-table>
           <template v-slot:default>
             <tbody>
               <tr
@@ -24,7 +24,65 @@
               </tr>
             </tbody>
           </template>
-        </v-simple-table>
+        </v-simple-table> -->
+        <ul>
+          <li class="timeline flex-row" v-for="item in details" :key="item.name">
+            <h5>{{ item.name }}</h5>
+            <span v-html="item.value"></span>
+          </li>
+          <li class="timeline flex-row">
+            <h5>Funding methods</h5>
+            <span>
+              <div v-for="(method, index) in methods" :key="index" class="d-flex align-center">
+                <em v-html="method.img" class="mr-2"></em> {{ method.name }} 
+              </div>
+            </span>
+          </li>
+        </ul>
+      </v-col>
+      <v-col cols="12" md="5" class="details-table">
+        <ul>
+          <li>
+            <h5>minimum and maximum purchase</h5>
+            <span>
+              <v-icon size="20" color="green" class="mr-2">mdi-arrow-collapse-down</v-icon> Minimum purchase <small class="ml-5">$10</small>
+              <br>
+              <v-icon size="20" color="red" class="mr-2">mdi-arrow-collapse-up</v-icon> maximum purchase <small class="ml-5">-</small>
+            </span>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <h5>Excluded participations</h5>
+            <span>Afghanistan, brundi, central african republic, democratic republic of congo.the crimea region, democratic people’s republic of north korea, republic of iraq, lebabon, liberia, libya, myanmar, puerto rico, somalia, sudan, syrian arab republic, venezuela, zimbawe</span>
+          </li>
+        </ul>
+      </v-col>
+      <v-col cols="12" sm="6" md="4 offset-md-2" lg="3 offset-lg-3">
+        <v-btn
+          dark
+          depressed
+          width="100%"
+          height="48"
+          class="btn-main"
+          :color="$store.state.cPrimary"
+        >
+          <v-icon size="21" class="mr-1">mdi-basket-outline</v-icon>
+          Buy Token
+        </v-btn>
+      </v-col>
+      <v-col cols="12" sm="6" md="4" lg="3">
+        <v-btn
+          dark
+          outlined
+          width="100%"
+          height="48"
+          class="btn-main"
+          :color="$store.state.cPrimary"
+        >
+          <v-icon size="21" class="mr-1">mdi-arrow-down</v-icon>
+          Download white paper
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -33,6 +91,7 @@
 <script>
   export default {
     data: () => ({
+      ethereumIcon: require('../../static/img/ethereum.svg'),
       details: [
         {
           name: 'Asset',
@@ -44,23 +103,29 @@
         },
         {
           name: 'Fixed sale price',
-          value: '0.012 eth ≃ $ 121',
-        },
-        {
-          name: 'minimum and maximum purchase',
-          value: '<span>Minimum purchase:</span> $10<span class="ml-15">Minimum purchase:</span> $10',
+          value: '0.012 eth ≃ <span class="dollar-amount">$214</span>',
         },
         {
           name: 'Loockup and release',
           value: '3 months cliff after IDO and then 12-month quarterly linear unlock',
         },
+      ],
+      methods: [
         {
-          name: 'Funding methods',
-          value: 'USDT network (etherium,BNB,Tron),Eth',
+          name: 'USDT',
+          img: require('../../static/img/methods/usdt.svg?raw'),
         },
         {
-          name: 'Excluded participations',
-          value: 'Afghanistan, brundi, central african republic, democratic republic of congo.the crimea region, democratic people’s republic of north korea, islamic republic of iran, republic of iraq, lebabon, liberia, libya, myanmar, puerto rico, somalia, sudan, syrian arab republic, venezuela, zimbawe',
+          name: 'Etherium',
+          img: require('../../static/img/methods/etherium.svg?raw'),
+        },
+        {
+          name: 'BNB',
+          img: require('../../static/img/methods/bnb.svg?raw'),
+        },
+        {
+          name: 'Tron',
+          img: require('../../static/img/methods/tron.svg?raw'),
         },
       ],
     }),
@@ -77,12 +142,17 @@
 
   .details-table {
     margin-top: 25px;
-    display: flex;
-    justify-content: center;
+
+    @include res($sm) {
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
 
     .v-data-table {
       line-height: 1.5;
-      border: 1px solid #F0F1F4;
+      border: 1px solid rgba(240, 241, 244, 0.7);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.02);
       border-radius: 15px;
       padding: 20px;
       flex: 1;
@@ -129,6 +199,116 @@
             }
           }
         }
+      }
+    }
+
+    ul {
+      background: #FFFFFF;
+      border: 1px solid rgba(240, 241, 244, 0.7);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.02);
+      border-radius: 15px;
+      padding: 25px 30px!important;
+      margin-bottom: 24px;
+      width: 100%;
+      display: block;
+
+      @include res($sm) {
+        margin-bottom: 24px;
+      }
+
+      li {
+        position: relative;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: $cb;
+        line-height: 33px;
+        display: flex;
+        flex-direction: column;
+
+        &.timeline {
+          padding-left: 20px;
+          padding-bottom: 20px;
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 17px;
+            left: 0%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: $cw;
+            border: 1px solid #C4C4C4;
+            border-radius: 50%;
+          }
+
+          &:first-child {
+            &:after {
+              background: #C4C4C4;
+            }
+          }
+
+          &:not(:last-child) {
+            &:before {
+              content: '';
+              position: absolute;
+              top: 55px;
+              left: 0px;
+              transform: translate(-50%, -50%);
+              width: 1px;
+              height: 120%;
+              background: #F0F1F4;;
+            }
+          }
+        }
+
+        h5 {
+          font-weight: 600;
+          font-size: 18px!important;
+          margin-bottom: 10px;
+          flex: 0.55;
+        }
+
+        span,
+        small {
+          font-weight: 400;
+          font-size: 16px;
+        }
+
+        span {
+          flex: 0.45;
+        }
+
+        em {
+          line-height: 0;
+        }
+
+      .dollar-amount {
+        background: #EAF4FB;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 5px;
+        text-transform: capitalize;
+        color: #3498DB;
+        padding: 5px 8px;
+      }
+    
+      .token-amount {
+        font-weight: 300;
+        font-size: 14px;
+        text-transform: capitalize;
+        color: #000000;
+        margin-right: 5px;
+      }
+    
+      .almost-eq {
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: capitalize;
+        color: #8C8C8C;
+        margin: 0 5px;
+      }
       }
     }
   }

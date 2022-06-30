@@ -70,7 +70,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 35px;
-      border-radius: 10px;
+      border-radius: 15px;
 
       &:hover {
         .b-img {

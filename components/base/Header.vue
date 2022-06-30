@@ -53,15 +53,37 @@
           </div>
         </div>
         <div class="left">
-          <a href="#">
-            <v-btn
-              depressed
-              class="btn-main btn-lang"
-            >
-             {{ content.lang }}
-              <v-icon class="ml-1">mdi-web</v-icon>
-            </v-btn>
-          </a>
+          <v-menu offset-y content-class="header-menu" transition="fade-transition">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                depressed
+                class="btn-main btn-lang"
+                v-bind="attrs"
+                v-on="on"
+              >
+              {{ content.lang }}
+                <v-icon class="ml-1">mdi-web</v-icon>
+              </v-btn>
+            </template>
+            <v-list nav flat class="inner">
+              <v-subheader>
+                select country
+                <v-icon size="20">mdi-chevron-up</v-icon>
+              </v-subheader>
+              <v-list-item-group>
+                <v-list-item v-for="(item, index) in userMenu.items" :key="index">
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      <NuxtLink :to="item.route" :aria-label="item.text">
+                        <span v-html="item.icon"></span>
+                        {{ item.text }}
+                      </NuxtLink>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
           <a href="https://dashboard.avanod.com/">
             <v-btn
               outlined
@@ -135,6 +157,21 @@
 <script>
 export default {
   data: () => ({
+     userMenu: {
+      status: false,
+      items: [
+        {
+          text: 'United kingdom',
+          icon: require('../../static/img/flags/uk.svg?raw'),
+          route: '#',
+        },
+        {
+          text: 'United kingdom',
+          icon: require('../../static/img/flags/uae.svg?raw'),
+          route: '#',
+        },
+      ],
+    },
     content: {
       lang: "en",
       connect: "Connect",
@@ -285,16 +322,16 @@ header {
     }
 
     &:before {
-      left: calc(57% - 20px);
+      left: calc(55% - 20px);
       bottom: -12px;
       height: 0;
       border-radius: 50%;
     }
 
     &:after {
-      left: 57%;
-      bottom: -11px;
-      height: 4px;
+      left: 55%;
+      bottom: -10px;
+      height: 3px;
       border-radius: 30px;
     }
 
@@ -337,6 +374,81 @@ header {
   }
 }
 
+.user-menu-area {
+  position: relative;
+}
+
+.header-menu {
+  margin-top: 10px;
+  background: $cw;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+
+  .inner {
+    min-width: 270px;
+    border-radius: 8px!important;
+    padding-top: 0;
+
+    .v-subheader {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      text-transform: capitalize;
+      color: #7A808B;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .v-list-item {
+      padding: 0!important;
+      border-radius: 8px!important;
+      min-height: 40px!important;
+      margin-bottom: 0!important;
+
+      &:hover {
+        background: #E4F8FF;
+      }
+
+      &:before {
+        border-radius: 8px;
+      }
+
+      .v-list-item__content {
+        padding: 0!important;
+
+        .v-list-item__title {
+          min-height: 30px!important;
+          line-height: 3.3!important;
+          font-size: 14px!important;
+
+          @include res(md) {
+            font-size: 13px!important;
+          }
+
+          a {
+            width: 100%;
+            display: block;
+            border-radius: 8px!important;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            text-transform: capitalize;
+            color: #5B626E;
+
+            span {
+              line-height: 0;
+              margin: 0 10px 0 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .drawer {
   position: fixed;
   margin-top: 66px;
@@ -363,10 +475,6 @@ header {
       border-radius: 8px !important;
     }
   }
-}
-
-.v-menu__content {
-  margin-top: 38px;
 }
 
 .v-list-item__title {

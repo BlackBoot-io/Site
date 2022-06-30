@@ -7,6 +7,7 @@
     <SectionDetails />
     <SectionCrowdsale />
     <SectionRoadmap />
+    <SectionBlog />
   </div>
 </template>
 
