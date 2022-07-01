@@ -14,7 +14,7 @@
             <h5 class="b-title">{{ benefit.title }}</h5>
             <p class="b-desc">{{ benefit.text }}</p>
           </div>
-          <img class="b-img" :src="benefit.image" :alt="benefit.title">
+          <span class="b-img" v-html="benefit.image"></span>
         </div>
       </v-col>
     </v-row>
@@ -28,25 +28,25 @@
         {
           title: 'Update Your CV',
           text: 'You have unlimited oportunity to update your cv and add any single Token and NFT.',
-          image: require('../../static/img/benefits/cv.svg'),
+          image: require('../../static/img/benefits/cv.svg?raw'),
           color: '#EDFBFF'
         },
         {
           title: 'Avoid Missing Memories',
           text: 'We have dedicated a strong feature not to miss any event that are related to your CV.',
-          image: require('../../static/img/benefits/avoid-missing.svg'),
+          image: require('../../static/img/benefits/avoid-missing.svg?raw'),
           color: '#FFF3F4'
         },
         {
           title: 'Social Media Connection',
           text: 'We offer people who are using our services to be able to share their NFTs and Tokens on instagram.',
-          image: require('../../static/img/benefits/social.svg'),
+          image: require('../../static/img/benefits/social.svg?raw'),
           color: '#FFFAEB'
         },
         {
           title: 'Proof Your Attendance',
           text: 'WUltimately, you can proove your attendance in any sigle event and courses that you have passed.',
-          image: require('../../static/img/benefits/attendance.svg'),
+          image: require('../../static/img/benefits/attendance.svg?raw'),
           color: '#EEFFF5'
         },
       ]
@@ -66,6 +66,7 @@
     margin-top: 40px;
   
     .benefit {
+      position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -100,10 +101,12 @@
       }
 
       .b-img {
-        flex: 0.2;
-        max-width: 170px;
-        max-height: 133px;
+        max-width: 167px;
+        max-height: 174px;
         transition: 0.2s;
+        position: absolute;
+        top: 10px;
+        right: 33px;
       }
     }
   }

@@ -18,7 +18,7 @@
           </ul>
         </v-col>
         <v-col cols="12" lg="5 offset-lg-1" class="d-none d-lg-flex text-right">
-          <img src="../../static/img/globe.png" alt="">
+          <img src="../../static/img/globe.png" class="globe" alt="">
         </v-col>
       </v-row>
     </v-container>
@@ -50,8 +50,12 @@
   background: #F2FAFDB2;
   background-repeat: no-repeat;
   background-position: left top;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 90px;
+  padding-bottom: 50px;
+
+  @include res($md) {
+    padding-top: 50px;
+  }
 
   .f-title {
     font-weight: 400;
@@ -89,6 +93,12 @@
         color: #5A5F68;
       }
     }
+  }
+
+  .globe {
+    position: absolute;
+    bottom: 0;
+    right: -20px;
   }
 }
 

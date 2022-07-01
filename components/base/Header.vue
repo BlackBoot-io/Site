@@ -166,7 +166,7 @@ export default {
           route: '#',
         },
         {
-          text: 'United kingdom',
+          text: 'United Arab Emirates',
           icon: require('../../static/img/flags/uae.svg?raw'),
           route: '#',
         },
@@ -398,6 +398,10 @@ header {
       color: #7A808B;
       display: flex;
       justify-content: space-between;
+
+      .v-icon {
+        cursor: pointer;
+      }
     }
 
     .v-list-item {
