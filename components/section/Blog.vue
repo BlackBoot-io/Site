@@ -15,17 +15,16 @@
             <p class="b-desc">{{ post.text }}</p>
           </div>
           <div class="b-details">
-            <v-avatar width="40" height="40" v-for="(avatar, index) in post.avatars" :key="index">
-              <img :src="avatar">
-            </v-avatar>
-            <div class="b-text">
-              <span class="b-name">{{ post.name }}</span>
-              <span class="b-date">{{ post.date }}</span>
-            </div>
+              <v-avatar width="40" height="40" v-for="(avatar, index) in post.avatars" :key="index">
+                <img :src="avatar">
+              </v-avatar>
+              <div class="b-text">
+                <span class="b-name">{{ post.name }}</span>
+                <span class="b-date">{{ post.date }}</span>
+              </div>
             <v-btn
               dark
               outlined
-              height="48"
               class="btn-main"
               :color="$store.state.cPrimary"
             >
@@ -93,13 +92,25 @@
 .blog {
   padding-bottom: 80px;
 
+  @include res($sm) {
+    padding-bottom: 40px;
+  } 
+
   .blog-posts {
     margin-top: 40px;
+
+    @include res($sm) {
+      margin-top: 15px;
+    }
   
     .post {
       padding: 35px;
       border-radius: 15px;
       background: #F6FBFE;
+
+      @include res($sm) {
+        padding: 25px;
+      }
 
       &:hover {
         .b-img {
@@ -110,9 +121,14 @@
       .b-title {
         font-weight: 600;
         font-size: 16px;
-        line-height: 19px;
+        line-height: 25px;
         color: $cb;
         margin-bottom: 20px;
+
+        @include res($sm) {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
       }
 
       .b-desc {
@@ -121,6 +137,10 @@
         line-height: 25px;
         letter-spacing: 0.01em;
         color: #000000;
+
+        @include res($sm) {
+          font-size: 13px;
+        }
       }
 
       .b-details {
@@ -156,7 +176,19 @@
 
         .v-btn {
           margin-left: auto; 
-          padding: 12px 10px;         
+          padding: 12px 10px; 
+          height: 48px; 
+
+          @include res($sm) {
+            height: 33px;
+            font-size: 14px!important;
+          }   
+
+          .v-icon {
+            @include res($sm) {
+              display: none;
+            }   
+          }
         }
       }
     }

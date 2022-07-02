@@ -1,6 +1,6 @@
 <template>
   <v-container fluid id="futures" class="futures">
-    <v-container>
+    <v-container class="f-inner">
       <v-row>
         <v-col cols="12" lg="6" class="d-flex flex-column justify-center">
           <h2 class="f-title">
@@ -54,7 +54,16 @@
   padding-bottom: 50px;
 
   @include res($md) {
-    padding-top: 50px;
+    padding: 50px 0;
+  }
+
+  @include res($sm) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .f-inner {
+    position: relative;
   }
 
   .f-title {
@@ -66,6 +75,11 @@
     span {
       position: relative;
       font-weight: 700;
+    }
+
+    @include res($sm) {
+      font-size: 18.708px;
+      line-height: 37px;
     }
   }
 
@@ -79,11 +93,23 @@
       margin-top: 27px;
       padding-left: 45px;
 
+      @include res($sm) {
+        font-size: 16px;
+        line-height: 27px;
+        padding-left: 35px;
+        margin-top: 15px;
+      }
+
       .v-icon {
         position: absolute;
         top: 5px;
         left: 0;
         font-size: 30px;
+
+        @include res($sm) {
+          top: 2px;
+          font-size: 25px;
+        }
       }
 
       span {
@@ -91,6 +117,10 @@
         font-size: 18px;
         line-height: 35px;
         color: #5A5F68;
+
+        @include res($sm) {
+          font-size: 15px;
+        }
       }
     }
   }

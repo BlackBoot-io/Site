@@ -80,12 +80,22 @@ export default {
       font-size: 18px;
       font-weight: 700;
       margin: 5px;
+
+      @include res($sm) {
+        font-weight: 600;
+        font-size: 16px;
+      }
     }
 
     .cs-date {
       font-size: 15px;
       font-weight: 400;
       color: #666;
+
+      @include res($sm) {
+        font-size: 14px;
+        line-height: 29px;
+      }
     }
 
     .timeline{
@@ -122,6 +132,13 @@ export default {
       flex-direction: row;
       justify-content: space-between;
       margin-bottom: 15px;
+
+      p {
+        @include res($sm) {
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
     }
 
     .cs-details {
@@ -139,14 +156,22 @@ export default {
         text-transform: capitalize;
         color: #3498DB;
         padding: 10px 8px;
+
+         @include res($sm) {
+          font-size: 11px;
+        }
       }
     
       .token-amount {
-        font-weight: 300;
+        font-weight: 400;
         font-size: 14px;
         text-transform: capitalize;
-        color: #000000;
+        color: #646972;
         margin-right: 5px;
+
+        @include res($sm) {
+          font-size: 12px;
+        }
       }
     
       .almost-eq {
@@ -159,9 +184,13 @@ export default {
     }
 
     .cs-des {
-      font-weight: 300;
-      color: #666;
+      font-weight: 400;
+      color: #989AA3;
       text-align: left;
+
+      @include res($sm) {
+        font-size: 12px;
+      }
     }
   }
 
@@ -186,7 +215,7 @@ export default {
         background: linear-gradient(to right, $cw 10%, transparent 40%);
 
         @include res(756px) {
-          background: linear-gradient(to right, $cw 10%, transparent 20%, transparent 80%, $cw 90%);
+          background: linear-gradient(to right, $cw 12%, transparent 12%, transparent 88%, $cw 88%);
         }
       }
     }
@@ -211,14 +240,17 @@ export default {
     height: 25px!important;
     top: 45%!important;
 
-    @include res($sm) {
-      top: 50%!important;
-    }
-
     &:after {
       font-size: 16px!important;
     }
 
+    @include res($sm) {
+      top: 127px!important;
+
+      &:after {
+        font-size: 12px!important;
+      }
+    }
   }
 
   .swiper-button-prev {

@@ -40,7 +40,7 @@
           </li>
         </ul>
       </v-col>
-      <v-col cols="12" md="5" class="details-table">
+      <v-col cols="12" md="5" class="details-table second">
         <ul>
           <li>
             <h5>minimum and maximum purchase</h5>
@@ -58,12 +58,11 @@
           </li>
         </ul>
       </v-col>
-      <v-col cols="12" sm="6" md="4 offset-md-2" lg="3 offset-lg-3">
+      <v-col cols="6" sm="4 offset-sm-2" md="4 offset-md-2" lg="3 offset-lg-3">
         <v-btn
           dark
           depressed
           width="100%"
-          height="48"
           class="btn-main"
           :color="$store.state.cPrimary"
         >
@@ -71,12 +70,11 @@
           Buy Token
         </v-btn>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="3">
+      <v-col cols="6" sm="4" md="4" lg="3">
         <v-btn
           dark
           outlined
           width="100%"
-          height="48"
           class="btn-main"
           :color="$store.state.cPrimary"
         >
@@ -138,7 +136,11 @@
 
 .details {
   padding-top: 40px;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
+
+  @include res($sm) {
+    padding-bottom: 0px;
+  }
 
   .details-table {
     margin-top: 25px;
@@ -147,6 +149,10 @@
       margin-top: 0;
       padding-top: 0;
       padding-bottom: 0;
+
+      &.second {
+        margin-bottom: 15px;
+      }
     }
 
     .v-data-table {
@@ -213,7 +219,12 @@
       display: block;
 
       @include res($sm) {
-        margin-bottom: 24px;
+        padding: 20px 30px!important;
+      }
+
+      @include res($sm) {
+        margin-top: 15px;
+        margin-bottom: 0;
       }
 
       li {
@@ -228,6 +239,10 @@
         &.timeline {
           padding-left: 20px;
           padding-bottom: 20px;
+
+          @include res($sm) {
+            padding-bottom: 10px;
+          }
 
           &:after {
             content: '';
@@ -257,7 +272,11 @@
               transform: translate(-50%, -50%);
               width: 1px;
               height: 120%;
-              background: #F0F1F4;;
+              background: #F0F1F4;
+
+              @include res($sm) {
+                height: 100%;
+              }
             }
           }
         }
@@ -267,12 +286,22 @@
           font-size: 18px!important;
           margin-bottom: 10px;
           flex: 0.55;
+
+          @include res($sm) {
+            font-size: 12px!important;
+            margin-bottom: 0px;
+          }
         }
 
         span,
         small {
           font-weight: 400;
           font-size: 16px;
+
+          @include res($sm) {
+            font-size: 12px;
+            line-height: 30px;
+          }
         }
 
         span {
@@ -283,33 +312,46 @@
           line-height: 0;
         }
 
-      .dollar-amount {
-        background: #EAF4FB;
-        border-radius: 5px;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 5px;
-        text-transform: capitalize;
-        color: #3498DB;
-        padding: 5px 8px;
+        .dollar-amount {
+          background: #EAF4FB;
+          border-radius: 5px;
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 5px;
+          text-transform: capitalize;
+          color: #3498DB;
+          padding: 5px 8px;
+
+          @include res($sm) {
+            font-size: 12px;
+          }
+        }
+      
+        .token-amount {
+          font-weight: 300;
+          font-size: 14px;
+          text-transform: capitalize;
+          color: #000000;
+          margin-right: 5px;
+        }
+      
+        .almost-eq {
+          font-weight: 500;
+          font-size: 20px;
+          text-transform: capitalize;
+          color: #8C8C8C;
+          margin: 0 5px;
+        }
       }
-    
-      .token-amount {
-        font-weight: 300;
-        font-size: 14px;
-        text-transform: capitalize;
-        color: #000000;
-        margin-right: 5px;
-      }
-    
-      .almost-eq {
-        font-weight: 500;
-        font-size: 20px;
-        text-transform: capitalize;
-        color: #8C8C8C;
-        margin: 0 5px;
-      }
-      }
+    }
+  }
+
+  .v-btn {
+    height: 48px!important;
+
+    @include res($sm) {
+      height: 40px!important;
+      font-size: 12px!important;
     }
   }
 }

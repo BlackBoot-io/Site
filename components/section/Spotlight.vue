@@ -11,15 +11,15 @@
           </p>
           <div class="public-sale">
             <v-row>
-              <v-col cols="12" sm="12" md="6" class="left">
+              <v-col cols="6" class="left">
                 <h5 class="p-title"> Public Sale</h5>
                 <p class="p-text">Remaining time to buy</p>
-                <v-btn dark depressed height="48" class="btn-main" :color="$store.state.cPrimary">
+                <v-btn dark depressed class="btn-main" :color="$store.state.cPrimary">
                   <v-icon size="21" class="mr-1">mdi-basket-outline</v-icon>
                   Buy Token
                 </v-btn>
               </v-col>  
-              <v-col cols="12" sm="12" md="6" class="right">
+              <v-col cols="6"  class="right">
                 <div>
                   <div class="d-flex align-center justify-space-between mb-3">
                     <p>Token Price</p>
@@ -40,7 +40,7 @@
                   <span>54</span>
                   <span>32</span>
                 </div>
-                <v-btn dark outlined height="48" class="btn-main" :color="$store.state.cPrimary">
+                <v-btn dark outlined class="btn-main" :color="$store.state.cPrimary">
                   <v-icon size="21" class="mr-1">mdi-arrow-down</v-icon>
                   Download white paper
                 </v-btn>
@@ -118,6 +118,10 @@
   background-repeat: no-repeat;
   background-position: left top;
 
+  @include res($md) {
+    padding: 12px 0;
+  }
+
   .s-inside {
     position: relative;
     display: flex;
@@ -128,8 +132,11 @@
       height: auto;
       padding-top: 80px;
     }
-  }
 
+    @include res($sm) {
+      padding-top: 60px;
+    }
+  }
 
   .slider {
     position: absolute;
@@ -171,11 +178,25 @@
       text-align: center;
     }
 
+    @include res($xs) {
+      font-size: 18px;
+      line-height: 45px;
+    }
+
     &:before {
       content: url('~static/img/dashed-line.svg');
       position: absolute;
       top: 20px;
       left: 100%;
+
+      @include res($sm) {
+        left: auto;
+        right: 0;
+      }
+
+      @include res($xs) {
+        display: none;
+      }
     }
 
     span {
@@ -212,6 +233,11 @@
     @include res($sm) {
       text-align: center;
     }
+
+    @include res($xs) {
+      font-size: 14px;
+      line-height: 27px;
+    }
   }
 
   .public-sale {
@@ -222,6 +248,10 @@
     box-shadow: 3.20857e-15px 20px 104.8px rgba(51, 51, 51, 0.0835);
     border-radius: 10px;
     padding: 25px 30px 30px 30px;
+
+    @include res($sm) {
+      padding: 22px 20px;
+    }
 
     @include res($md) {
       width: 100%;
@@ -241,12 +271,12 @@
       height: 100%;
 
       @include res($sm) {
-        height: 300px;
+        height: 230px;
+        padding: 6px;
       }
     }
 
     .left {
-      
       .p-title {
         position: relative;
         display: flex;
@@ -258,6 +288,11 @@
         padding-left: 30px;
         margin-top: 10px;
 
+        @include res($sm) {
+          font-size: 14px;
+          padding-left: 25px;
+        }
+
         &:before {
           content: '#';
           position: absolute;
@@ -265,11 +300,10 @@
           left: 10px;
           transform: translate(-50%, -50%);
           font-size: 30px;
-        }
 
-        span {
-          font-size: 30px;
-          margin-right: 5px;
+          @include res($sm) {
+            font-size: 20px;
+          }
         }
       }
 
@@ -279,10 +313,23 @@
         line-height: 10px;
         text-transform: capitalize;
         color: #000000;
+
+        @include res($sm) {
+          font-size: 12px;
+        }
       }
     }
 
     .right {
+
+      p {
+        font-weight: 400;
+
+        @include res($sm) {
+          font-size: 11.11px!important;
+        }
+      }
+
       .p-details {
         display: flex;
         align-items: center;
@@ -298,6 +345,12 @@
           color: #3498DB;
           padding: 8px;
           margin: 0 5px;
+
+          @include res($sm) {
+            font-size: 11px;
+            padding: 7px 5px;
+            margin: 0 3px;
+          }
         }
       
         .token-amount {
@@ -306,6 +359,10 @@
           text-transform: capitalize;
           color: #000000;
           margin: 0 5px;
+
+          @include res($sm) {
+            font-size: 11px!important;
+          }
         }
       
         .almost-eq {
@@ -313,6 +370,10 @@
           font-size: 20px;
           text-transform: capitalize;
           color: #8C8C8C;
+
+          @include res($sm) {
+            font-size: 15px!important;
+          }
         }
       }
 
@@ -330,6 +391,16 @@
           align-items: center;
           justify-content: center;
 
+          @include res($md) {
+            width: 22%;
+          }
+
+          @include res($sm) {
+            width: 22%;
+            height: 31.16px;
+            font-size: 11px;
+          }
+
           &:before {
             content: '';
             position: absolute;
@@ -341,7 +412,12 @@
             line-height: 9px;
             text-transform: capitalize;
             color: #7A808B;
+
+            @include res($sm) {
+              font-size: 11px;
+            }
           }
+
           &:after {
             content: ':';
             position: absolute;
@@ -353,6 +429,19 @@
             line-height: 9px;
             text-transform: capitalize;
             color: #7A808B;
+
+            @include res($md) {
+              right: -15px;
+            }
+
+            @include res($sm) {
+              font-size: 14px;
+              right: -10px;
+            }
+
+            @include res($xs) {
+              right: -8px;
+            }
           }
 
           &:nth-child(1) {
@@ -381,12 +470,31 @@
         }
       }
     }
+
+    .v-btn {
+      height: 48px!important;
+
+      @include res($sm) {
+        height: 40px!important;
+        font-size: 11.5px!important;
+      }
+
+      .v-icon {
+        @include res($xs) {
+          display: none;
+        }
+      }
+    }
   }
 }
 
 .stats {
   padding-top: 80px;
   padding-bottom: 50px;
+
+  @include res($sm) {
+    padding: 20px 7px 20px 7px;
+  }
 
   .stat-num {
     position: relative;
@@ -396,6 +504,11 @@
     font-size: 30px;
     color: #023047;
     margin-bottom: 15px!important;
+
+    @include res($sm) {
+      font-size: 20.6417px;
+      line-height: 25px;
+    }
 
     &:before {
       content: "";
@@ -409,6 +522,11 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
+
+      @include res($sm) {
+        width: 25px;
+        height: 25px;
+      }
     }
 
     &.num-0 {
@@ -440,6 +558,12 @@
     letter-spacing: 0.01em;
     color: #5B626E;
     max-width: 90%;
+
+    @include res($sm) {
+      font-size: 14px;
+      line-height: 17px;
+      max-width: 100%;
+    }
   }
 }
 

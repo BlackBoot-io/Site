@@ -62,6 +62,10 @@
   padding-top: 60px;
   padding-bottom: 80px;
 
+  @include res($sm) {
+    padding-bottom: 0px;
+  }
+
   .benefits-items {
     margin-top: 40px;
   
@@ -73,9 +77,13 @@
       padding: 35px;
       border-radius: 15px;
 
+      @include res($sm) {
+        padding: 25px;
+      }
+
       &:hover {
         .b-img {
-          transform: scale(1.1);
+          transform: translate(0%, -50%) scale(1.1);
         }
       }
 
@@ -89,6 +97,12 @@
           letter-spacing: -0.0041em;
           color: #282A2D;
           margin-bottom: 25px;
+
+          @include res($sm) {
+            font-size: 13.8214px;
+            line-height: 17px;
+            margin-bottom: 10px;
+          }
         }
 
         .b-desc {
@@ -97,6 +111,11 @@
           line-height: 28px;
           letter-spacing: -0.0041em;
           color: #282A2D;
+
+          @include res($sm) {
+            font-size: 12.5036px;
+            line-height: 19px;
+          }
         }
       }
 
@@ -105,8 +124,15 @@
         max-height: 174px;
         transition: 0.2s;
         position: absolute;
-        top: 10px;
+        top: 50%;
         right: 33px;
+        transform: translate(0%, -50%);
+
+        @include res($sm) {
+          right: 23px;
+          max-width: 90px;
+          max-height: 110px;
+        }
       }
     }
   }

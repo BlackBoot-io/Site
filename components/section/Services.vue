@@ -11,7 +11,7 @@
       </v-col>
     </v-row>
     <v-row class="services-items">
-      <v-col cols="12" md="4" class="service" v-for="(service, index) in services" :key="index">
+      <v-col cols="6" md="4" class="service" v-for="(service, index) in services" :key="index">
         <div class="s-img" v-html="service.image"></div>
         <p class="s-desc">{{ service.text }}</p>
       </v-col>
@@ -60,13 +60,40 @@
   padding-top: 80px;
   padding-bottom: 80px;
 
+  @include res($sm) {
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
+
   .services-items {
     margin-top: 40px;
+
+    @include res($sm) {
+      margin-top: 20px;
+    }
   
     .service {
       display: flex;
       align-items: center;
       padding: 25px 45px 25px 12px;
+
+      @include res($sm) {
+        padding: 12px;
+      }
+
+      .s-img {
+        min-width: 72px;
+        max-width: 82px;
+        min-height: 82px;
+        max-height: 82px;
+
+        @include res($sm) {
+          min-width: 37px;
+          max-width: 47px;
+          min-height: 47px;
+          max-height: 47px;
+        }
+      }
 
       .s-desc {
         font-weight: 500;
@@ -75,6 +102,12 @@
         margin-left: 12px!important;
         letter-spacing: -0.0041em;
         color: #616771;
+
+        @include res($sm) {
+          font-weight: 500;
+          font-size: 11.9576px;
+          line-height: 19px;
+        }
       }
     }
   }

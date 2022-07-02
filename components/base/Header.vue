@@ -1,13 +1,23 @@
 <template>
   <div>
     <v-app-bar app :class="{ fixed: scrolled }">
-      <v-container class="py-0 fill-height d-md-none">
+      <v-container class="pa-0 fill-height d-md-none">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
         <NuxtLink to="/" class="logo-holder">
-          <BaseLogo class="logo mr-2" width="25" height="40" />
+          <BaseLogo class="logo mr-1 ml-5" width="20" height="35" />
           <span>{{ $store.state.title }}</span>
         </NuxtLink>
+        <v-spacer></v-spacer>
+        <a href="https://dashboard.avanod.com/">
+          <v-btn
+            plain
+            class="btn-main btn-connect responsive px-2"
+            color="black"
+          >
+            {{ content.connect }}
+          </v-btn>
+        </a>
       </v-container>
       <v-container class="main-bar d-none d-md-flex">
         <div class="right">
@@ -17,12 +27,12 @@
           </NuxtLink>
         </div>
         <div class="center">
-          <div v-for="link in $store.state.menu" :key="link.name">
+          <div v-for="(link, index) in $store.state.menu" :key="link.name">
             <NuxtLink v-if="!link.items" :to="link.route" class="header-link">
               {{ link.name }}
             </NuxtLink>
             <v-menu
-              v-else
+              v-if="link.items && index != 0"
               open-on-hover
               rounded="lg"
               transition="slide-y-transition"
@@ -98,10 +108,11 @@
       </v-container>
     </v-app-bar>
     <v-navigation-drawer
-      class="drawer"
-      v-model="drawer"
       absolute
       temporary
+      v-model="drawer"
+      class="drawer"
+      width="100%"
     >
       <v-list nav dense>
         <v-list-item-group v-model="group" :color="$store.state.cPrimary">
@@ -109,12 +120,11 @@
             <v-list-item
               v-if="!link.items"
               class="pa-0 mb-2"
-              :class="{'v-list-item--active': $nuxt.$route.path == link.route}"
             >
-              <NuxtLink :to="link.route" class="d-flex py-2 pr-8 list-link">
-                <v-list-item-icon class="ml-5">
+              <NuxtLink :to="link.route" class="d-flex py-2 pl-5 list-link">
+                <!-- <v-list-item-icon class="ml-5">
                   <v-icon>{{ link.icon }}</v-icon>
-                </v-list-item-icon>
+                </v-list-item-icon> -->
                 <v-list-item-title>{{ link.name }}</v-list-item-title>
               </NuxtLink>
             </v-list-item>
@@ -126,11 +136,11 @@
             >
               <template v-slot:activator="{ on, attrs }">
                 <v-list-item class="pa-0 mb-2" v-bind="attrs" v-on="on">
-                  <div class="d-flex py-2 pr-8 list-link">
-                    <v-list-item-icon class="ml-5">
+                  <div class="d-flex py-2 pl-5 pr-2 list-link">
+                    <!-- <v-list-item-icon class="ml-5">
                       <v-icon>{{ link.icon }}</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-title>
+                    </v-list-item-icon> -->
+                    <v-list-item-title class="d-flex justify-space-between">
                       {{ link.name }}
                       <v-icon class="mr-1">mdi-chevron-down</v-icon>
                     </v-list-item-title>
@@ -182,7 +192,6 @@ export default {
   }),
   beforeMount() {
     window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("resize", this.handleScroll);
   },
   mounted() {
     this.handleScroll();
@@ -190,7 +199,7 @@ export default {
   methods: {
     handleScroll() {
       if (process.client) {
-        if (document.documentElement.scrollTop > 0 || window.innerWidth < 960) {
+        if (document.documentElement.scrollTop > 0) {
           this.scrolled = true;
         } else {
           this.scrolled = false;
@@ -213,6 +222,7 @@ header {
   transition: 0.5s !important;
   transition-delay: 0s !important;
   height: inherit !important;
+  z-index: 999!important;
 
   .logo-holder {
     display: flex;
@@ -284,6 +294,16 @@ header {
         min-width: 116px!important;
         border: 1px solid #023047!important;
         box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25)!important;
+
+        &.responsive {
+          min-width: auto!important;
+          border: none!important;
+          box-shadow: none!important;
+
+          .v-btn__content {
+            opacity: 1!important;
+          }
+        }
       }
     }
   }
@@ -453,10 +473,13 @@ header {
   }
 }
 
+.v-list-item__title {
+  font-size: 14px !important;
+}
+
 .drawer {
   position: fixed;
-  margin-top: 66px;
-  padding-top: 10px;
+  padding-top: 70px;
   background: rgba(255, 255, 255, 0.95) none repeat scroll 0% 0% !important;
   z-index: 99;
 
@@ -479,10 +502,12 @@ header {
       border-radius: 8px !important;
     }
   }
-}
 
-.v-list-item__title {
-  font-size: 14px !important;
+  .v-list-item__title {
+    font-size: 24px!important;
+    line-height: 35px!important;
+    color: #5B626E;
+  }
 }
 
 </style>

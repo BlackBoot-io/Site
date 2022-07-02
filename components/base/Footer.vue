@@ -287,7 +287,7 @@ footer {
         }
 
         @include res($sm) {
-          font-size: 20px;
+          font-size: 17px;
           margin-bottom: 10px;
         }
       }
@@ -299,6 +299,11 @@ footer {
           line-height: 30px;
           color: $cw;
           margin-bottom: 15px;
+
+          @include res($sm) {
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
           
           i {
             color: $cw;
@@ -367,9 +372,15 @@ footer {
         display: flex;
         align-items: center;
 
-        @include res(sm) {
+        @include res($sm) {
           justify-content: center;
           align-items: center;
+        }
+
+        p {
+          @include res($sm) {
+            font-size: 11px;
+          }
         }
       }
     }

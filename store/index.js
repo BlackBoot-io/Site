@@ -5,29 +5,25 @@ export const state = () => ({
 	cSecondary: '#1d2a3b',
 	menu: [
 		{
+			name: "Language",
+			route: "#",
+			icon: "mdi-chart-box-outline",
+			items: [
+				{
+					name: "United Kingdom",
+					route: "#uk",
+				},
+				{
+					name: "United Arab Emirates",
+					route: "#uae",
+				},
+			]
+		},
+		{
 			name: "Home",
 			route: "/",
 			icon: "mdi-home-outline",
 		},
-		// {
-		// 	name: "وضعیت بازار",
-		// 	route: "#",
-		// 	icon: "mdi-chart-box-outline",
-		// 	items: [
-		// 		{
-		// 			name: "بیت کوین",
-		// 			route: "btc",
-		// 		},
-		// 		{
-		// 			name: "اتریوم",
-		// 			route: "eth",
-		// 		},
-		// 		{
-		// 			name: "سایر ارز های دیجیتال",
-		// 			route: "crypto",
-		// 		},
-		// 	]
-		// },
 		{
 			name: "Token",
 			route: "#futures",

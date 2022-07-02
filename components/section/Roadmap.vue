@@ -13,8 +13,14 @@
     <v-row>
       <v-col
         cols="12"
-        class="roadmap-img"
+        class="roadmap-img d-none d-md-flex"
         v-html="roadmap"
+      >
+      </v-col>
+      <v-col
+        cols="12"
+        class="roadmap-img d-md-none"
+        v-html="roadmapRes"
       >
       </v-col>
     </v-row>
@@ -25,6 +31,7 @@
   export default {
     data: () => ({
       roadmap: require('../../static/img/roadmap.svg?raw'),
+      roadmapRes: require('../../static/img/roadmap-res.svg?raw'),
     }),
   }
 </script>
@@ -37,8 +44,17 @@
   padding-top: 50px;
   padding-bottom: 100px;
 
+  @include res($sm) {
+    padding-bottom: 50px;
+  }
+
   .roadmap-img {
     margin-top: 35px;
+    max-width: 100%;
+
+    @include res($sm) {
+      margin-top: 10px;
+    }
   }
 }
 
