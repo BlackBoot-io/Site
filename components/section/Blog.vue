@@ -29,7 +29,7 @@
               :color="$store.state.cPrimary"
             >
               Read more
-              <v-icon size="21" class="ml-1">mdi-arrow-right</v-icon>
+              <em v-html="readMoreIcon" class="ml-1"></em>
             </v-btn>
           </div>
         </div>
@@ -41,6 +41,7 @@
 <script>
   export default {
     data: () => ({
+      readMoreIcon: require('../../static/img/icons/readmore.svg?raw'),
       posts: [
         {
           title: 'How to enable social login for the comunity?',

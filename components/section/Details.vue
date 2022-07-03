@@ -45,9 +45,9 @@
           <li>
             <h5>minimum and maximum purchase</h5>
             <span>
-              <v-icon size="20" color="green" class="mr-2">mdi-arrow-collapse-down</v-icon> Minimum purchase <small class="ml-5">$10</small>
+              <em v-html="minIcon" class="mr-1"></em>Minimum purchase <small class="ml-5">$10</small>
               <br>
-              <v-icon size="20" color="red" class="mr-2">mdi-arrow-collapse-up</v-icon> maximum purchase <small class="ml-5">-</small>
+              <em v-html="maxIcon" class="mr-1"></em>maximum purchase <small class="ml-5">-</small>
             </span>
           </li>
         </ul>
@@ -66,7 +66,7 @@
           class="btn-main"
           :color="$store.state.cPrimary"
         >
-          <v-icon size="21" class="mr-1">mdi-basket-outline</v-icon>
+          <em v-html="buyIcon"></em>
           Buy Token
         </v-btn>
       </v-col>
@@ -78,7 +78,7 @@
           class="btn-main"
           :color="$store.state.cPrimary"
         >
-          <v-icon size="21" class="mr-1">mdi-arrow-down</v-icon>
+          <em v-html="downloadIcon" class="mr-1"></em>
           Download white paper
         </v-btn>
       </v-col>
@@ -89,7 +89,11 @@
 <script>
   export default {
     data: () => ({
-      ethereumIcon: require('../../static/img/ethereum.svg'),
+      ethereumIcon: require('../../static/img/icons/ethereum.svg?raw'),
+      downloadIcon: require('../../static/img/icons/download.svg?raw'),
+      buyIcon: require('../../static/img/icons/buy.svg?raw'),
+      minIcon: require('../../static/img/icons/min.svg?raw'),
+      maxIcon: require('../../static/img/icons/max.svg?raw'),
       details: [
         {
           name: 'Asset',
@@ -240,6 +244,14 @@
           padding-left: 20px;
           padding-bottom: 20px;
 
+          @include res($lg) {
+            padding-bottom: 13px;
+          }
+
+          @include res($md) {
+            padding-bottom: 26px;
+          }
+
           @include res($sm) {
             padding-bottom: 10px;
           }
@@ -306,10 +318,6 @@
 
         span {
           flex: 0.45;
-        }
-
-        em {
-          line-height: 0;
         }
 
         .dollar-amount {

@@ -15,7 +15,7 @@
           <div class="cs-inner">
             <p>Token Price</p>
             <div class="cs-details">
-              <span class="token-amount">0.012</span><span><img :src="ethereumIcon" alt="ethereumIcon" /></span><span class="almost-eq">≃</span><span class="dollar-amount">$214</span>
+              <span class="token-amount">0.012</span><span><em v-html="ethereumIcon"></em></span><span class="almost-eq">≃</span><span class="dollar-amount">$214</span>
             </div>
           </div>
           <p class="cs-des">You can see our Product roadmap to be able to plan.</p>
@@ -59,8 +59,7 @@ export default {
 				}
 			},
     },
-    ethereumIcon: require('../../static/img/ethereum.svg'),
-    busdIcon: require('../../static/img/busd.svg'),
+    ethereumIcon: require('../../static/img/icons/ethereum.svg?raw'),
   }),
   created: function () {},
 };

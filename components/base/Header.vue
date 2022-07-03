@@ -27,8 +27,8 @@
           </NuxtLink>
         </div>
         <div class="center">
-          <div v-for="(link, index) in $store.state.menu" :key="link.name">
-            <NuxtLink v-if="!link.items" :to="link.route" class="header-link">
+          <template v-for="(link, index) in $store.state.menu">
+            <NuxtLink v-if="!link.items && index != 0" :to="link.route" class="header-link" :key="link.name">
               {{ link.name }}
             </NuxtLink>
             <v-menu
@@ -36,6 +36,7 @@
               open-on-hover
               rounded="lg"
               transition="slide-y-transition"
+              :key="link.name"
             >
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
@@ -60,7 +61,7 @@
                 </v-list-item>
               </v-list>
             </v-menu>
-          </div>
+          </template>
         </div>
         <div class="left">
           <v-menu offset-y content-class="header-menu" transition="fade-transition">
@@ -72,7 +73,7 @@
                 v-on="on"
               >
               {{ content.lang }}
-                <v-icon class="ml-1">mdi-web</v-icon>
+                <em v-html="langIcon"></em>
               </v-btn>
             </template>
             <v-list nav flat class="inner">
@@ -100,7 +101,7 @@
               depressed
               class="btn-main btn-connect ml-3"
             >
-              <v-icon class="mr-1">mdi-wallet-outline</v-icon>
+              <em v-html="walletIcon" class="mr-1"></em>
               {{ content.connect }}
             </v-btn>
           </a>
@@ -167,7 +168,9 @@
 <script>
 export default {
   data: () => ({
-     userMenu: {
+    walletIcon: require('../../static/img/icons/wallet.svg?raw'),
+    langIcon: require('../../static/img/icons/lang.svg?raw'),
+    userMenu: {
       status: false,
       items: [
         {

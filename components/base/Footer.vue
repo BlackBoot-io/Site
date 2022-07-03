@@ -5,17 +5,19 @@
         <v-row>
           <v-col cols="12" sm="6" md="12" lg="4">
             <h5 class="d-flex align-center">{{ $store.state.title }}</h5>
-            <ul class="footer-default-list">
+            <ul>
               <li v-for="(item, index) in content.contactInfo" :key="index">
-                <v-icon>{{ item.icon }}</v-icon>
-                {{ item.text }}
+                <a :href="item.link" :class="{ 'not-link': !item.link }">
+                  <em v-html="item.icon" class="mr-2"></em>
+                  {{ item.text }}
+                </a>
               </li>
             </ul>
             <img src="../../static/img/built-on-eth.svg" alt="Built On Eth" class="mt-3" />
           </v-col>
-          <v-col cols="12" sm="6" md="4" lg="3">
+          <v-col cols="6" sm="6" md="4" lg="3">
             <h5>{{ content.menu.first.title }}</h5>
-            <ul class="footer-default-list">
+            <ul>
               <li v-for="link in content.menu.first.items" :key="link.name">
                 <NuxtLink
                   :to="link.route"
@@ -26,9 +28,9 @@
               </li>
             </ul>
           </v-col>
-          <v-col cols="12" sm="6" md="4" lg="3">
+          <v-col cols="6" sm="6" md="4" lg="3">
             <h5>{{ content.menu.third.title }}</h5>
-            <ul class="footer-default-list">
+            <ul>
               <li v-for="link in content.menu.third.items" :key="link.name">
                 <NuxtLink :to="link.route">
                   {{ link.name }}
@@ -36,9 +38,9 @@
               </li>
             </ul>
           </v-col>
-          <v-col cols="12" sm="6" md="4" lg="2">
+          <v-col cols="6" sm="6" md="4" lg="2">
             <h5>{{ content.menu.fourth.title }}</h5>
-            <ul class="footer-default-list">
+            <ul>
               <li v-for="link in content.menu.fourth.items" :key="link.name">
                 <NuxtLink :to="link.route">
                   {{ link.name }}
@@ -57,7 +59,7 @@
             <ul>
               <li v-for="(item, index) in content.social.items" :key="index">
                 <a :href="item.link" target="_blank">
-                  <v-icon>{{ item.icon }}</v-icon>
+                  <em v-html="item.icon"></em>
                 </a>
               </li>
             </ul>
@@ -73,18 +75,20 @@ export default {
   data: () => ({
     content: {
       builtOnEth: require('../../static/img/built-on-eth.svg'),
+      copyrightIcon: require('../../static/img/icons/copyright.svg?raw'),
       contactInfo: [
         {
           text: "Somebody, PO Box 12345, Dubai, UAE",
-          icon: "mdi-map-marker-outline",
+          icon: require('../../static/img/icons/location.svg?raw'),
         },
         {
           text: "+971-23456789",
-          icon: "mdi-phone-outline",
+          icon: require('../../static/img/icons/phone.svg?raw'),
         },
         {
-          text: "BlackBoot@gmail.com",
-          icon: "mdi-email-outline",
+          text: "info@blackboot.io",
+          link: "mailto:info@blackboot.io",
+          icon: require('../../static/img/icons/email.svg?raw'),
         },
       ],
       menu: {
@@ -164,25 +168,25 @@ export default {
       },
       social: {
         items: [
+          // {
+          //   icon: require('../../static/img/icons/instagram.svg?raw'),
+          //   link: "#",
+          // },
+          // {
+          //   icon: require('../../static/img/icons/twitter.svg?raw'),
+          //   link: "#",
+          // },
+          // {
+          //   icon: require('../../static/img/icons/telegram.svg?raw'),
+          //   link: "#",
+          // },
           {
-            icon: "mdi-instagram",
-            link: "#",
+            icon: require('../../static/img/icons/github.svg?raw'),
+            link: "https://github.com/BlackBoot-io",
           },
           {
-            icon: "mdi-twitter",
-            link: "#",
-          },
-          {
-            icon: "mdi-telegram",
-            link: "#",
-          },
-          {
-            icon: "mdi-github",
-            link: "#",
-          },
-          {
-            icon: "mdi-discord",
-            link: "#",
+            icon: require('../../static/img/icons/discord.svg?raw'),
+            link: "https://discord.gg/ncrq7CXZ",
           },
         ],
       },
@@ -261,7 +265,6 @@ footer {
 
       @include res($md) {
         padding: 25px 15px;
-        text-align: center;
       }
 
       p {
@@ -281,10 +284,6 @@ footer {
         min-height: 40px;
         display: flex;
         align-items: center;
-
-        @include res($md) {
-          justify-content: center;
-        }
 
         @include res($sm) {
           font-size: 17px;
@@ -308,6 +307,12 @@ footer {
           i {
             color: $cw;
             margin-right: 5px;
+          }
+
+          a {
+            &.not-link {
+              cursor: default;
+            }
           }
         }
       }

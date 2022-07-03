@@ -15,7 +15,7 @@
                 <h5 class="p-title"> Public Sale</h5>
                 <p class="p-text">Remaining time to buy</p>
                 <v-btn dark depressed class="btn-main" :color="$store.state.cPrimary">
-                  <v-icon size="21" class="mr-1">mdi-basket-outline</v-icon>
+                  <em v-html="buyIcon" ></em>
                   Buy Token
                 </v-btn>
               </v-col>  
@@ -24,13 +24,13 @@
                   <div class="d-flex align-center justify-space-between mb-3">
                     <p>Token Price</p>
                     <div class="p-details">
-                      <span class="dollar-amount">$214</span><span class="almost-eq">≃</span><span class="token-amount">0.012</span><span><img :src="ethereumIcon" alt="ethereumIcon" /></span>
+                      <span class="dollar-amount">$214</span><span class="almost-eq">≃</span><span class="token-amount">0.012</span><span><em v-html="ethereumIcon"></em></span>
                     </div>
                   </div>
                   <div class="d-flex align-center justify-space-between">
                     <p>Tokens for sale</p>
                     <div class="p-details">
-                    <span class="token-amount">900m</span><span><img :src="busdIcon" alt="ethereumIcon" /></span>
+                    <span class="token-amount">900m</span><span><em v-html="busdIcon"></em></span>
                     </div>
                   </div>
                 </div>
@@ -41,7 +41,7 @@
                   <span>32</span>
                 </div>
                 <v-btn dark outlined class="btn-main" :color="$store.state.cPrimary">
-                  <v-icon size="21" class="mr-1">mdi-arrow-down</v-icon>
+                  <em v-html="downloadIcon" class="mr-1"></em>
                   Download white paper
                 </v-btn>
               </v-col>
@@ -69,19 +69,21 @@
 <script>
   export default {
     data: () => ({
-      ethereumIcon: require('../../static/img/ethereum.svg'),
-      busdIcon: require('../../static/img/busd.svg'),
+      ethereumIcon: require('../../static/img/icons/ethereum.svg?raw'),
+      busdIcon: require('../../static/img/icons/busd.svg?raw'),
+      downloadIcon: require('../../static/img/icons/download.svg?raw'),
+      buyIcon: require('../../static/img/icons/buy.svg?raw'),
       slides: [
         {
-          img: "../img/slides/1.svg",
+          img: "../img/slides/1.png",
           link: "#",
         },
         {
-          img: "../img/slides/1.svg",
+          img: "../img/slides/2.png",
           link: "#",
         },
         {
-          img: "../img/slides/1.svg",
+          img: "../img/slides/3.png",
           link: "#",
         },
       ],
@@ -140,8 +142,10 @@
 
   .slider {
     position: absolute;
-    bottom: 14px;
-    right: -92px;
+    // bottom: 14px;
+    // right: -92px;
+    bottom: -15px;
+    right: -127px;
     width: 633px;
     height: 532px;
 
@@ -477,12 +481,6 @@
       @include res($sm) {
         height: 40px!important;
         font-size: 11.5px!important;
-      }
-
-      .v-icon {
-        @include res($xs) {
-          display: none;
-        }
       }
     }
   }
