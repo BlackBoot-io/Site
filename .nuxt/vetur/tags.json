@@ -8,12 +8,6 @@
   "BaseLogo": {
     "description": "Auto imported from components/base/Logo.vue"
   },
-  "SwiperCrowdsale": {
-    "description": "Auto imported from components/swiper/Crowdsale.vue"
-  },
-  "SwiperSlideshow": {
-    "description": "Auto imported from components/swiper/Slideshow.vue"
-  },
   "SectionBenefits": {
     "description": "Auto imported from components/section/Benefits.vue"
   },
@@ -37,5 +31,11 @@
   },
   "SectionSpotlight": {
     "description": "Auto imported from components/section/Spotlight.vue"
+  },
+  "SwiperCrowdsale": {
+    "description": "Auto imported from components/swiper/Crowdsale.vue"
+  },
+  "SwiperSlideshow": {
+    "description": "Auto imported from components/swiper/Slideshow.vue"
   }
 }
