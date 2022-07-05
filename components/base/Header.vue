@@ -377,12 +377,12 @@ header {
   }
 
   &.fixed {
-    background: rgba($cw, 0.95) !important;
+    background: rgba($cw, 0.9) !important;
     z-index: 999 !important;
     transition: 0.5s !important;
     transition-delay: 0s !important;
     padding: 5px 0 !important;
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 0px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.1) !important;
 
     .header-link,
     .header-sub {

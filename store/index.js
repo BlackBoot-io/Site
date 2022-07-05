@@ -25,14 +25,14 @@ export const state = () => ({
 			icon: "mdi-home-outline",
 		},
 		{
-			name: "Token",
-			route: "#futures",
-			icon: "mdi-circle-multiple-outline",
-		},
-		{
 			name: "Services",
 			route: "#services",
 			icon: "mdi-layers-outline",
+		},
+		{
+			name: "Token",
+			route: "#details",
+			icon: "mdi-circle-multiple-outline",
 		},
 		{
 			name: "Roadmap",
