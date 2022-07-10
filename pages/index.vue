@@ -1,10 +1,10 @@
 <template>
   <div>
-    <SectionSpotlight />
+    <SectionSpotlight :currentSale="currentSale" />
     <SectionFutures />
     <SectionServices />
     <SectionBenefits />
-    <SectionDetails />
+    <SectionDetails :currentSale="currentSale" />
     <SectionCrowdsale />
     <SectionRoadmap />
     <SectionBlog />
@@ -13,7 +13,20 @@
 
 <script>
 export default {
-  name: 'IndexPage'
+  data: () => ({
+    currentSale: "",
+  }),
+  created: function () {
+    this.getCurrentSale();
+  },
+  methods: {
+    getCurrentSale() {
+      this.$axios.$get('/CrowdSaleSchedule/GetCurrentSale')
+      .then(response => {
+        this.currentSale = response.data;
+      })
+    },
+  }
 }
 </script>
 

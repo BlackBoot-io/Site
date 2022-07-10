@@ -21,6 +21,7 @@ export default {
     '@mdi/font/css/materialdesignicons.css'
   ],
   plugins: [
+    '@/plugins/axios',
     { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
   ],
   components: {
@@ -34,11 +35,21 @@ export default {
   },
   buildModules: [
     '@nuxtjs/vuetify',
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+    '@nuxtjs/moment',
   ],
   modules: [
+    '@nuxtjs/axios',
   ],
   build: {
+  },
+  axios: {
+    withCredentials: true,
+    baseURL: process.env.baseUrl,
+    headers: {
+      // 'Access-Control-Allow-Origin': '*',
+      // 'Vary': 'Origin'
+    }
   },
   router: {
     scrollBehavior: async function(to, from, savedPosition) {

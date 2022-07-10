@@ -26,9 +26,21 @@
           </template>
         </v-simple-table> -->
         <ul>
-          <li class="timeline flex-row" v-for="item in details" :key="item.name">
-            <h5>{{ item.name }}</h5>
-            <span v-html="item.value"></span>
+          <li class="timeline flex-row">
+            <h5>Asset</h5>
+            <span>BBT Tokens</span>
+          </li>
+          <li class="timeline flex-row">
+            <h5>Supply for sale</h5>
+            <span>{{ this.currentSale.tokenForSale }} Tokens</span>
+          </li>
+          <li class="timeline flex-row">
+            <h5>Fixed sale price</h5>
+            <span>{{ this.currentSale.price }} eth ≃ <span class="dollar-amount">$214</span></span>
+          </li>
+          <li class="timeline flex-row">
+            <h5>Loockup and release</h5>
+            <span>3 months cliff after IDO and then 12-month quarterly linear unlock</span>
           </li>
           <li class="timeline flex-row">
             <h5>Funding methods</h5>
@@ -45,7 +57,7 @@
           <li>
             <h5>minimum and maximum purchase</h5>
             <span>
-              <em v-html="minIcon" class="mr-1"></em>Minimum purchase <small class="ml-5">$10</small>
+              <em v-html="minIcon" class="mr-1"></em>Minimum purchase <small v-if="currentSale" class="ml-5">${{ this.currentSale.minimumBuy }}</small>
               <br>
               <em v-html="maxIcon" class="mr-1"></em>maximum purchase <small class="ml-5">-</small>
             </span>
@@ -59,16 +71,18 @@
         </ul>
       </v-col>
       <v-col cols="6" sm="4 offset-sm-2" md="4 offset-md-2" lg="3 offset-lg-3">
-        <v-btn
-          dark
-          depressed
-          width="100%"
-          class="btn-main"
-          :color="$store.state.cPrimary"
-        >
-          <em v-html="buyIcon"></em>
-          Buy Token
-        </v-btn>
+        <a href="https://dashboard.avanod.com/buy-token" target="_blank">
+          <v-btn
+            dark
+            depressed
+            width="100%"
+            class="btn-main"
+            :color="$store.state.cPrimary"
+          >
+            <em v-html="buyIcon"></em>
+            Buy Token
+          </v-btn>
+        </a>
       </v-col>
       <v-col cols="6" sm="4" md="4" lg="3">
         <v-btn
@@ -88,30 +102,13 @@
 
 <script>
   export default {
+    props: ['currentSale'],
     data: () => ({
       ethereumIcon: require('../../static/img/icons/ethereum.svg?raw'),
       downloadIcon: require('../../static/img/icons/download.svg?raw'),
       buyIcon: require('../../static/img/icons/buy.svg?raw'),
       minIcon: require('../../static/img/icons/min.svg?raw'),
       maxIcon: require('../../static/img/icons/max.svg?raw'),
-      details: [
-        {
-          name: 'Asset',
-          value: 'BBT Tokens',
-        },
-        {
-          name: 'Supply for sale',
-          value: '145200 Tokens',
-        },
-        {
-          name: 'Fixed sale price',
-          value: '0.012 eth ≃ <span class="dollar-amount">$214</span>',
-        },
-        {
-          name: 'Loockup and release',
-          value: '3 months cliff after IDO and then 12-month quarterly linear unlock',
-        },
-      ],
       methods: [
         {
           name: 'USDT',
@@ -131,6 +128,9 @@
         },
       ],
     }),
+    created: function () {
+      
+    },
   }
 </script>
 

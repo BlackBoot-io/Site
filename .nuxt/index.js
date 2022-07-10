@@ -15,6 +15,9 @@ import { createStore } from './store.js'
 
 import nuxt_plugin_plugin_1271c4e6 from 'nuxt_plugin_plugin_1271c4e6' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_plugin_30224cfe from 'nuxt_plugin_plugin_30224cfe' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_axios_083117ba from 'nuxt_plugin_axios_083117ba' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_moment_e09abc56 from 'nuxt_plugin_moment_e09abc56' // Source: ./moment.js (mode: 'all')
+import nuxt_plugin_axios_2228ef02 from 'nuxt_plugin_axios_2228ef02' // Source: ../plugins/axios (mode: 'all')
 import nuxt_plugin_vueawesomeswiper_0f4ed586 from 'nuxt_plugin_vueawesomeswiper_0f4ed586' // Source: ../plugins/vue-awesome-swiper (mode: 'client')
 
 // Component: <ClientOnly>
@@ -218,6 +221,18 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_30224cfe === 'function') {
     await nuxt_plugin_plugin_30224cfe(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_083117ba === 'function') {
+    await nuxt_plugin_axios_083117ba(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_moment_e09abc56 === 'function') {
+    await nuxt_plugin_moment_e09abc56(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_2228ef02 === 'function') {
+    await nuxt_plugin_axios_2228ef02(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_vueawesomeswiper_0f4ed586 === 'function') {

@@ -1,24 +1,24 @@
 <template>
   <div v-swiper="swiperOption" class="crowdsale-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="i in 6" :key="i">
+      <div class="swiper-slide" v-for="item in items" :key="item.crowdSaleScheduleId">
         <div class="cs-box">
-          <h5 class="cs-title">Public Sale</h5>
-          <p class="cs-date">Jun-Aug 2022</p>
+          <h5 class="cs-title">{{ item.title }}</h5>
+          <p class="cs-date">{{ $moment(item.from).format("MMM") }}-{{ $moment(item.to).format("MMM YYYY") }}</p>
           <div class="timeline"></div>
           <div class="cs-inner">
             <p>Supply for sale</p>
             <div class="cs-details">
-              <span class="token-amount">158m Tokens</span>
+              <span v-if="item.tokenForSale" class="token-amount">{{ item.tokenForSale.toLocaleString() }} Tokens</span>
             </div>
           </div>
           <div class="cs-inner">
             <p>Token Price</p>
             <div class="cs-details">
-              <span class="token-amount">0.012</span><span><em v-html="ethereumIcon"></em></span><span class="almost-eq">≃</span><span class="dollar-amount">$214</span>
+              <span class="token-amount">{{ item.price }}</span><span><em v-html="ethereumIcon"></em></span><span class="almost-eq">≃</span><span class="dollar-amount">$214</span>
             </div>
           </div>
-          <p class="cs-des">You can see our Product roadmap to be able to plan.</p>
+          <p class="cs-des">{{ item.description }}</p>
         </div>
       </div>
     </div>
@@ -35,6 +35,7 @@ export default {
   directives: {
     swiper: directive,
   },
+  props: ['items'],
   data: () => ({
     swiperOption: {
       spaceBetween: 70,
@@ -61,7 +62,9 @@ export default {
     },
     ethereumIcon: require('../../static/img/icons/ethereum.svg?raw'),
   }),
-  created: function () {},
+  created: function () {
+    
+  },
 };
 </script>
 

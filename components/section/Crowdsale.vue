@@ -12,7 +12,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <SwiperCrowdsale />
+        <SwiperCrowdsale :items="crowdSale" />
       </v-col>
     </v-row>
   </v-container>
@@ -21,7 +21,19 @@
 <script>
   export default {
     data: () => ({
+      crowdSale: "",
     }),
+    created: function () {
+      this.GetCurrentSale();
+    },
+    methods: {
+      GetCurrentSale() {
+        this.$axios.$get('/CrowdSaleSchedule/GetAll')
+        .then(response => {
+          this.crowdSale = response.data;
+        })
+      },
+    }
   }
 </script>
 

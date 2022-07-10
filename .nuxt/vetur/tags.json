@@ -23,6 +23,9 @@
   "SectionFutures": {
     "description": "Auto imported from components/section/Futures.vue"
   },
+  "SectionPublicSale": {
+    "description": "Auto imported from components/section/PublicSale.vue"
+  },
   "SectionRoadmap": {
     "description": "Auto imported from components/section/Roadmap.vue"
   },

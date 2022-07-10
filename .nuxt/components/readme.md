@@ -14,6 +14,7 @@ You can directly use them in pages and other components without the need to impo
 - `<SectionCrowdsale>` | `<section-crowdsale>` (components/section/Crowdsale.vue)
 - `<SectionDetails>` | `<section-details>` (components/section/Details.vue)
 - `<SectionFutures>` | `<section-futures>` (components/section/Futures.vue)
+- `<SectionPublicSale>` | `<section-public-sale>` (components/section/PublicSale.vue)
 - `<SectionRoadmap>` | `<section-roadmap>` (components/section/Roadmap.vue)
 - `<SectionServices>` | `<section-services>` (components/section/Services.vue)
 - `<SectionSpotlight>` | `<section-spotlight>` (components/section/Spotlight.vue)
