@@ -32,11 +32,11 @@
           </li>
           <li class="timeline flex-row">
             <h5>Supply for sale</h5>
-            <span>{{ this.currentSale.tokenForSale }} Tokens</span>
+            <span v-if="currentSale.tokenForSale">{{ this.currentSale.tokenForSale.toLocaleString() }} Tokens</span>
           </li>
           <li class="timeline flex-row">
             <h5>Fixed sale price</h5>
-            <span>{{ this.currentSale.price }} eth ≃ <span class="dollar-amount">$214</span></span>
+            <span>{{ this.currentSale.price}} eth ≃ <span class="dollar-amount">$214</span></span>
           </li>
           <li class="timeline flex-row">
             <h5>Loockup and release</h5>
