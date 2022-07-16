@@ -36,7 +36,7 @@
           </li>
           <li class="timeline flex-row">
             <h5>Fixed sale price</h5>
-            <span>{{ this.currentSale.price}} <em v-html="methods[0].img"></em> ≃ <span class="dollar-amount">1AVN</span></span>
+            <span>{{ this.currentSale.price}} <em v-html="methods[0].img"></em> ≃ <span class="dollar-amount">1 AVN</span></span>
           </li>
           <li class="timeline flex-row">
             <h5>Loockup and release</h5>
@@ -71,7 +71,7 @@
         </ul>
       </v-col>
       <v-col cols="6" sm="4 offset-sm-2" md="4 offset-md-2" lg="3 offset-lg-3">
-        <a href="https://dashboard.avanod.com/buy-token" target="_blank">
+        <a href="https://token.avanod.com/buy-token" target="_blank">
           <v-btn
             dark
             depressed

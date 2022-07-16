@@ -4,7 +4,7 @@
       <v-col cols="6" class="left">
         <h5 class="p-title"> Public Sale</h5>
         <p class="p-text">Remaining time to buy</p>
-        <a href="https://dashboard.avanod.com/buy-token" target="_blank">
+        <a href="https://token.avanod.com/buy-token" target="_blank">
           <v-btn dark depressed class="btn-main" width="100%" :color="$store.state.cPrimary">
             <em v-html="buyIcon"></em>
             Buy Token
@@ -16,7 +16,7 @@
           <div class="d-flex align-center justify-space-between mb-3">
             <p>Token Price</p>
             <div class="p-details">
-              <span class="dollar-amount">1AVN</span><span class="almost-eq">≃</span><span class="token-amount">{{ currentSale.price }}</span><span><em v-html="usdtIcon"></em></span>
+              <span class="dollar-amount">1 AVN</span><span class="almost-eq">≃</span><span class="token-amount">{{ currentSale.price }}</span><span><em v-html="usdtIcon"></em></span>
             </div>
           </div>
           <div class="d-flex align-center justify-space-between">

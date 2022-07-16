@@ -9,7 +9,7 @@
           <span>{{ $store.state.title }}</span>
         </NuxtLink>
         <v-spacer></v-spacer>
-        <a href="https://dashboard.avanod.com/">
+        <a href="https://token.avanod.com/">
           <v-btn
             plain
             class="btn-main btn-connect responsive px-2"
@@ -95,7 +95,7 @@
               </v-list-item-group>
             </v-list>
           </v-menu>
-          <a href="https://dashboard.avanod.com/">
+          <a href="https://token.avanod.com/">
             <v-btn
               outlined
               depressed

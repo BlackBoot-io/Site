@@ -15,7 +15,7 @@
           <div class="cs-inner">
             <p>Token Price</p>
             <div class="cs-details">
-              <span class="token-amount">{{ item.price }}</span><span><em v-html="ethereumIcon"></em></span><span class="almost-eq">≃</span><span class="dollar-amount">$214</span>
+              <span class="token-amount">{{ item.price }}</span><span><em v-html="usdtIcon"></em></span><span class="almost-eq">≃</span><span class="dollar-amount">1 AVN</span>
             </div>
           </div>
           <p class="cs-des">{{ item.description }}</p>
@@ -60,7 +60,7 @@ export default {
 				}
 			},
     },
-    ethereumIcon: require('../../static/img/icons/ethereum.svg?raw'),
+    usdtIcon: require('../../static/img/methods/usdt.svg?raw'),
   }),
   created: function () {
     
