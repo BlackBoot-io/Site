@@ -116,7 +116,7 @@ export default {
           ],
         },
         third: {
-          title: " Use Cases",
+          title: "Use Cases",
           items: [
             {
               name: "Certificate Publishing",

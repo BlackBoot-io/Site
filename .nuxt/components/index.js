@@ -1,17 +1,17 @@
-export { default as BaseFooter } from '../../components/base/Footer.vue'
-export { default as BaseHeader } from '../../components/base/Header.vue'
-export { default as BaseLogo } from '../../components/base/Logo.vue'
-export { default as SectionBenefits } from '../../components/section/Benefits.vue'
-export { default as SectionBlog } from '../../components/section/Blog.vue'
-export { default as SectionCrowdsale } from '../../components/section/Crowdsale.vue'
-export { default as SectionDetails } from '../../components/section/Details.vue'
-export { default as SectionFutures } from '../../components/section/Futures.vue'
-export { default as SectionPublicSale } from '../../components/section/PublicSale.vue'
-export { default as SectionRoadmap } from '../../components/section/Roadmap.vue'
-export { default as SectionServices } from '../../components/section/Services.vue'
-export { default as SectionSpotlight } from '../../components/section/Spotlight.vue'
-export { default as SwiperCrowdsale } from '../../components/swiper/Crowdsale.vue'
-export { default as SwiperSlideshow } from '../../components/swiper/Slideshow.vue'
+export const BaseFooter = () => import('../../components/base/Footer.vue' /* webpackChunkName: "components/base-footer" */).then(c => wrapFunctional(c.default || c))
+export const BaseHeader = () => import('../../components/base/Header.vue' /* webpackChunkName: "components/base-header" */).then(c => wrapFunctional(c.default || c))
+export const BaseLogo = () => import('../../components/base/Logo.vue' /* webpackChunkName: "components/base-logo" */).then(c => wrapFunctional(c.default || c))
+export const SectionBenefits = () => import('../../components/section/Benefits.vue' /* webpackChunkName: "components/section-benefits" */).then(c => wrapFunctional(c.default || c))
+export const SectionBlog = () => import('../../components/section/Blog.vue' /* webpackChunkName: "components/section-blog" */).then(c => wrapFunctional(c.default || c))
+export const SectionCrowdsale = () => import('../../components/section/Crowdsale.vue' /* webpackChunkName: "components/section-crowdsale" */).then(c => wrapFunctional(c.default || c))
+export const SectionDetails = () => import('../../components/section/Details.vue' /* webpackChunkName: "components/section-details" */).then(c => wrapFunctional(c.default || c))
+export const SectionFutures = () => import('../../components/section/Futures.vue' /* webpackChunkName: "components/section-futures" */).then(c => wrapFunctional(c.default || c))
+export const SectionPublicSale = () => import('../../components/section/PublicSale.vue' /* webpackChunkName: "components/section-public-sale" */).then(c => wrapFunctional(c.default || c))
+export const SectionRoadmap = () => import('../../components/section/Roadmap.vue' /* webpackChunkName: "components/section-roadmap" */).then(c => wrapFunctional(c.default || c))
+export const SectionServices = () => import('../../components/section/Services.vue' /* webpackChunkName: "components/section-services" */).then(c => wrapFunctional(c.default || c))
+export const SectionSpotlight = () => import('../../components/section/Spotlight.vue' /* webpackChunkName: "components/section-spotlight" */).then(c => wrapFunctional(c.default || c))
+export const SwiperCrowdsale = () => import('../../components/swiper/Crowdsale.vue' /* webpackChunkName: "components/swiper-crowdsale" */).then(c => wrapFunctional(c.default || c))
+export const SwiperSlideshow = () => import('../../components/swiper/Slideshow.vue' /* webpackChunkName: "components/swiper-slideshow" */).then(c => wrapFunctional(c.default || c))
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

@@ -16,7 +16,7 @@
           <div class="d-flex align-center justify-space-between mb-3">
             <p>Token Price</p>
             <div class="p-details">
-              <span class="dollar-amount">$214</span><span class="almost-eq">≃</span><span class="token-amount">{{ currentSale.price }}</span><span><em v-html="ethereumIcon"></em></span>
+              <span class="dollar-amount">1AVN</span><span class="almost-eq">≃</span><span class="token-amount">{{ currentSale.price }}</span><span><em v-html="usdtIcon"></em></span>
             </div>
           </div>
           <div class="d-flex align-center justify-space-between">
@@ -47,6 +47,7 @@
     data: () => ({
       ethereumIcon: require('../../static/img/icons/ethereum.svg?raw'),
       busdIcon: require('../../static/img/icons/busd.svg?raw'),
+      usdtIcon: require('../../static/img/methods/usdt.svg?raw'),
       downloadIcon: require('../../static/img/icons/download.svg?raw'),
       buyIcon: require('../../static/img/icons/buy.svg?raw'),
       countDown: {

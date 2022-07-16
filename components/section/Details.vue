@@ -28,7 +28,7 @@
         <ul>
           <li class="timeline flex-row">
             <h5>Asset</h5>
-            <span>BBT Tokens</span>
+            <span>Avanod Tokens</span>
           </li>
           <li class="timeline flex-row">
             <h5>Supply for sale</h5>
@@ -36,7 +36,7 @@
           </li>
           <li class="timeline flex-row">
             <h5>Fixed sale price</h5>
-            <span>{{ this.currentSale.price}} eth ≃ <span class="dollar-amount">$214</span></span>
+            <span>{{ this.currentSale.price}} <em v-html="methods[0].img"></em> ≃ <span class="dollar-amount">1AVN</span></span>
           </li>
           <li class="timeline flex-row">
             <h5>Loockup and release</h5>
@@ -324,11 +324,11 @@
           background: #EAF4FB;
           border-radius: 5px;
           font-weight: 500;
-          font-size: 17px;
+          font-size: 15px;
           line-height: 5px;
           text-transform: capitalize;
           color: #3498DB;
-          padding: 5px 8px;
+          padding: 3px 8px;
 
           @include res($sm) {
             font-size: 12px;
