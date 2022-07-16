@@ -1,8 +1,8 @@
 export default {
   target: 'server',
   head: {
-    titleTemplate: 'Black Boot',
-    title: 'Black Boot',
+    titleTemplate: 'Avanod',
+    title: 'Avanod',
     htmlAttrs: {
       lang: 'en'
     },

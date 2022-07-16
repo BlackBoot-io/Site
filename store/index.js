@@ -1,6 +1,6 @@
 export const state = () => ({
-	title: "Black Boot", 
-	description: "Black Boot",
+	title: "Avanod", 
+	description: "Avanod",
 	cPrimary: '#412971',
 	cSecondary: '#1d2a3b',
 	menu: [

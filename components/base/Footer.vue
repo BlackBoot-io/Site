@@ -53,7 +53,7 @@
       <v-container class="bottom">
         <v-row>
           <v-col cols="12" sm="12" md="7" class="copyright">
-            <p>{{ `©${new Date().getFullYear()} ${content.copyright}` }}</p>
+            <p>{{ `©${new Date().getFullYear()} ${$store.state.title}. ${content.copyright}` }}</p>
           </v-col>
           <v-col cols="12" sm="12" md="5" class="social">
             <ul>
@@ -86,8 +86,8 @@ export default {
           icon: require('../../static/img/icons/phone.svg?raw'),
         },
         {
-          text: "info@blackboot.io",
-          link: "mailto:info@blackboot.io",
+          text: "info@avanod.io",
+          link: "mailto:info@avanod.io",
           icon: require('../../static/img/icons/email.svg?raw'),
         },
       ],
@@ -190,7 +190,7 @@ export default {
           },
         ],
       },
-      copyright: "BlackBoot. All rights reserved",
+      copyright: "All rights reserved",
     },
   }),
 };

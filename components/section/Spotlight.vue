@@ -7,7 +7,7 @@
             We Enable You <span>Proof Yourself</span><br>and <span>Your Experiences!</span>
           </h1>
           <p class="s-text">
-            Black boot the first provider to able you proof your experiences through Soulbound Tokens and NFTs!
+            {{ $store.state.title }} the first provider to able you proof your experiences through Soulbound Tokens and NFTs!
           </p>
           <SectionPublicSale :currentSale="currentSale" />
         </v-col>
