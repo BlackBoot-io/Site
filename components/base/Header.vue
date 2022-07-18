@@ -5,7 +5,7 @@
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
         <NuxtLink to="/" class="logo-holder">
-          <BaseLogo class="logo mr-1 ml-5" width="20" height="35" />
+          <BaseLogo class="logo mr-1 ml-5" width="35" height="35" />
           <span>{{ $store.state.title }}</span>
         </NuxtLink>
         <v-spacer></v-spacer>
@@ -22,7 +22,7 @@
       <v-container class="main-bar d-none d-md-flex">
         <div class="right">
           <NuxtLink to="/" class="logo-holder">
-            <BaseLogo class="logo mr-2" width="25" height="40" />
+            <BaseLogo class="logo mr-2" width="40" height="40" />
             <span class="logo-text">{{ $store.state.title }}</span>
           </NuxtLink>
         </div>

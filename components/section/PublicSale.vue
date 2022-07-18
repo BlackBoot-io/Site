@@ -2,7 +2,7 @@
   <div class="public-sale">
     <v-row>
       <v-col cols="6" class="left">
-        <h5 class="p-title"> Public Sale</h5>
+        <h5 class="p-title"> {{ currentSale.title }}</h5>
         <p class="p-text">Remaining time to buy</p>
         <a href="https://token.avanod.com/buy-token" target="_blank">
           <v-btn dark depressed class="btn-main" width="100%" :color="$store.state.cPrimary">
@@ -16,7 +16,7 @@
           <div class="d-flex align-center justify-space-between mb-3">
             <p>Token Price</p>
             <div class="p-details">
-              <span class="dollar-amount">1 AVN</span><span class="almost-eq">≃</span><span class="token-amount">{{ currentSale.price }}</span><span><em v-html="usdtIcon"></em></span>
+              <span class="dollar-amount">1 AVN</span><span class="almost-eq">≃</span><span class="token-amount">{{ currentSale.price }}</span><span class="token-sign"><em v-html="usdtIcon"></em></span>
             </div>
           </div>
           <div class="d-flex align-center justify-space-between">
@@ -216,6 +216,10 @@
         @include res($sm) {
           font-size: 11px!important;
         }
+      }
+
+      .token-sign {
+        line-height: 1!important;
       }
     
       .almost-eq {

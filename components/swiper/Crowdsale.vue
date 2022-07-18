@@ -15,7 +15,7 @@
           <div class="cs-inner">
             <p>Token Price</p>
             <div class="cs-details">
-              <span class="token-amount">{{ item.price }}</span><span><em v-html="usdtIcon"></em></span><span class="almost-eq">≃</span><span class="dollar-amount">1 AVN</span>
+              <span class="token-amount">{{ item.price }}</span><span class="token-sign"><em v-html="usdtIcon"></em></span><span class="almost-eq">≃</span><span class="dollar-amount">1 AVN</span>
             </div>
           </div>
           <p class="cs-des">{{ item.description }}</p>
@@ -174,6 +174,10 @@ export default {
         @include res($sm) {
           font-size: 12px;
         }
+      }
+
+      .token-sign {
+        line-height: 1!important;
       }
     
       .almost-eq {
