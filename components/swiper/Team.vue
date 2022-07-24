@@ -1,9 +1,10 @@
 <template>
   <div v-swiper="swiperOption" class="team-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="i in 9" :key="i">
+      <div class="swiper-slide" v-for="(item, index) in items" :key="index" @click="selected(item.name)">
         <div class="t-box">
-          <img src="../../static/img/team/1.png">
+          <img :src="item.avatar">
+          <p>{{ item.name }}</p>
         </div>
       </div>
     </div>
@@ -25,7 +26,7 @@ export default {
     swiperOption: {
       spaceBetween: 45,
       centeredSlides: true,
-      loop: true,
+      // loop: true,
       slideToClickedSlide: true,
       autoplay: {
         delay: 6000,
@@ -50,8 +51,13 @@ export default {
     usdtIcon: require('../../static/img/methods/usdt.svg?raw'),
   }),
   created: function () {
-    
+
   },
+  methods: {
+    selected(input) {
+      this.$emit('selectedMember', input);
+    },
+  }
 };
 </script>
 
@@ -69,6 +75,7 @@ export default {
     img {
       border-radius: 8px;
       cursor: pointer;
+      width: 93px;
     }
 
     .t-box {
