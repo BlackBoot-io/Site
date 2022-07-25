@@ -1,5 +1,12 @@
 [
   {
+    "name": "contact",
+    "path": "/contact",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/contact.vue",
+    "chunkName": "pages/contact",
+    "_name": "_398e9c29"
+  },
+  {
     "name": "faq",
     "path": "/faq",
     "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/faq.vue",

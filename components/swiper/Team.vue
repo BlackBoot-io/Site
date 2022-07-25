@@ -1,7 +1,7 @@
 <template>
-  <div v-swiper="swiperOption" class="team-swiper">
+  <div v-swiper="swiperOption" class="team-swiper" @slideChange="memberChange">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="(item, index) in items" :key="index" @click="selected(item.name)">
+      <div class="swiper-slide" v-for="(item, index) in items" :key="index" >
         <div class="t-box">
           <img :src="item.avatar">
           <p>{{ item.name }}</p>
@@ -26,7 +26,7 @@ export default {
     swiperOption: {
       spaceBetween: 45,
       centeredSlides: true,
-      // loop: true,
+      loop: true,
       slideToClickedSlide: true,
       autoplay: {
         delay: 6000,
@@ -54,8 +54,8 @@ export default {
 
   },
   methods: {
-    selected(input) {
-      this.$emit('selectedMember', input);
+    memberChange() {
+      this.$emit('memberSelected', this.$swiper.realIndex);
     },
   }
 };

@@ -41,7 +41,7 @@ export const state = () => ({
 		},
 		{
 			name: "Our Team",
-			route: "#1",
+			route: "/team",
 			icon: "mdi-account-group-outline",
 		},
 	],

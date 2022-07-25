@@ -10,7 +10,7 @@
           </p> -->
         </v-col>
         <v-col cols="12">
-          <SwiperTeam :items="members" @selectedMember="showMember" />
+          <SwiperTeam :items="members" @memberSelected="showMember" />
           <v-divider class="my-15"></v-divider>
         </v-col>
         <v-col cols="4">
@@ -59,7 +59,106 @@ export default {
     crowdSale: "",
     members: [
       {
-        name: 'Full Name',
+        name: '1',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '2',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '3',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '4',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '5',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '6',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '7',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '8',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '9',
+        role: 'Developer',
+        avatar: require('../static/img/team/2.png'),
+        socials: {
+          email : "",
+          twitter : "",
+          instagram : "",
+          linkedin : ""
+        }
+      },
+      {
+        name: '10',
         role: 'Developer',
         avatar: require('../static/img/team/2.png'),
         socials: {
@@ -73,11 +172,11 @@ export default {
     member: ""
   }),
   created: function () {
-    
+    this.member = this.members[0];
   },
   methods: {
-    showMember(name) {
-      this.member = this.members.find(item => item.name == name);
+    showMember(index) {
+      this.member = this.members[index];
     },
   }
 }

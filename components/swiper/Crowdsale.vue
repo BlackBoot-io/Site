@@ -5,7 +5,7 @@
         <div class="cs-box">
           <h5 class="cs-title">{{ item.title }}</h5>
           <p class="cs-date">{{ $moment(item.from).format("MMM") }}-{{ $moment(item.to).format("MMM YYYY") }}</p>
-          <div class="timeline"></div>
+          <div class="timeline" :class="{ 'active': item.isActive }"></div>
           <div class="cs-inner">
             <p>Supply for sale</p>
             <div class="cs-details">
@@ -100,7 +100,7 @@ export default {
       }
     }
 
-    .timeline{
+    .timeline {
       position: relative;
       height: 50px;
 
@@ -126,6 +126,12 @@ export default {
         border: 1px solid green;
         background: $cw;
         border-radius: 50%;
+      }
+
+      &.active {
+        &:after {
+          background: green!important;
+        }
       }
     }
 

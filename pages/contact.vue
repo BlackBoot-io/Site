@@ -3,31 +3,19 @@
     <v-container>
       <v-row class="content">
         <v-col cols="12" class="text-center">
-          <h1 class="title-main dot-yellow">
-            <span>Frequently Asked Questions</span>
+          <h1 class="title-main dot-green">
+            <span>Contact Us</span>
           </h1>
-          <!-- <p class="title-sub">
-          </p> -->
+          <p class="title-sub">
+            Questions, bug reports, feedback.
+          </p>
         </v-col>
       </v-row>
       <v-row class="my-10">
-        <v-col cols="5">
-          <h3 class="faq-head-title">The basics</h3>
-          <v-divider class="faq-divider mt-8 mb-5"></v-divider>
-          <v-expansion-panels>
-            <v-expansion-panel v-for="(item, i) in faqs" :key="i">
-              <v-expansion-panel-header>
-                <p>
-                  {{ item.question }}
-                </p>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <p v-html="item.answer" />
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
+        <v-col cols="7">
+          
         </v-col>
-        <v-col cols="5 offset-2">
+        <v-col cols="5">
           
         </v-col>
       </v-row>
