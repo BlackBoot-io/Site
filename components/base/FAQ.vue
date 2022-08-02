@@ -89,6 +89,7 @@
   opacity: 0.7;
   padding-left: 0;
   padding-right: 0;
+    padding: 15px 0 15px 0 !important;
 
   &:hover {
     opacity: 0.9;
@@ -104,7 +105,6 @@
   }
 
   @include res($md) {
-    padding: 15px 0 15px 0 !important;
   }
 
   @include res($sm) {

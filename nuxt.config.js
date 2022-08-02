@@ -43,6 +43,9 @@ export default {
   ],
   build: {
   },
+  vuetify: {
+    defaultAssets: false
+  },
   axios: {
     withCredentials: true,
     baseURL: process.env.baseUrl,

@@ -29,7 +29,7 @@ export default {
       loop: true,
       slideToClickedSlide: true,
       autoplay: {
-        delay: 60000,
+        delay: 6000,
         disableOnInteraction: false,
       },
 			navigation: {

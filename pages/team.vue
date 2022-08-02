@@ -17,8 +17,10 @@
           <img class="avatar" :src="member.avatar">
         </v-col>
         <v-col cols="12" sm="7" md="7" lg="8" class="team-details">
-          <h2 class="name">{{ member.name }}</h2>
-          <h3 class="role">{{ member.role }}</h3>
+          <div>
+            <h2 class="name">{{ member.name }}</h2>
+            <h3 class="role">{{ member.role }}</h3>
+          </div>
           <p class="description">{{ member.description }}</p>
           <ul>
             <li v-for="(value, name, index) in member.socials" :key="index">
