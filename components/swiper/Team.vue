@@ -29,7 +29,7 @@ export default {
       loop: true,
       slideToClickedSlide: true,
       autoplay: {
-        delay: 6000,
+        delay: 60000,
         disableOnInteraction: false,
       },
 			navigation: {
@@ -40,15 +40,14 @@ export default {
 				1264: {
 					slidesPerView: 7
 				},
-				756: {
-					slidesPerView: 2
+				850: {
+					slidesPerView: 5
 				},
 				599: {
-					slidesPerView: 1
+					slidesPerView: 3
 				}
 			},
     },
-    usdtIcon: require('../../static/img/methods/usdt.svg?raw'),
   }),
   created: function () {
 
@@ -69,6 +68,10 @@ export default {
   margin-top: 50px;
 	padding: 30px 50px!important;
 
+  @include res($sm) {
+    margin-top: 0px;
+  }
+
   .swiper-slide {
     transition: 0.3s;
     
@@ -80,6 +83,16 @@ export default {
 
     .t-box {
       text-align: center;
+
+      p {
+        @include res(849px) {
+            font-size: 14px;
+        }
+
+        @include res(599px) {
+          font-size: 13px;
+        }
+      }
     }
     
     &.swiper-slide-active {
@@ -109,14 +122,6 @@ export default {
     &:hover {
       background: #412971!important;
       color: $cw!important;
-    }
-
-    @include res($sm) {
-      top: 127px!important;
-
-      &:after {
-        font-size: 12px!important;
-      }
     }
   }
 

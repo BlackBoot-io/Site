@@ -1,4 +1,7 @@
 {
+  "BaseFAQ": {
+    "description": "Auto imported from components/base/FAQ.vue"
+  },
   "BaseFooter": {
     "description": "Auto imported from components/base/Footer.vue"
   },

@@ -11,38 +11,33 @@
         </v-col>
         <v-col cols="12">
           <SwiperTeam :items="members" @memberSelected="showMember" />
-          <v-divider class="my-15"></v-divider>
+          <v-divider class="team-divider"></v-divider>
         </v-col>
-        <v-col cols="4">
-          <img src="../static/img/team/2.png">
+        <v-col cols="12" sm="5" md="5" lg="4" class="team-avatar">
+          <img class="avatar" :src="member.avatar">
         </v-col>
-        <v-col cols="7 offset-1" class="team-details">
+        <v-col cols="12" sm="7" md="7" lg="8" class="team-details">
           <h2 class="name">{{ member.name }}</h2>
           <h3 class="role">{{ member.role }}</h3>
-          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet egestas leo ligula interdum. Neque dolor lectus sit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet .</p>
+          <p class="description">{{ member.description }}</p>
           <ul>
-            <li>
-              saina.ghaasemi
-            </li>
-            <li>
-              saina.ghaasemi
-            </li>
-            <li>
-              saina.ghaasemi
-            </li>
-            <li>
-              saina.ghaasemi
+            <li v-for="(value, name, index) in member.socials" :key="index">
+              <a :href="value" target="_blank">
+                <!-- <em v-html="`../img/socials/${name}.svg?raw`"></em> -->
+							  <em>
+                  <img :src="`../img/socials/${name}.svg`" :alt="name" />
+                </em>
+                {{ value.substring(value.lastIndexOf('/') + 1) }}
+              </a>
             </li>
           </ul>
           <div>
-            <v-btn dark outlined class="btn-main mb-1" :color="$store.state.cPrimary">
-              <em v-html="downloadIcon" class="mr-1"></em>
-              Send an email
-            </v-btn>
-            <v-btn dark outlined class="btn-main mb-1" :color="$store.state.cPrimary">
-              <em v-html="downloadIcon" class="mr-1"></em>
-              Send an email
-            </v-btn>
+            <a :href="'mailto:' + member.email">
+              <v-btn dark outlined class="btn-main mb-1" :color="$store.state.cPrimary">
+                <em v-html="arrowIcon" class="mr-2"></em>
+                Send an email
+              </v-btn>
+            </a>
           </div>
         </v-col>
       </v-row>
@@ -55,117 +50,91 @@
 export default {
   name: 'Team',
   data: () => ({
-    downloadIcon: require('../static/img/icons/download.svg?raw'),
+    arrowIcon: require('../static/img/icons/arrow.svg?raw'),
+    emailIcon: require('../static/img/socials/email.svg?raw'),
     crowdSale: "",
     members: [
       {
-        name: '1',
-        role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
+        name: 'Mehdi Emrani',
+        role: 'Program Manager',
+        description: "Mehdi has more than 15 years of management and development tech lead experience in exchange brokerages and has multiple successful launches for finance and online trading projects. Nowadays he focuses on NFT and Defi and tries to start a new business based on Blockchain.",
+        avatar: require('../static/img/team/emrani.jpg'),
+        email: '',
         socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
+          linkedin : "https://www.linkedin.com/in/mehdiemrani",
         }
       },
       {
-        name: '2',
+        name: 'Mohammad Karimi',
         role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet egestas leo ligula interdum. Neque dolor lectus sit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet.",
+        avatar: require('../static/img/team/karimi.jpg'),
+        email: '',
         socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
+          linkedin : "https://www.linkedin.com/in/mha-karimi",
         }
       },
       {
-        name: '3',
-        role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
+        name: 'Shahrooz BazrAfshan',
+        role: 'Software Developer',
+        description: "Shahrooz is a developer since 2014 and started to grow with every line of code and study meanwhile. right now he is focusing on web3 and blockchain technologies.",
+        avatar: require('../static/img/team/bazrafshan.jpg'),
+        email: '',
         socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
+          linkedin : "https://www.linkedin.com/in/shahrooz-bazrafshan-78bb5765",
         }
       },
       {
-        name: '4',
+        name: 'Navid Montazeripour',
         role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet egestas leo ligula interdum. Neque dolor lectus sit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet.",
+        avatar: require('../static/img/team/montazeripour.jpg'),
+        email: '',
         socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
+          linkedin : "https://www.linkedin.com/in/navidmontazeripour",
         }
       },
       {
-        name: '5',
-        role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
+        name: 'Mohammad Mokhtari',
+        role: 'Software Developer',
+        description: "Mohammad began his career as a Full-stack developer. Eventually, he seized the opportunity to lead teams and products to success. He worked on several successful projects as a developer and technical team leader. These days, he focuses on the blockchain tech and keeps learning more and more about it.",
+        avatar: require('../static/img/team/mokhtari.jpg'),
+        email: '',
         socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
+          linkedin : "https://www.linkedin.com/in/mohammadmokhtari",
         }
       },
       {
-        name: '6',
-        role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
+        name: 'Roozbeh Eslami',
+        role: 'Front-End Engineer',
+        description: "Roozbeh began programming at university and he understands the importance of a well-designed and functional website. Nowadays, he is mostly focusing on front-end development and web3.",
+        avatar: require('../static/img/team/eslami.jpg'),
+        email: 'eslami.roozbeh@gmail.com',
         socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
+          linkedin : "https://www.linkedin.com/in/roozbeheslami",
+          twitter : "https://www.twitter.com/roozbeh_eslami",
+          instagram : "https://www.instagram.com/roosbeh",
+          github: "https://github.com/roozbeheslami"
         }
       },
       {
-        name: '7',
-        role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
+        name: 'Farhad Zohoor Alishahi',
+        role: 'Software Developer',
+        description: "Farhad is a fullstack developer, working on several company-scaled projects. He got interested in the new horizon of Web3 and Blockchain technologies and spends most of the time researching in it.",
+        avatar: require('../static/img/team/zohooralishahi.jpg'),
+        email: '',
         socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
+          linkedin : "https://www.linkedin.com/in/farhad-zohooralishahi-1035ab1aa",
         }
       },
       {
-        name: '8',
+        name: 'Esmaeil Rastipour',
         role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet egestas leo ligula interdum. Neque dolor lectus sit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet.",
+        avatar: require('../static/img/team/rastipour.jpg'),
+        email: '',
         socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
-        }
-      },
-      {
-        name: '9',
-        role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
-        socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
-        }
-      },
-      {
-        name: '10',
-        role: 'Developer',
-        avatar: require('../static/img/team/2.png'),
-        socials: {
-          email : "",
-          twitter : "",
-          instagram : "",
-          linkedin : ""
+          linkedin : "https://www.linkedin.com/in/erastipour",
         }
       },
     ],
@@ -189,54 +158,122 @@ export default {
 .team {
   margin-bottom: 100px!important;
 
+  @include res(599px) {
+    margin-bottom: 0!important;
+  }
+
+  .team-divider {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    @include res(849px) {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    @include res(599px) {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .team-avatar {
+
+    @include res(599px) {
+      text-align: center;
+      padding-bottom: 0;
+    }
+
+    .avatar {
+      border-radius: 12px;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
   .team-details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
 
-  .name {
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 23px;
-    color: #3B4C68;
-  }
-
-  .role {
-    font-weight: 500;
-    font-size: 19px;
-    letter-spacing: 0.05em;
-    color: #3B4C68;
-    margin-bottom: 15px!important;
-  }
-
-  .description {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 28px;
-    color: #3B4C68;
-    opacity: 0.5;
-    margin-bottom: 15px!important;
-  }
-
-  ul {
-    margin-bottom: 50px;
-
-    li {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 24px;
-      color: #5B626E;
-      display: inline-block;
-      width: 48%;
-      margin-bottom: 10px;
+    @include res(599px) {
+      text-align: center;
     }
-  }
 
-  .v-btn {
-    min-width: 190px!important;
-    height: 48px!important;
-    margin-right: 20px;
+    .name {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 23px;
+      color: #3B4C68;
+      margin-bottom: 15px!important;
+
+      @include res(599px) {
+        font-size: 24px;
+        line-height: 20px;
+        margin-bottom: 10px!important;
+      }
+    }
+
+    .role {
+      font-weight: 500;
+      font-size: 19px;
+      letter-spacing: 0.05em;
+      color: #3B4C68;
+      margin-bottom: 15px!important;
+
+      @include res(599px) {
+        font-size: 14px;
+        margin-bottom: 5px!important;
+      }
+    }
+
+    .description {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 28px;
+      color: #3B4C68;
+      opacity: 0.5;
+      margin-bottom: 15px!important;
+    }
+
+    ul {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: row;
+
+      @include res($md) {
+        display: block;
+      }
+
+      li {
+        font-weight: 400;
+        font-size: 14px;
+        color: #5B626E;
+        margin-bottom: 5px;
+        margin-right: 0px;
+        display: inline-block;
+        width: 45%;
+
+        a {
+          display: block;
+
+          em {
+            width: 33px;
+            height: 33px;
+            text-align: center;
+            display: inline-flex!important;
+            justify-content: center!important;
+            align-items: center!important;
+          }
+        }
+      }
+    }
+
+    .v-btn {
+      min-width: 190px!important;
+      height: 48px!important;
+      margin-right: 20px;
+    }
   }
 }
 

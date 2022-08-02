@@ -204,6 +204,10 @@
           padding: 7px 5px;
           margin: 0 3px;
         }
+
+        @include res($xs) {
+          padding: 6px 3px;
+        }
       }
     
       .token-amount {
