@@ -165,8 +165,8 @@ export default {
   }
 
   .team-divider {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
     @include res(849px) {
       margin-top: 15px;

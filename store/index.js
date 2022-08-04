@@ -26,17 +26,17 @@ export const state = () => ({
 		},
 		{
 			name: "Services",
-			route: "#services",
+			route: "/#services",
 			icon: "mdi-layers-outline",
 		},
 		{
 			name: "Token",
-			route: "#details",
+			route: "/#details",
 			icon: "mdi-circle-multiple-outline",
 		},
 		{
 			name: "Roadmap",
-			route: "#roadmap",
+			route: "/#roadmap",
 			icon: "mdi-map-marker-path",
 		},
 		{
