@@ -7,7 +7,7 @@
             We Enable You <span>Proof Yourself</span><br>and <span>Your Experiences!</span>
           </h1>
           <p class="s-text">
-            {{ $store.state.title }} the first provider to able you proof your experiences through Soulbound Tokens and NFTs!
+            {{ $store.state.title }} is the first provider to able you proof your experiences through Soulbound Tokens and NFTs!
           </p>
           <SectionPublicSale :currentSale="currentSale" />
         </v-col>
@@ -35,15 +35,15 @@
     data: () => ({
       slides: [
         {
-          img: "../img/slides/1.png",
+          img: "../img/slides/1.webp",
           link: "#",
         },
         {
-          img: "../img/slides/2.png",
+          img: "../img/slides/2.webp",
           link: "#",
         },
         {
-          img: "../img/slides/3.png",
+          img: "../img/slides/3.webp",
           link: "#",
         },
       ],
@@ -75,8 +75,8 @@
 
 .spotlight {
   background: #8de0f8;
-  background-image: url('../../static/img/spotlight-bg.png');
-  background-image: url('../../static/img/spotlight-bg.png'), linear-gradient(to bottom,#f1fafd 0%, $cw 100%);
+  background-image: url('../../static/img/spotlight-bg.webp');
+  background-image: url('../../static/img/spotlight-bg.webp'), linear-gradient(to bottom,#f1fafd 0%, $cw 100%);
   background-repeat: no-repeat;
   background-position: left top;
 

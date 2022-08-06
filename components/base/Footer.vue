@@ -7,13 +7,13 @@
             <h5 class="d-flex align-center">{{ $store.state.title }}</h5>
             <ul>
               <li v-for="(item, index) in content.contactInfo" :key="index">
-                <a :href="item.link" :class="{ 'not-link': !item.link }">
+                <a :href="item.link" :class="{ 'not-link': item.link == '#' }">
                   <em v-html="item.icon" class="mr-2"></em>
                   {{ item.text }}
                 </a>
               </li>
             </ul>
-            <img src="../../static/img/built-on-eth.svg" alt="Built On Eth" class="mt-3" />
+            <img src="../../static/img/built-on-eth.webp" width="213" height="50" alt="Built On Eth" class="mt-3" />
           </v-col>
           <v-col cols="6" sm="6" md="4" lg="3">
             <h5>{{ content.menu.first.title }}</h5>
@@ -58,7 +58,7 @@
           <v-col cols="12" sm="12" md="5" class="social">
             <ul>
               <li v-for="(item, index) in content.social.items" :key="index">
-                <a :href="item.link" target="_blank">
+                <a :href="item.link" target="_blank" aria-label="social">
                   <em v-html="item.icon"></em>
                 </a>
               </li>
@@ -79,10 +79,12 @@ export default {
       contactInfo: [
         {
           text: "Somebody, PO Box 12345, Dubai, UAE",
+          link: "#",
           icon: require('../../static/img/icons/location.svg?raw'),
         },
         {
           text: "+971-23456789",
+          link: "#",
           icon: require('../../static/img/icons/phone.svg?raw'),
         },
         {

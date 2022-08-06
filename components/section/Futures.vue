@@ -18,7 +18,7 @@
           </ul>
         </v-col>
         <v-col cols="12" lg="5 offset-lg-1" class="d-none d-lg-flex text-right">
-          <img src="../../static/img/globe.png" class="globe" alt="">
+          <img src="../../static/img/globe.webp" class="globe" alt="">
         </v-col>
       </v-row>
     </v-container>

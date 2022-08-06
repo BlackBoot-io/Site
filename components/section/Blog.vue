@@ -16,7 +16,7 @@
           </div>
           <div class="b-details">
               <v-avatar width="40" height="40" v-for="(avatar, index) in post.avatars" :key="index">
-                <img :src="avatar">
+                <img :src="avatar" width="40" height="40" :alt="post.name">
               </v-avatar>
               <div class="b-text">
                 <span class="b-name">{{ post.name }}</span>
@@ -49,8 +49,8 @@
           name: 'Rio ferdanen',
           date: 'updated 1 day ago',
           avatars: [
-            'https://cdn.vuetifyjs.com/images/john.jpg',
-            'https://cdn.vuetifyjs.com/images/john.jpg',
+            require('../../static/img/contact.webp'),
+            require('../../static/img/contact.webp'),
           ]
         },
         {
@@ -59,7 +59,7 @@
           name: 'Rio ferdanen',
           date: 'updated 1 day ago',
           avatars: [
-            'https://cdn.vuetifyjs.com/images/john.jpg',
+            require('../../static/img/contact.webp'),
           ]
         },
         {
@@ -68,8 +68,8 @@
           name: 'Rio ferdanen',
           date: 'updated 1 day ago',
           avatars: [
-            'https://cdn.vuetifyjs.com/images/john.jpg',
-            'https://cdn.vuetifyjs.com/images/john.jpg',
+            require('../../static/img/contact.webp'),
+            require('../../static/img/contact.webp'),
           ]
         },
         {
@@ -78,7 +78,7 @@
           name: 'Rio ferdanen',
           date: 'updated 1 day ago',
           avatars: [
-            'https://cdn.vuetifyjs.com/images/john.jpg',
+            require('../../static/img/contact.webp'),
           ]
         },
       ]

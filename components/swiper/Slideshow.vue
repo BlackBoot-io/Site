@@ -2,16 +2,16 @@
   <div v-swiper="swiperOption" class="slideshow-swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
-        <a class="ss-link" :href="slide.link">
+        <!-- <a class="ss-link" :href="slide.link"> -->
             <!-- <div
               class="ss-section"
               data-aos="fade-up"
               data-aos-delay="300"
               data-aos-easing="ease-out"
             > -->
-              <img class="ss-image" :src="slide.img" />
+              <img class="ss-image" :src="slide.img" alt="slider images" width="525" height="505" />
             <!-- </div> -->
-        </a>
+        <!-- </a> -->
       </div>
     </div>
     <div class="swiper-pagination" slot="pagination"></div>
