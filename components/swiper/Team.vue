@@ -30,7 +30,8 @@ export default {
       slideToClickedSlide: true,
       autoplay: {
         delay: 6000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
+        pauseOnMouseEnter: true,
       },
 			navigation: {
 				nextEl: ".swiper-button-next",
