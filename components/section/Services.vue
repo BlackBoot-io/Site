@@ -24,6 +24,10 @@
     data: () => ({
       services: [
         {
+          image: require('../../static/img/services/nft-update.svg?raw'),
+          text: 'Provide APIs to connect.'
+        },
+        {
           image: require('../../static/img/services/nft.svg?raw'),
           text: 'We create NFTs for you.'
         },
@@ -32,20 +36,16 @@
           text: 'We create Soulbound Tokens  for you.'
         },
         {
-          image: require('../../static/img/services/explore.svg?raw'),
-          text: 'Allow others to explore your expertise.'
-        },
-        {
-          image: require('../../static/img/services/nft-update.svg?raw'),
-          text: 'Update your NFTs authomatically.'
+          image: require('../../static/img/services/blockchain.svg?raw'),
+          text: 'Store everything on blockchain.'
         },
         {
           image: require('../../static/img/services/collection.svg?raw'),
           text: 'Create a collection of tokens.'
         },
         {
-          image: require('../../static/img/services/blockchain.svg?raw'),
-          text: 'Store everything on blockchain.'
+          image: require('../../static/img/services/explore.svg?raw'),
+          text: 'Allow others to explore your expertise.'
         },
       ]
     }),

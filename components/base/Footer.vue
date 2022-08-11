@@ -78,7 +78,7 @@ export default {
       copyrightIcon: require('../../static/img/icons/copyright.svg?raw'),
       contactInfo: [
         {
-          text: "Somebody, PO Box 12345, Dubai, UAE",
+          text: "Dubai, UAE.",
           link: "#",
           icon: require('../../static/img/icons/location.svg?raw'),
         },
@@ -89,7 +89,7 @@ export default {
         },
         {
           text: "info@avanod.io",
-          link: "mailto:info@avanod.io",
+          link: "mailto:info@avanod.com",
           icon: require('../../static/img/icons/email.svg?raw'),
         },
       ],

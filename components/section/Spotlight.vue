@@ -4,7 +4,7 @@
       <v-row class="s-inside">
         <v-col cols="12" md="12" lg="6">
           <h1 class="s-head">
-            We Enable You <span>Proof Yourself</span><br>and <span>Your Experiences!</span>
+            We Enable You <span>Proof Yourself</span><br>and <span>Your Experiences by NFTs!</span>
           </h1>
           <p class="s-text">
             {{ $store.state.title }} is the first provider to able you proof your experiences through Soulbound Tokens and NFTs!
@@ -34,31 +34,31 @@
     props: ['currentSale'],
     data: () => ({
       slides: [
-        {
-          img: "../img/slides/1.webp",
-          link: "#",
-        },
+        // {
+        //   img: "../img/slides/1.webp",
+        //   link: "#",
+        // },
         {
           img: "../img/slides/2.webp",
           link: "#",
         },
-        {
-          img: "../img/slides/3.webp",
-          link: "#",
-        },
+        // {
+        //   img: "../img/slides/3.webp",
+        //   link: "#",
+        // },
       ],
       stats: [
         {
-          num: '3K+',
-          text: 'The CVs that is viewed by businesses on our platform so far.'
+          num: '4+',
+          text: 'Businesses have integrated themeselves with us.'
         },
         {
-          num: '200+',
-          text: 'The number of Job titiles that we have worked with so far.'
+          num: '2000+',
+          text: 'More than 2K NFTs have minted by Avanod.'
         },
         {
-          num: '1M+',
-          text: 'The tokens that is traded in our platform.'
+          num: '10M+',
+          text: 'The tokens invested by others.'
         },
         {
           num: '100+',
@@ -102,10 +102,8 @@
 
   .slider {
     position: absolute;
-    // bottom: 14px;
-    // right: -92px;
     bottom: -15px;
-    right: -127px;
+    right: -180px;
     width: 633px;
     height: 532px;
 

@@ -27,25 +27,25 @@
       benefits: [
         {
           title: 'Update Your CV',
-          text: 'You have unlimited oportunity to update your cv and add any single Token and NFT.',
+          text: 'You have unlimited oportunity to connect your business via APIs to mint NFTs.',
           image: require('../../static/img/benefits/cv.svg?raw'),
           color: '#EDFBFF'
         },
         {
           title: 'Avoid Missing Memories',
-          text: 'We have dedicated a strong feature not to miss any event that are related to your CV.',
+          text: 'We have dedicated a strong feature not to miss any event that are related to your life bookmarks.',
           image: require('../../static/img/benefits/avoid-missing.svg?raw'),
           color: '#FFF3F4'
         },
         {
           title: 'Social Media Connection',
-          text: 'We offer people who are using our services to be able to share their NFTs and Tokens on instagram.',
+          text: 'We offer people who are using our services to be able to share their NFTs and Tokens on social medias.',
           image: require('../../static/img/benefits/social.svg?raw'),
           color: '#FFFAEB'
         },
         {
           title: 'Proof Your Attendance',
-          text: 'WUltimately, you can proove your attendance in any sigle event and courses that you have passed.',
+          text: 'Ultimately, you can proove your attendance in any sigle event and courses that you have passed.',
           image: require('../../static/img/benefits/attendance.svg?raw'),
           color: '#EEFFF5'
         },
