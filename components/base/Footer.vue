@@ -88,7 +88,7 @@ export default {
           icon: require('../../static/img/icons/phone.svg?raw'),
         },
         {
-          text: "info@avanod.io",
+          text: "info@avanod.com",
           link: "mailto:info@avanod.com",
           icon: require('../../static/img/icons/email.svg?raw'),
         },

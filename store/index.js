@@ -5,42 +5,66 @@ export const state = () => ({
 	cSecondary: '#1d2a3b',
 	menu: [
 		{
-			name: "Language",
+			title: "Language",
 			route: "#",
 			icon: "mdi-chart-box-outline",
-			items: [
+			links: [
 				{
-					name: "United Kingdom",
-					route: "#uk",
+					title: "United Kingdom",
+					route: "#",
 				},
 				{
-					name: "United Arab Emirates",
-					route: "#uae",
+					title: "United Arab Emirates",
+					route: "#",
 				},
 			]
 		},
 		{
-			name: "Home",
+			title: "Home",
 			route: "/",
 			icon: "mdi-home-outline",
 		},
 		{
-			name: "Services",
+			title: "Products",
+			route: "",
+			icon: "mdi-layers-outline",
+			items: [
+				"Established tech stack, tools & standards",
+				"Enterprise adoption and integration",
+				"Tailored execution environments",
+			],
+			links: [
+				{
+					title: "NFT as a Service",
+					description: "Using NFT infrustructure for managing assets.",
+					route: "/uk",
+					icon: require('../static/img/icons/lang.svg?raw'),
+				},
+				{
+					title: "Online Events",
+					description: "A proven record for experience and expertiese.",
+					route: "/uae",
+					icon: require('../static/img/icons/wallet.svg?raw'),
+				},
+			]
+		},
+		{
+			title: "Services",
 			route: "/#services",
 			icon: "mdi-layers-outline",
 		},
 		{
-			name: "Token",
+			title: "Token",
 			route: "/#details",
 			icon: "mdi-circle-multiple-outline",
 		},
 		{
-			name: "Roadmap",
+			title: "Roadmap",
 			route: "/#roadmap",
 			icon: "mdi-map-marker-path",
 		},
 		{
-			name: "Our Team",
+			title: "Our Team",
 			route: "/team",
 			icon: "mdi-account-group-outline",
 		},

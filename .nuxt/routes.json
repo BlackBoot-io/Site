@@ -14,6 +14,13 @@
     "_name": "_94c20ec2"
   },
   {
+    "name": "invest-us",
+    "path": "/invest-us",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/invest-us.vue",
+    "chunkName": "pages/invest-us",
+    "_name": "_1657dc3f"
+  },
+  {
     "name": "team",
     "path": "/team",
     "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/team.vue",

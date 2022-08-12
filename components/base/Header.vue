@@ -28,15 +28,17 @@
         </div>
         <div class="center">
           <template v-for="(link, index) in $store.state.menu">
-            <NuxtLink v-if="!link.items && index != 0" :to="link.route" class="header-link" :key="link.name">
-              {{ link.name }}
+            <NuxtLink v-if="!link.items && index != 0" :to="link.route" class="header-link" :key="link.title">
+              {{ link.title }}
             </NuxtLink>
             <v-menu
               v-if="link.items && index != 0"
               open-on-hover
+              offset-y
               rounded="lg"
               transition="slide-y-transition"
-              :key="link.name"
+              :key="link.title"
+              content-class="drop-menu"
             >
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
@@ -47,24 +49,58 @@
                   dark
                   class="header-sub px-0"
                 >
-                  {{ link.name }}
-                  <v-icon class="mr-1">mdi-chevron-down</v-icon>
+                  {{ link.title }}
+                  <v-icon size="16">mdi-chevron-down</v-icon>
                 </v-btn>
               </template>
-              <v-list>
-                <v-list-item
-                  v-for="(item, index) in link.items"
-                  :key="index"
-                  :to="item.route"
-                >
-                  <v-list-item-title>{{ item.name }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
+              <v-card class="drop-card">
+                <v-row class="inner">
+                  <v-col cols="5" class="drop-side">
+                    <div>
+                      <h5 class="drop-title">
+                        {{ link.title }}
+                      </h5>
+                      <ul class="drop-list">
+                        <li
+                          v-for="(item, index) in link.items"
+                          :key="index"
+                        >
+                          {{ item }}
+                        </li>
+                      </ul>
+                    </div>
+                    <ul class="drop-ex-links">
+                      <li>
+                        <a href="#">Plans & Pricing</a>
+                      </li>
+                      <li>
+                        <a href="#">What we suupport</a>
+                      </li>
+                    </ul>
+                  </v-col>
+                  <v-col cols="7" class="drop-main">
+                    <ul class="drop-links">
+                      <li
+                        v-for="(item, index) in link.links"
+                        :key="index"
+                      >
+                        <NuxtLink :to="item.route">
+                          <em v-html="item.icon"></em>
+                          <span>
+                            <h6>{{ item.title }}</h6>
+                            <p>{{ item.description }}</p>
+                          </span>
+                        </NuxtLink>
+                      </li>
+                    </ul>
+                  </v-col>
+                </v-row>
+              </v-card>
             </v-menu>
           </template>
         </div>
         <div class="left">
-          <v-menu offset-y content-class="header-menu" transition="fade-transition">
+          <v-menu offset-y transition="slide-y-transition" content-class="header-menu">
             <template v-slot:activator="{ on, attrs }">
               <v-btn
                 depressed
@@ -82,12 +118,12 @@
                 <v-icon size="20">mdi-chevron-up</v-icon>
               </v-subheader>
               <v-list-item-group>
-                <v-list-item v-for="(item, index) in userMenu.items" :key="index">
+                <v-list-item v-for="(item, index) in userMenu.links" :key="index">
                   <v-list-item-content>
                     <v-list-item-title>
-                      <NuxtLink :to="item.route" :aria-label="item.text">
+                      <NuxtLink :to="item.route" :aria-label="item.title">
                         <span v-html="item.icon"></span>
-                        {{ item.text }}
+                        {{ item.title }}
                       </NuxtLink>
                     </v-list-item-title>
                   </v-list-item-content>
@@ -117,7 +153,7 @@
     >
       <v-list nav dense>
         <v-list-item-group v-model="group" :color="$store.state.cPrimary">
-          <div v-for="link in $store.state.menu" :key="link.name">
+          <div v-for="link in $store.state.menu" :key="link.title">
             <v-list-item
               v-if="!link.items"
               class="pa-0 mb-2"
@@ -126,7 +162,7 @@
                 <!-- <v-list-item-icon class="ml-5">
                   <v-icon>{{ link.icon }}</v-icon>
                 </v-list-item-icon> -->
-                <v-list-item-title>{{ link.name }}</v-list-item-title>
+                <v-list-item-title>{{ link.title }}</v-list-item-title>
               </NuxtLink>
             </v-list-item>
             <v-menu
@@ -142,7 +178,7 @@
                       <v-icon>{{ link.icon }}</v-icon>
                     </v-list-item-icon> -->
                     <v-list-item-title class="d-flex justify-space-between">
-                      {{ link.name }}
+                      {{ link.title }}
                       <v-icon class="mr-1">mdi-chevron-down</v-icon>
                     </v-list-item-title>
                   </div>
@@ -154,7 +190,7 @@
                   :key="index"
                   :to="item.route"
                 >
-                  <v-list-item-title>{{ item.name }}</v-list-item-title>
+                  <v-list-item-title>{{ item.title }}</v-list-item-title>
                 </v-list-item>
               </v-list>
             </v-menu>
@@ -172,14 +208,14 @@ export default {
     langIcon: require('../../static/img/icons/lang.svg?raw'),
     userMenu: {
       status: false,
-      items: [
+      links: [
         {
-          text: 'United kingdom',
+          title: 'United kingdom',
           icon: require('../../static/img/flags/uk.svg?raw'),
           route: '#',
         },
         {
-          text: 'United Arab Emirates',
+          title: 'United Arab Emirates',
           icon: require('../../static/img/flags/uae.svg?raw'),
           route: '#',
         },
@@ -378,6 +414,7 @@ header {
 
   &.fixed {
     background: rgba($cw, 0.9) !important;
+    backdrop-filter: saturate(300%) blur(4px);
     z-index: 999 !important;
     transition: 0.5s !important;
     transition-delay: 0s !important;
@@ -510,6 +547,150 @@ header {
     font-size: 24px!important;
     line-height: 35px!important;
     color: #5B626E;
+  }
+}
+
+
+.drop-menu {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06)!important;
+
+  .drop-card {
+    display: flex;
+    min-width: 510px;
+    min-height: 410px;
+    background: $cw!important;
+    border-radius: 12px!important;
+    
+    .inner {
+      margin: 0!important;
+
+      .drop-main {
+        padding: 18px 20px 10px 20px;
+      }
+
+      .drop-side {
+        padding: 20px 22px 10px 22px;
+        background: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .drop-title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 15px;
+      }
+
+      .drop-list {
+        li {
+          position: relative;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          margin-bottom: 10px;
+          padding-left: 20px;
+
+          &:before {
+            content: "\F012C";
+            font: normal normal normal 24px/1 "Material Design Icons";
+            font-size: 8px;
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translate(-50%, -50%);
+            background: #e1f5fd;
+            color: #545a95;
+            border-radius: 50%;
+            padding: 2px;
+          }
+        }
+      }
+
+      .drop-ex-links {
+        li {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 14px;
+          color: #412971;
+          margin-bottom: 10px;
+
+          a {
+            position: relative;
+            display: inline-block;
+
+            &:before {
+              content: "\F005C";
+              font: normal normal normal 24px/1 "Material Design Icons";
+              font-size: 13px;
+              position: absolute;
+              top: 50%;
+              right: -25px;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+
+      .drop-links {
+        li {
+          position: relative;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 14px;
+          margin-bottom: 5px;
+
+          &:before {
+            content: "\F0142";
+            font: normal normal normal 24px/1 "Material Design Icons";
+            font-size: 12px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(-50%, -50%);
+            color: #616771;
+          }
+
+          a {
+            display: flex;
+            padding: 8px;
+            border-radius: 8px;
+
+            &:hover {
+              background: #f6f6f6;
+            }
+
+            em {
+              display: flex!important;
+              align-items: center!important;
+              justify-content: center!important;
+              width: 35px;
+              height: 35px;
+              background: #E4D9EA;
+              border-radius: 5px;
+              margin-right: 10px;
+            }
+
+            span {
+              h6 {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                margin-bottom: 3px;
+              }
+
+              p {
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 15px;
+                color: #5B5B5B;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
