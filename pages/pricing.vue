@@ -3,11 +3,11 @@
     <v-container>
       <v-row class="content">
         <v-col cols="12" class="text-center">
-          <h1 class="title-main dot-green">
-            <span>Contact Us</span>
+          <h1 class="title-main dot-pink">
+            <span>Choose the most suitable package for your team</span>
           </h1>
           <p class="title-sub">
-            Questions, bug reports, feedback.
+            Start for free and upgrade your plan based on your needs
           </p>
         </v-col>
       </v-row>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Contact',
+  name: 'Pricing',
   data: () => ({
     
   }),

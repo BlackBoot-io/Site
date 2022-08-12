@@ -4,9 +4,9 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _398e9c29 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
 const _94c20ec2 = () => interopDefault(import('../pages/faq.vue' /* webpackChunkName: "pages/faq" */))
 const _1657dc3f = () => interopDefault(import('../pages/invest-us.vue' /* webpackChunkName: "pages/invest-us" */))
+const _d8045662 = () => interopDefault(import('../pages/pricing.vue' /* webpackChunkName: "pages/pricing" */))
 const _683306a4 = () => interopDefault(import('../pages/team.vue' /* webpackChunkName: "pages/team" */))
 const _7b25a01b = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -22,10 +22,6 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/contact",
-    component: _398e9c29,
-    name: "contact"
-  }, {
     path: "/faq",
     component: _94c20ec2,
     name: "faq"
@@ -33,6 +29,10 @@ export const routerOptions = {
     path: "/invest-us",
     component: _1657dc3f,
     name: "invest-us"
+  }, {
+    path: "/pricing",
+    component: _d8045662,
+    name: "pricing"
   }, {
     path: "/team",
     component: _683306a4,

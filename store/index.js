@@ -11,11 +11,11 @@ export const state = () => ({
 			links: [
 				{
 					title: "United Kingdom",
-					route: "#",
+					route: "#uk",
 				},
 				{
 					title: "United Arab Emirates",
-					route: "#",
+					route: "#uae",
 				},
 			]
 		},
@@ -37,36 +37,94 @@ export const state = () => ({
 				{
 					title: "NFT as a Service",
 					description: "Using NFT infrustructure for managing assets.",
-					route: "/uk",
+					route: "#",
 					icon: require('../static/img/icons/lang.svg?raw'),
 				},
 				{
 					title: "Online Events",
 					description: "A proven record for experience and expertiese.",
-					route: "/uae",
+					route: "#",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 			]
 		},
 		{
-			title: "Services",
-			route: "/#services",
+			title: "Use Cases",
+			route: "",
+			icon: "mdi-layers-outline",
+			description: "We help businesses and institutions take part in the Web3 ecosystem.",
+			links: [
+				{
+					title: "NFT as a Service",
+					description: "Using NFT infrustructure for managing assets.",
+					route: "#",
+					icon: require('../static/img/icons/lang.svg?raw'),
+				},
+				{
+					title: "Online Events",
+					description: "A proven record for experience and expertiese.",
+					route: "#",
+					icon: require('../static/img/icons/wallet.svg?raw'),
+				},
+			]
+		},
+		{
+			title: "Developers",
+			route: "",
+			icon: "mdi-layers-outline",
+			items: [
+				"Established tech stack, tools & standards",
+				"Enterprise adoption and integration",
+				"Tailored execution environments",
+			],
+			links: [
+				{
+					title: "NFT as a Service",
+					description: "Using NFT infrustructure for managing assets.",
+					route: "#",
+					icon: require('../static/img/icons/lang.svg?raw'),
+				},
+				{
+					title: "Online Events",
+					description: "A proven record for experience and expertiese.",
+					route: "#",
+					icon: require('../static/img/icons/wallet.svg?raw'),
+				},
+			]
+		},
+		{
+			title: "Invest us",
+			route: "/invest-us",
 			icon: "mdi-layers-outline",
 		},
 		{
-			title: "Token",
-			route: "/#details",
-			icon: "mdi-circle-multiple-outline",
+			title: "Pricing",
+			route: "/pricing",
+			icon: "mdi-layers-outline",
 		},
 		{
-			title: "Roadmap",
-			route: "/#roadmap",
-			icon: "mdi-map-marker-path",
-		},
-		{
-			title: "Our Team",
-			route: "/team",
-			icon: "mdi-account-group-outline",
+			title: "About Us",
+			route: "",
+			icon: "mdi-layers-outline",
+			items: [
+				"Established tech stack, tools & standards",
+				"Enterprise adoption and integration",
+				"Tailored execution environments",
+			],
+			links: [
+				{
+					title: "NFT as a Service",
+					description: "Using NFT infrustructure for managing assets.",
+					route: "#",
+					icon: require('../static/img/icons/lang.svg?raw'),
+				},
+				{
+					title: "Online Events",
+					description: "A proven record for experience and expertiese.",
+					route: "#",
+					icon: require('../static/img/icons/wallet.svg?raw'),
+				},
+			]
 		},
 	],
 })

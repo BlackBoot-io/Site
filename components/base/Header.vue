@@ -28,11 +28,11 @@
         </div>
         <div class="center">
           <template v-for="(link, index) in $store.state.menu">
-            <NuxtLink v-if="!link.items && index != 0" :to="link.route" class="header-link" :key="link.title">
+            <NuxtLink v-if="!link.links && index != 0" :to="link.route" class="header-link" :key="link.title">
               {{ link.title }}
             </NuxtLink>
             <v-menu
-              v-if="link.items && index != 0"
+              v-if="link.links && index != 0"
               open-on-hover
               offset-y
               rounded="lg"
@@ -60,7 +60,7 @@
                       <h5 class="drop-title">
                         {{ link.title }}
                       </h5>
-                      <ul class="drop-list">
+                      <ul v-if="link.items" class="drop-list">
                         <li
                           v-for="(item, index) in link.items"
                           :key="index"
@@ -68,6 +68,9 @@
                           {{ item }}
                         </li>
                       </ul>
+                      <p v-if="link.description" class="drop-description">
+                        {{ link.description }}
+                      </p>
                     </div>
                     <ul class="drop-ex-links">
                       <li>
@@ -287,7 +290,7 @@ header {
   }
 
   .right {
-    flex: 0.8;
+    flex: 0.5;
 
     @include res(md) {
       flex: 0.55;
@@ -310,16 +313,12 @@ header {
   }
 
   .center {
-    flex: 1.3;
+    flex: 1.5;
     justify-content: space-evenly;
-
-    @include res(md) {
-      flex: 1.5;
-    }
   }
 
   .left {
-    flex: 0.8;
+    flex: 0.5;
     justify-content: flex-end;
 
     .v-btn {
@@ -363,8 +362,9 @@ header {
     font-family: $f!important;
     transition: 0.5s;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 16px!important;
+    line-height: 60px;
+    height: 60px!important;
 
     @include res(md) {
       font-size: 13px !important;
@@ -381,17 +381,17 @@ header {
     }
 
     &:before {
-      left: calc(55% - 20px);
-      bottom: -12px;
+      left: calc(58% - 20px);
+      bottom: 3px;
       height: 0;
       border-radius: 50%;
     }
 
     &:after {
-      left: 55%;
-      bottom: -10px;
+      left: 58%;
+      bottom: 5px;
       height: 3px;
-      border-radius: 30px;
+      border-radius: 50px;
     }
 
     &:hover {
@@ -556,8 +556,8 @@ header {
 
   .drop-card {
     display: flex;
-    min-width: 510px;
-    min-height: 410px;
+    width: 520px;
+    height: 410px;
     background: $cw!important;
     border-radius: 12px!important;
     
@@ -565,11 +565,11 @@ header {
       margin: 0!important;
 
       .drop-main {
-        padding: 18px 20px 10px 20px;
+        padding: 15px 10px 10px 10px;
       }
 
       .drop-side {
-        padding: 20px 22px 10px 22px;
+        padding: 20px 20px 10px 20px;
         background: #f9f9f9;
         display: flex;
         flex-direction: column;
@@ -606,6 +606,12 @@ header {
             padding: 2px;
           }
         }
+      }
+
+      .drop-description {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
       }
 
       .drop-ex-links {

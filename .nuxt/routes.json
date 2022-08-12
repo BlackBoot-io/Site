@@ -1,37 +1,32 @@
 [
   {
-    "name": "contact",
-    "path": "/contact",
-    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/contact.vue",
-    "chunkName": "pages/contact",
-    "_name": "_398e9c29"
-  },
-  {
     "name": "faq",
     "path": "/faq",
     "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/faq.vue",
-    "chunkName": "pages/faq",
-    "_name": "_94c20ec2"
+    "chunkName": "pages/faq"
   },
   {
     "name": "invest-us",
     "path": "/invest-us",
     "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/invest-us.vue",
-    "chunkName": "pages/invest-us",
-    "_name": "_1657dc3f"
+    "chunkName": "pages/invest-us"
+  },
+  {
+    "name": "pricing",
+    "path": "/pricing",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/pricing.vue",
+    "chunkName": "pages/pricing"
   },
   {
     "name": "team",
     "path": "/team",
     "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/team.vue",
-    "chunkName": "pages/team",
-    "_name": "_683306a4"
+    "chunkName": "pages/team"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_7b25a01b"
+    "chunkName": "pages/index"
   }
 ]

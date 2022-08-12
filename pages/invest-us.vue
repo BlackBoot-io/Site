@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: 'Contact',
+  name: 'Invest Us',
   data: () => ({
     currentSale: "",
   }),
