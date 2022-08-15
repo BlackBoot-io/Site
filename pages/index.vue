@@ -4,9 +4,6 @@
     <SectionFutures />
     <SectionServices />
     <SectionBenefits />
-    <SectionDetails :currentSale="currentSale" />
-    <SectionCrowdsale />
-    <SectionRoadmap />
     <SectionBlog />
   </div>
 </template>

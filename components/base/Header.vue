@@ -35,6 +35,8 @@
               v-if="link.links && index != 0"
               open-on-hover
               offset-y
+              nudge-left="200"
+              position-y="500"
               rounded="lg"
               transition="slide-y-transition"
               :key="link.title"
@@ -55,12 +57,12 @@
               </template>
               <v-card class="drop-card">
                 <v-row class="inner">
-                  <v-col cols="5" class="drop-side">
+                  <v-col cols="5" :order="index == $store.state.menu.length-1 ? 2 : 1" class="drop-side">
                     <div>
                       <h5 class="drop-title">
-                        {{ link.title }}
+                        {{ index != $store.state.menu.length-1 ? link.title : link.titleSide }}
                       </h5>
-                      <ul v-if="link.items" class="drop-list">
+                      <ul v-if="link.items" class="drop-items">
                         <li
                           v-for="(item, index) in link.items"
                           :key="index"
@@ -68,11 +70,19 @@
                           {{ item }}
                         </li>
                       </ul>
+                      <ul v-if="link.linkItems" class="drop-link-items">
+                        <li
+                          v-for="(item, index) in link.linkItems"
+                          :key="index"
+                        >
+                          <a :href="item.link">{{ item.title }}</a>
+                        </li>
+                      </ul>
                       <p v-if="link.description" class="drop-description">
                         {{ link.description }}
                       </p>
                     </div>
-                    <ul class="drop-ex-links">
+                    <ul v-if="index != $store.state.menu.length-1" class="drop-ex-links">
                       <li>
                         <a href="#">Plans & Pricing</a>
                       </li>
@@ -81,7 +91,10 @@
                       </li>
                     </ul>
                   </v-col>
-                  <v-col cols="7" class="drop-main">
+                  <v-col cols="7" :order="index == $store.state.menu.length-1 ? 1 : 2" class="drop-main">
+                    <h5 v-if="index == $store.state.menu.length-1" class="drop-title pl-2">
+                      {{ link.title }}
+                    </h5>
                     <ul class="drop-links">
                       <li
                         v-for="(item, index) in link.links"
@@ -91,7 +104,7 @@
                           <em v-html="item.icon"></em>
                           <span>
                             <h6>{{ item.title }}</h6>
-                            <p>{{ item.description }}</p>
+                            <p v-if="item.description">{{ item.description }}</p>
                           </span>
                         </NuxtLink>
                       </li>
@@ -565,7 +578,7 @@ header {
       margin: 0!important;
 
       .drop-main {
-        padding: 15px 10px 10px 10px;
+        padding: 20px 10px 10px 10px;
       }
 
       .drop-side {
@@ -583,7 +596,7 @@ header {
         margin-bottom: 15px;
       }
 
-      .drop-list {
+      .drop-items {
         li {
           position: relative;
           font-weight: 400;
@@ -604,6 +617,34 @@ header {
             color: #545a95;
             border-radius: 50%;
             padding: 2px;
+          }
+        }
+      }
+
+      .drop-link-items {
+        margin-top: 25px;
+
+        li {
+          position: relative;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          margin-bottom: 20px;
+
+          a {
+            position: relative;
+            display: inline-block;
+
+            &:before {
+              content: "\F005C";
+              font: normal normal normal 24px/1 "Material Design Icons";
+              font-size: 13px;
+              position: absolute;
+              top: 50%;
+              right: -25px;
+              transform: translate(-50%, -50%);
+              color: #8C8C8C;
+            }
           }
         }
       }
@@ -645,7 +686,7 @@ header {
           font-weight: 600;
           font-size: 12px;
           line-height: 14px;
-          margin-bottom: 5px;
+          margin-bottom: 3px;
 
           &:before {
             content: "\F0142";
@@ -679,6 +720,10 @@ header {
             }
 
             span {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              
               h6 {
                 font-weight: 600;
                 font-size: 14px;
