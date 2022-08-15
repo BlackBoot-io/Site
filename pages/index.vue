@@ -1,7 +1,7 @@
 <template>
   <div>
     <SectionSpotlight :currentSale="currentSale" />
-    <SectionFutures />
+    <SectionSupport />
     <SectionServices />
     <SectionBenefits />
     <SectionBlog />

@@ -141,24 +141,12 @@ export const state = () => ({
 			icon: "mdi-layers-outline",
 			linkItems: [
 				{
-					title: "Twitter",
-					route: "#",
-				},
-				{
-					title: "Linkedin",
-					route: "#",
-				},
-				{
-					title: "Facebook",
-					route: "#",
-				},
-				{
-					title: "Instagram",
-					route: "#",
+					title: "Github",
+					route: "https://github.com/BlackBoot-io",
 				},
 				{
 					title: "Discord",
-					route: "#",
+					route: "https://discord.gg/ncrq7CXZ",
 				},
 			],
 			links: [
@@ -174,7 +162,7 @@ export const state = () => ({
 				},
 				{
 					title: "Our team",
-					route: "#",
+					route: "/team",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 			]

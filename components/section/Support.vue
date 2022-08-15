@@ -1,13 +1,13 @@
 <template>
-  <v-container fluid id="futures" class="futures">
-    <v-container class="f-inner">
+  <v-container fluid id="supports" class="supports">
+    <v-container class="s-inner">
       <v-row>
         <v-col cols="12" lg="6" class="d-flex flex-column justify-center">
-          <h2 class="f-title">
+          <h2 class="s-title">
             We support both <span>NFTs and SoulBound Tokens.</span>
           </h2>
-          <ul class="f-list">
-            <li v-for="(future, index) in futures" :key="index">
+          <ul class="s-list">
+            <li v-for="(future, index) in supports" :key="index">
               <v-icon>mdi-check-circle-outline</v-icon>
               {{ future.title }}
               <br>
@@ -28,7 +28,7 @@
 <script>
   export default {
     data: () => ({
-      futures: [
+      supports: [
         {
           title: 'User friendly application',
           description: 'We make the application user friendly, so that it can be used by many people and business owners.'
@@ -46,7 +46,7 @@
 @import '~/assets/scss/_variables.scss';
 @import '~/assets/scss/_mixins.scss';
 
-.futures {
+.supports {
   background: #F2FAFDB2;
   background-repeat: no-repeat;
   background-position: left top;
@@ -62,11 +62,11 @@
     padding-bottom: 20px;
   }
 
-  .f-inner {
+  .s-inner {
     position: relative;
   }
 
-  .f-title {
+  .s-title {
     font-weight: 400;
     font-size: 26px;
     line-height: 52px;
@@ -83,7 +83,7 @@
     }
   }
 
-  .f-list {
+  .s-list {
 
     li {
       position: relative;

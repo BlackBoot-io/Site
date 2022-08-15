@@ -28,6 +28,13 @@
     "_name": "_683306a4"
   },
   {
+    "name": "use-cases-slug",
+    "path": "/use-cases/:slug?",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/use-cases/_slug.vue",
+    "chunkName": "pages/use-cases/_slug",
+    "_name": "_641834fe"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/index.vue",

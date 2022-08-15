@@ -32,9 +32,6 @@
   "SectionDetails": {
     "description": "Auto imported from components/section/Details.vue"
   },
-  "SectionFutures": {
-    "description": "Auto imported from components/section/Futures.vue"
-  },
   "SectionPublicSale": {
     "description": "Auto imported from components/section/PublicSale.vue"
   },
@@ -46,5 +43,8 @@
   },
   "SectionSpotlight": {
     "description": "Auto imported from components/section/Spotlight.vue"
+  },
+  "SectionSupport": {
+    "description": "Auto imported from components/section/Support.vue"
   }
 }

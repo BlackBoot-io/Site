@@ -8,6 +8,7 @@ const _94c20ec2 = () => interopDefault(import('../pages/faq.vue' /* webpackChunk
 const _1657dc3f = () => interopDefault(import('../pages/invest-us.vue' /* webpackChunkName: "pages/invest-us" */))
 const _d8045662 = () => interopDefault(import('../pages/pricing.vue' /* webpackChunkName: "pages/pricing" */))
 const _683306a4 = () => interopDefault(import('../pages/team.vue' /* webpackChunkName: "pages/team" */))
+const _641834fe = () => interopDefault(import('../pages/use-cases/_slug.vue' /* webpackChunkName: "pages/use-cases/_slug" */))
 const _7b25a01b = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -37,6 +38,10 @@ export const routerOptions = {
     path: "/team",
     component: _683306a4,
     name: "team"
+  }, {
+    path: "/use-cases/:slug?",
+    component: _641834fe,
+    name: "use-cases-slug"
   }, {
     path: "/",
     component: _7b25a01b,
