@@ -56,7 +56,7 @@ export const state = () => ({
 			links: [
 				{
 					title: "Proof of Attendance",
-					route: "#",
+					route: "/use-cases/",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 				{

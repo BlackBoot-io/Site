@@ -1,23 +1,23 @@
 <template>
-  <v-container class="benefits">
-    <v-row>
-      <v-col cols="12" class="text-center">
-        <h3 class="title-main dot-green">
-          What You <span>Get Working With Us</span>
-        </h3>
-      </v-col>
-    </v-row>
-    <v-row class="benefits-items">
-      <v-col cols="12" lg="6" v-for="(benefit, index) in benefits" :key="index">
-        <div class="benefit" :style="`background-color: ${benefit.color}`">
-          <div class="b-text">
-            <h5 class="b-title">{{ benefit.title }}</h5>
-            <p class="b-desc">{{ benefit.text }}</p>
-          </div>
-          <span class="b-img" v-html="benefit.image"></span>
-        </div>
-      </v-col>
-    </v-row>
+  <v-container fluid id="benefits" class="benefits">
+    <v-container>
+      <v-row>
+        <v-col cols="12" class="text-center">
+          <h3 class="title-main">
+            <span>The benefits of using BlackBoot</span>
+          </h3>
+          <p class="title-sub">
+            Designed to robust you  and help to achieve prosperity in any era.
+          </p>
+        </v-col>
+      </v-row>
+      <v-row class="benefits-items">
+        <v-col cols="6" md="6" lg="3" class="benefit" v-for="(benefit, index) in benefits" :key="index">
+          <div class="b-img" v-html="benefit.image"></div>
+          <p class="b-desc">{{ benefit.text }}</p>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-container>
 </template>
 
@@ -26,28 +26,20 @@
     data: () => ({
       benefits: [
         {
-          title: 'Update Your CV',
-          text: 'You have unlimited oportunity to connect your business via APIs to mint NFTs.',
-          image: require('../../static/img/benefits/cv.svg?raw'),
-          color: '#EDFBFF'
+          image: require('../../static/img/services/collection.svg?raw'),
+          text: 'Create a collection of tokens.'
         },
         {
-          title: 'Avoid Missing Memories',
-          text: 'We have dedicated a strong feature not to miss any event that are related to your life bookmarks.',
-          image: require('../../static/img/benefits/avoid-missing.svg?raw'),
-          color: '#FFF3F4'
+          image: require('../../static/img/services/explore.svg?raw'),
+          text: 'Allow others to explore your expertise.'
         },
         {
-          title: 'Social Media Connection',
-          text: 'We offer people who are using our services to be able to share their NFTs and Tokens on social medias.',
-          image: require('../../static/img/benefits/social.svg?raw'),
-          color: '#FFFAEB'
+          image: require('../../static/img/services/nft-update.svg?raw'),
+          text: 'Provide APIs to connect.'
         },
         {
-          title: 'Proof Your Attendance',
-          text: 'Ultimately, you can proove your attendance in any sigle event and courses that you have passed.',
-          image: require('../../static/img/benefits/attendance.svg?raw'),
-          color: '#EEFFF5'
+          image: require('../../static/img/services/blockchain.svg?raw'),
+          text: 'Store everything on blockchain.'
         },
       ]
     }),
@@ -60,78 +52,56 @@
 
 .benefits {
   padding-top: 60px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
+  background: #F2FAFD;
 
   @include res($sm) {
-    padding-bottom: 0px;
+    padding-top: 40px;
+    padding-bottom: 20px;
   }
 
   .benefits-items {
     margin-top: 40px;
+
+    @include res($sm) {
+      margin-top: 20px;
+    }
   
     .benefit {
-      position: relative;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 35px;
-      border-radius: 15px;
+      padding: 25px 12px 25px 12px;
 
-      @include res($sm) {
-        padding: 25px;
-      }
-
-      &:hover {
-        .b-img {
-          transform: translate(0%, -50%) scale(1.1);
-        }
-      }
-
-      .b-text {
-        flex: 0.57;
-
-        .b-title {
-          font-weight: 700;
-          font-size: 20px;
-          line-height: 24px;
-          letter-spacing: -0.0041em;
-          color: #282A2D;
-          margin-bottom: 25px;
-
-          @include res($sm) {
-            font-size: 13.8214px;
-            line-height: 17px;
-            margin-bottom: 10px;
-          }
-        }
-
-        .b-desc {
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 28px;
-          letter-spacing: -0.0041em;
-          color: #282A2D;
-
-          @include res($sm) {
-            font-size: 12.5036px;
-            line-height: 19px;
-          }
-        }
+      @include res($md) {
+        padding: 12px;
       }
 
       .b-img {
-        max-width: 167px;
-        max-height: 174px;
-        transition: 0.2s;
-        position: absolute;
-        top: 50%;
-        right: 33px;
-        transform: translate(0%, -50%);
+        min-width: 72px;
+        max-width: 82px;
+        min-height: 82px;
+        max-height: 82px;
 
         @include res($sm) {
-          right: 23px;
-          max-width: 90px;
-          max-height: 110px;
+          min-width: 37px;
+          max-width: 47px;
+          min-height: 47px;
+          max-height: 47px;
+        }
+      }
+
+      .b-desc {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 28px;
+        margin-left: 12px!important;
+        letter-spacing: -0.0041em;
+        color: #616771;
+
+        @include res($sm) {
+          font-weight: 500;
+          font-size: 11.9576px;
+          line-height: 19px;
         }
       }
     }

@@ -36,7 +36,7 @@
               open-on-hover
               offset-y
               nudge-left="200"
-              position-y="500"
+              :position-y="500"
               rounded="lg"
               transition="slide-y-transition"
               :key="link.title"
@@ -75,7 +75,7 @@
                           v-for="(item, index) in link.linkItems"
                           :key="index"
                         >
-                          <a :href="item.link">{{ item.title }}</a>
+                          <a :href="item.route">{{ item.title }}</a>
                         </li>
                       </ul>
                       <p v-if="link.description" class="drop-description">
@@ -100,7 +100,7 @@
                         v-for="(item, index) in link.links"
                         :key="index"
                       >
-                        <NuxtLink :to="item.route">
+                        <NuxtLink :to="item.route + item.title.replace(/\s+/g, '-').toLowerCase()">
                           <em v-html="item.icon"></em>
                           <span>
                             <h6>{{ item.title }}</h6>

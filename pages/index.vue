@@ -3,7 +3,7 @@
     <SectionSpotlight :currentSale="currentSale" />
     <SectionSupport />
     <SectionServices />
-    <SectionBenefits />
+    <SectionAdvantages />
     <SectionBlog />
   </div>
 </template>

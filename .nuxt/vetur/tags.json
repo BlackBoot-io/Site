@@ -20,6 +20,9 @@
   "SwiperTeam": {
     "description": "Auto imported from components/swiper/Team.vue"
   },
+  "SectionAdvantages": {
+    "description": "Auto imported from components/section/Advantages.vue"
+  },
   "SectionBenefits": {
     "description": "Auto imported from components/section/Benefits.vue"
   },
@@ -32,6 +35,9 @@
   "SectionDetails": {
     "description": "Auto imported from components/section/Details.vue"
   },
+  "SectionFeatures": {
+    "description": "Auto imported from components/section/Features.vue"
+  },
   "SectionPublicSale": {
     "description": "Auto imported from components/section/PublicSale.vue"
   },
@@ -43,6 +49,9 @@
   },
   "SectionSpotlight": {
     "description": "Auto imported from components/section/Spotlight.vue"
+  },
+  "SectionSteps": {
+    "description": "Auto imported from components/section/Steps.vue"
   },
   "SectionSupport": {
     "description": "Auto imported from components/section/Support.vue"
