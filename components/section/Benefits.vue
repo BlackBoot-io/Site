@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="12" class="text-center">
           <h3 class="title-main">
-            <span>The benefits of using BlackBoot</span>
+            <span>The benefits of using {{ $store.state.title }}</span>
           </h3>
           <p class="title-sub">
             Designed to robust you  and help to achieve prosperity in any era.

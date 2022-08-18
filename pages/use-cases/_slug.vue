@@ -22,13 +22,13 @@
                 Let’s discuss your project
               </v-btn>
             </v-col>
-            <v-col
+            <!-- <v-col
               cols="12"
               lg="5"
               class="case-img"
               v-html="require(`../../static/img/cases/${this.$route.params.slug}.svg?raw`)"
             >
-            </v-col>
+            </v-col> -->
           </v-row>
         </v-container>
         <SectionFeatures />

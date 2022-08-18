@@ -61,32 +61,32 @@ export const state = () => ({
 				},
 				{
 					title: "Academia",
-					route: "#",
+					route: "/use-cases/",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 				{
 					title: "Digital Identity",
-					route: "#",
+					route: "/use-cases/",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 				{
 					title: "Music NFTs",
-					route: "#",
+					route: "/use-cases/",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 				{
 					title: "university Certificate",
-					route: "#",
+					route: "/use-cases/",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 				{
 					title: "Health Care",
-					route: "#",
+					route: "/use-cases/",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 				{
 					title: "Private Club Membership",
-					route: "#",
+					route: "/use-cases/",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 			]
@@ -163,6 +163,11 @@ export const state = () => ({
 				{
 					title: "Our team",
 					route: "/team",
+					icon: require('../static/img/icons/wallet.svg?raw'),
+				},
+				{
+					title: "Frequently Asked Questions",
+					route: "/faq",
 					icon: require('../static/img/icons/wallet.svg?raw'),
 				},
 			]

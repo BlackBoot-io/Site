@@ -97,10 +97,10 @@
                     </h5>
                     <ul class="drop-links">
                       <li
-                        v-for="(item, index) in link.links"
-                        :key="index"
+                        v-for="(item, itemIndex) in link.links"
+                        :key="itemIndex"
                       >
-                        <NuxtLink :to="item.route + item.title.replace(/\s+/g, '-').toLowerCase()">
+                        <NuxtLink :to="index == 3 ? item.route + item.title.replace(/\s+/g, '-').toLowerCase() : item.route">
                           <em v-html="item.icon"></em>
                           <span>
                             <h6>{{ item.title }}</h6>
