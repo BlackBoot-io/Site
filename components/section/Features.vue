@@ -9,7 +9,7 @@
       <v-col cols="10 offset-1" class="mb-5">
         <v-row>
           <v-col v-for="(future, index) in features" :key="index" cols="12" md="6" class="f-box">
-            <v-icon>mdi-check-circle-outline</v-icon>
+            <em v-html="checkIcon" class="mr-1"></em>
             {{ future.title }}
             <br>
             <span>
@@ -25,6 +25,7 @@
 <script>
   export default {
     data: () => ({
+      checkIcon: require('../../static/img/icons/check-black.svg?raw'),
       features: [
         {
           title: 'Set up notifications on demand',
@@ -71,19 +72,17 @@
     @include res($sm) {
       font-size: 16px;
       line-height: 27px;
-      padding-left: 35px;
-      margin-bottom: 10px;
+      padding-left: 20px;
+      margin-bottom: 0px;
     }
 
-    .v-icon {
+    em {
       position: absolute;
-      top: 10px;
-      left: 0;
-      font-size: 30px;
+      top: 7px;
+      left: -4px;
 
       @include res($sm) {
-        top: 2px;
-        font-size: 25px;
+        left: -30px;
       }
     }
 

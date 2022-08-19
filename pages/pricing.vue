@@ -23,17 +23,6 @@
           <span class="toggle-label">Get 2 month free</span>
         </v-col>
         <v-col cols="12" class="pricing-table">
-          <!-- <v-data-table
-            :headers="headers"
-            :items="cells"
-            hide-default-footer
-          >
-            <template v-for="header in headers" v-slot:[`header.${header.value}`]="{ header }">
-              <span :key="header.value">{{ header.text }}
-                <v-btn>dfds</v-btn>
-              </span>
-            </template>
-          </v-data-table> -->
           <v-simple-table>
             <template v-slot:default>
               <thead>
@@ -242,7 +231,7 @@ export default {
 }
 
 .pricing-table {
-  margin-top: 25px;
+  margin-top: 15px;
 
   @include res($sm) {
     margin-top: 0;

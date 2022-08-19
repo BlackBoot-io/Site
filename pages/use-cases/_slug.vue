@@ -1,6 +1,6 @@
 <template>
     <div>
-      <v-container fluid class="content-container px-0">
+      <v-container fluid class="content-container type-second px-0">
         <v-container>
           <v-row class="content">
             <v-col cols="12" lg="7">

@@ -78,7 +78,7 @@
     }
 
     @include res($sm) {
-      font-size: 18.708px;
+      font-size: 17px;
       line-height: 37px;
     }
   }

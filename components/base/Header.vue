@@ -99,6 +99,7 @@
                       <li
                         v-for="(item, itemIndex) in link.links"
                         :key="itemIndex"
+                        :class="{'mt-15': index == 4 && itemIndex == 3}"
                       >
                         <NuxtLink :to="index == 3 ? item.route + item.title.replace(/\s+/g, '-').toLowerCase() : item.route">
                           <em v-html="item.icon"></em>
@@ -171,7 +172,7 @@
         <v-list-item-group v-model="group" :color="$store.state.cPrimary">
           <div v-for="link in $store.state.menu" :key="link.title">
             <v-list-item
-              v-if="!link.items"
+              v-if="!link.links"
               class="pa-0 mb-2"
             >
               <NuxtLink :to="link.route" class="d-flex py-2 pl-5 list-link">
@@ -202,10 +203,13 @@
               </template>
               <v-list>
                 <v-list-item
-                  v-for="(item, index) in link.items"
+                  v-for="(item, index) in link.links"
                   :key="index"
                   :to="item.route"
                 >
+                  <v-list-item-icon>
+                    <em v-html="item.icon"></em>
+                  </v-list-item-icon>
                   <v-list-item-title>{{ item.title }}</v-list-item-title>
                 </v-list-item>
               </v-list>

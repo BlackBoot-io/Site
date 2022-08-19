@@ -171,6 +171,10 @@
         font-size: 32px;
       }
 
+      @include res($xs) {
+        font-size: 26px;
+      }
+
       &:before {
         content: "";
         position: absolute;

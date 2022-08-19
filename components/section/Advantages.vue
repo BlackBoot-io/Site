@@ -63,11 +63,15 @@
   padding-bottom: 80px;
 
   @include res($sm) {
-    padding-bottom: 0px;
+    padding-bottom: 30px;
   }
 
   .ads-items {
     margin-top: 40px;
+
+    @include res($sm) {
+      margin-top: 20px;
+    }
   
     .ad {
       position: relative;

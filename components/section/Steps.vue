@@ -58,7 +58,7 @@
     @include res($sm) {
       font-size: 16px;
       line-height: 27px;
-      padding-left: 35px;
+      padding-left: 70px;
       margin-bottom: 10px;
     }
 
@@ -72,6 +72,11 @@
       text-align: center;
       color: #E1E1E1;
 
+      @include res($sm) {
+        left: 15px;
+        min-width: 30px;
+      }
+
       &:before {
         content: '';
         position: absolute;
@@ -81,11 +86,10 @@
         width: 1px;
         height: 90%;
         background: #E1E1E1;
-      }
 
-      @include res($sm) {
-        top: 2px;
-        font-size: 25px;
+        @include res($sm) {
+          right: -10px;
+        }
       }
     }
 

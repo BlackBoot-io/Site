@@ -185,11 +185,10 @@
             font-size: 14px!important;
           }   
 
-          .v-icon {
-            @include res($sm) {
-              display: none;
-            }   
-          }
+          @include res($xs) {
+            font-size: 13px!important;
+            padding: 12px 7px; 
+          }   
         }
       }
     }
