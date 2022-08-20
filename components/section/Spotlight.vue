@@ -88,7 +88,7 @@
     position: relative;
     display: flex;
     align-items: flex-end;
-    padding-top: 120px;
+    padding-top: 96px;
 
     @include res($md) {
       height: auto;

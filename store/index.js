@@ -1,7 +1,7 @@
 export const state = () => ({
 	title: "Avanod", 
 	description: "Avanod",
-	cPrimary: '#412971',
+	cPrimary: '#020d1c',
 	cSecondary: '#1d2a3b',
 	menu: [
 		{

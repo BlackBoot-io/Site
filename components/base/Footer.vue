@@ -19,10 +19,7 @@
             <h5>{{ content.menu.first.title }}</h5>
             <ul>
               <li v-for="link in content.menu.first.items" :key="link.name">
-                <NuxtLink
-                  :to="link.route"
-                  :target="link.targetBlank && '_blank'"
-                >
+                <NuxtLink :to="link.route" :target="link.targetBlank && '_blank'">
                   {{ link.name }}
                 </NuxtLink>
               </li>
@@ -235,7 +232,7 @@ footer {
 
   .main {
     position: relative;
-    background: #231739!important;
+    background: #020d1c !important;
 
     &:before,
     &:after {
@@ -305,13 +302,20 @@ footer {
             font-size: 14px;
             margin-bottom: 10px;
           }
-          
+
           i {
             color: $cw;
             margin-right: 5px;
           }
 
           a {
+            color: #a4a9b5 !important;
+            font-size: 14px;
+
+            &:hover {
+               color: #fff !important;
+            }
+
             &.not-link {
               cursor: default;
             }
@@ -333,12 +337,12 @@ footer {
         transform: translate(-50%, -50%);
         width: 80%;
         height: 1px;
-        background: #3E2865;
+        background: #a4a9b5;
       }
 
       p {
         font-weight: 400;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 21px;
         color: $cw;
       }

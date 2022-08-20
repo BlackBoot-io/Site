@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _94c20ec2 = () => interopDefault(import('../pages/faq.vue' /* webpackChunkName: "pages/faq" */))
-const _1657dc3f = () => interopDefault(import('../pages/invest-us.vue' /* webpackChunkName: "pages/invest-us" */))
-const _d8045662 = () => interopDefault(import('../pages/pricing.vue' /* webpackChunkName: "pages/pricing" */))
-const _683306a4 = () => interopDefault(import('../pages/team.vue' /* webpackChunkName: "pages/team" */))
-const _641834fe = () => interopDefault(import('../pages/use-cases/_slug.vue' /* webpackChunkName: "pages/use-cases/_slug" */))
-const _7b25a01b = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _933dbf08 = () => interopDefault(import('..\\pages\\faq.vue' /* webpackChunkName: "pages/faq" */))
+const _893c2b48 = () => interopDefault(import('..\\pages\\invest-us.vue' /* webpackChunkName: "pages/invest-us" */))
+const _d50273a8 = () => interopDefault(import('..\\pages\\pricing.vue' /* webpackChunkName: "pages/pricing" */))
+const _7fb5da67 = () => interopDefault(import('..\\pages\\team.vue' /* webpackChunkName: "pages/team" */))
+const _512a02f7 = () => interopDefault(import('..\\pages\\use-cases\\_slug.vue' /* webpackChunkName: "pages/use-cases/_slug" */))
+const _53fd44b8 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/faq",
-    component: _94c20ec2,
+    component: _933dbf08,
     name: "faq"
   }, {
     path: "/invest-us",
-    component: _1657dc3f,
+    component: _893c2b48,
     name: "invest-us"
   }, {
     path: "/pricing",
-    component: _d8045662,
+    component: _d50273a8,
     name: "pricing"
   }, {
     path: "/team",
-    component: _683306a4,
+    component: _7fb5da67,
     name: "team"
   }, {
     path: "/use-cases/:slug?",
-    component: _641834fe,
+    component: _512a02f7,
     name: "use-cases-slug"
   }, {
     path: "/",
-    component: _7b25a01b,
+    component: _53fd44b8,
     name: "index"
   }],
 
