@@ -168,55 +168,28 @@
       class="drawer"
       width="100%"
     >
-      <v-list nav dense>
-        <v-list-item-group v-model="group" :color="$store.state.cPrimary">
-          <div v-for="link in $store.state.menu" :key="link.title">
-            <v-list-item
-              v-if="!link.links"
-              class="pa-0 mb-2"
-            >
-              <NuxtLink :to="link.route" class="d-flex py-2 pl-5 list-link">
-                <!-- <v-list-item-icon class="ml-5">
-                  <v-icon>{{ link.icon }}</v-icon>
-                </v-list-item-icon> -->
-                <v-list-item-title>{{ link.title }}</v-list-item-title>
-              </NuxtLink>
-            </v-list-item>
-            <v-menu
-              v-else
-              class="mb-2"
-              rounded="lg"
-              transition="slide-y-transition"
-            >
-              <template v-slot:activator="{ on, attrs }">
-                <v-list-item class="pa-0 mb-2" v-bind="attrs" v-on="on">
-                  <div class="d-flex py-2 pl-5 pr-2 list-link">
-                    <!-- <v-list-item-icon class="ml-5">
-                      <v-icon>{{ link.icon }}</v-icon>
-                    </v-list-item-icon> -->
-                    <v-list-item-title class="d-flex justify-space-between">
-                      {{ link.title }}
-                      <v-icon class="mr-1">mdi-chevron-down</v-icon>
-                    </v-list-item-title>
-                  </div>
-                </v-list-item>
-              </template>
-              <v-list>
-                <v-list-item
-                  v-for="(item, index) in link.links"
-                  :key="index"
-                  :to="item.route"
-                >
-                  <v-list-item-icon>
-                    <em v-html="item.icon"></em>
-                  </v-list-item-icon>
-                  <v-list-item-title>{{ item.title }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-menu>
-          </div>
-        </v-list-item-group>
-      </v-list>
+      <v-expansion-panels>
+        <div v-for="link in $store.state.menu" :key="link.title" class="drawer-link">
+          <NuxtLink v-if="!link.links" :to="link.route" class="drawer-title">
+            {{ link.title }}
+          </NuxtLink>
+          <v-expansion-panel v-else>
+            <v-expansion-panel-header>
+              {{ link.title }}
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <v-row>
+                <v-col cols="6" v-for="(item, index) in link.links" :key="index">
+                  <NuxtLink :to="item.route" class="drawer-sub">
+                    <em v-html="item.icon" class="mr-2"></em>
+                    {{ item.title }}
+                  </NuxtLink>
+                </v-col>
+              </v-row>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </div>
+      </v-expansion-panels>
     </v-navigation-drawer>
   </div>
 </template>
@@ -544,26 +517,73 @@ header {
     justify-content: left;
   }
 
-  .list-link,
-  .drawer-sub {
+  .drawer-link {
+    display: flex;
+    width: 100%;;
+  }
+
+  .drawer-title {
     width: 100%;
+    padding: 15px 23px !important;
+    font-weight: 500;
+    font-size: 20px!important;
+    line-height: 24px!important;
+    color: #5B626E!important;
   }
 
-  .v-list {
-    padding: 12px !important;
+  .drawer-sub {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: $cb!important;
+    display: flex;
+    align-items: center;
   }
 
-  .v-list--nav .v-list-item,
-  .v-list--nav .v-list-item {
-    &:before {
-      border-radius: 8px !important;
+  .v-expansion-panel {
+    background: transparent!important;
+
+    &::before {
+      box-shadow: 0 0 0 0 !important;
+    }
+
+    &::after {
+      display: none;
     }
   }
 
-  .v-list-item__title {
-    font-size: 24px!important;
-    line-height: 35px!important;
+  .v-expansion-panel--active:not(:first-child),
+  .v-expansion-panel--active + .v-expansion-panel {
+    margin-top: 0;
+  }
+
+  .v-expansion-panel-header {
+    flex-direction: row;
+    font-weight: 500;
+    font-size: 20px!important;
+    line-height: 24px!important;
     color: #5B626E;
+    padding-left: 0;
+    padding-right: 0;
+    padding: 15px 23px !important;
+
+    p {
+      flex: 0.9 !important;
+    }
+
+    i {
+      color: #002558 !important;
+      font-size: 20px !important;
+    }
+  }
+  .v-expansion-panel-content {
+    font-weight: 500;
+    font-size: 16px;
+    color: #6E757C;
+  }
+
+  .v-expansion-panel--active > .v-expansion-panel-header {
+    opacity: 1;
   }
 }
 
@@ -654,9 +674,9 @@ header {
       }
 
       .drop-description {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
       }
 
       .drop-ex-links {

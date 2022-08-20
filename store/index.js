@@ -12,10 +12,12 @@ export const state = () => ({
 				{
 					title: "United Kingdom",
 					route: "#uk",
+					icon: require('../static/img/flags/uk.svg?raw'),
 				},
 				{
 					title: "United Arab Emirates",
 					route: "#uae",
+					icon: require('../static/img/flags/uae.svg?raw'),
 				},
 			]
 		},

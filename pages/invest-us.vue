@@ -19,8 +19,8 @@
             </p>
             <SectionPublicSale :currentSale="currentSale" class="mt-5" />
           </v-col>
-          <v-col cols="12" lg="5">
-
+          <v-col cols="12" lg="5" class="d-none d-lg-block">
+            <img class="t-image" src="../static/img/invest-box.png" alt="invest us" />
           </v-col>
         </v-row>
       </v-container>
@@ -51,10 +51,21 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~/assets/scss/_variables.scss";
 @import "~/assets/scss/_mixins.scss";
 
+.paragraph-main {
+  padding-right: 40px;
 
+  @include res($md) {
+    padding-right: 0;
+  }
+}
+
+.t-image {
+  float: right;
+  margin-top: 35px;
+}
 
 </style>
