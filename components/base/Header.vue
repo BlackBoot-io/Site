@@ -419,12 +419,12 @@ header {
       font-weight: 700;
 
       &:before {
-        width: 5px;
-        height: 5px;
+       // width: 5px;
+       // height: 5px;
       }
 
       &:after {
-        width: 30px !important;
+       // width: 30px !important;
       }
     }
   }

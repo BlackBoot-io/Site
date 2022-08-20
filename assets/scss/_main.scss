@@ -8,63 +8,63 @@
 /*////////////////////// VUE JS //////////////////////*/
 
 [v-cloak] {
-	display: none!important;
+  display: none !important;
 }
 
-.fade-enter  {
-	opacity: 0;
+.fade-enter {
+  opacity: 0;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-	transition: opacity 0.5s;
-	transition: 2s;
+  transition: opacity 0.5s;
+  transition: 2s;
 }
 
 .fade-leave {
-	opacity: 0;
+  opacity: 0;
 }
 
 /*////////////////////// VUETIFY //////////////////////*/
 
 .container {
-	@include res(xl) {
-		max-width: 1140px!important;
-	}
+  @include res(xl) {
+    max-width: 1140px !important;
+  }
 }
 
 .container--fluid {
-	max-width: 100%!important;
+  max-width: 100% !important;
 }
 
 .v-menu__content {
 
-	@include res(sm) {
-		margin-top: 57px!important;
-	}
+  @include res(sm) {
+    margin-top: 57px !important;
+  }
 
-	@media only screen and (min-width: $sm) {
-		min-width: 200px!important;
-	}
+  @media only screen and (min-width: $sm) {
+    min-width: 200px !important;
+  }
 }
 
 .v-list {
-	margin-bottom: 0px!important;
+  margin-bottom: 0px !important;
 }
 
 /*////////////////////// GENERAL CLASSES AND COMPONENTS //////////////////////*/
 
 .dir-ltr {
-	direction: $dir-o;
-	text-align: $align-o;
+  direction: $dir-o;
+  text-align: $align-o;
 }
 
 .btn-main {
-	cursor: pointer;
-	border-radius: 10px!important;
-	font-size: 16px!important;
-	line-height: 30px!important;
-	text-transform: none!important;
+  cursor: pointer;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  line-height: 30px !important;
+  text-transform: none !important;
 }
 
 .title-main {
@@ -104,22 +104,25 @@
       height: 30px;
     }
   }
-  
+
   &.dot-yellow {
     &:before {
       background: #FFEDBA;
     }
   }
+
   &.dot-green {
     &:before {
       background: #CFE7E4;
     }
   }
+
   &.dot-pink {
     &:before {
       background: #F4D1D3;
     }
   }
+
   &.dot-purple {
     &:before {
       background: #E3D6E9;
@@ -143,7 +146,7 @@
   letter-spacing: -0.0041em;
   color: #616771;
   max-width: 613px;
-  margin: 20px auto 0 auto!important;
+  margin: 20px auto 0 auto !important;
   display: block;
 
   @include res($sm) {
@@ -161,8 +164,8 @@
 
 em {
   line-height: 0 !important;
-  vertical-align: middle!important;
-  display: inline-block!important;
+  vertical-align: middle !important;
+  display: inline-block !important;
 }
 
 /*////////////////////// SECTIONS //////////////////////*/
@@ -170,7 +173,7 @@ em {
 .content-container {
   background: #8de0f8;
   background-image: url('../../static/img/spotlight-bg.webp');
-  background-image: url('../../static/img/spotlight-bg.webp'), linear-gradient(to bottom,#f1fafd 0%, $cw 100%);
+  background-image: url('../../static/img/spotlight-bg.webp'), linear-gradient(to bottom, #f1fafd 0%, $cw 100%);
   background-repeat: no-repeat;
   background-position: left top;
   min-height: 500px;

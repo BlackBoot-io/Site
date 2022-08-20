@@ -26,7 +26,7 @@
     data: () => ({
       advantages: [
         {
-          title: 'Update Your CV',
+          title: 'Connect your business',
           text: 'You have unlimited oportunity to connect your business via APIs to mint NFTs.',
           image: require('../../static/img/benefits/cv.svg?raw'),
           color: '#EDFBFF'
