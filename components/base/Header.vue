@@ -169,7 +169,7 @@
       width="100%"
     >
       <v-expansion-panels>
-        <div v-for="link in $store.state.menu" :key="link.title" class="drawer-link">
+        <div v-for="(link, index) in $store.state.menu" :key="index" class="drawer-link">
           <NuxtLink v-if="!link.links" :to="link.route" class="drawer-title">
             {{ link.title }}
           </NuxtLink>
@@ -179,8 +179,8 @@
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <v-row>
-                <v-col cols="6" v-for="(item, index) in link.links" :key="index">
-                  <NuxtLink :to="item.route" class="drawer-sub">
+                <v-col cols="6" v-for="(item, itemIndex) in link.links" :key="itemIndex">
+                  <NuxtLink :to="index == 3 ? item.route + item.title.replace(/\s+/g, '-').toLowerCase() : item.route" class="drawer-sub">
                     <em v-html="item.icon" class="mr-2"></em>
                     {{ item.title }}
                   </NuxtLink>

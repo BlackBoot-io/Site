@@ -26,11 +26,7 @@
     data: () => ({
       advantages: [
         {
-<<<<<<< HEAD
           title: 'Connect Your Business',
-=======
-          title: 'Connect your business',
->>>>>>> 6fb8de20938a44c9ba0dd376e7ca1da6928190f4
           text: 'You have unlimited oportunity to connect your business via APIs to mint NFTs.',
           image: require('../../static/img/benefits/cv.svg?raw'),
           color: '#EDFBFF'
