@@ -40,6 +40,7 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/svg',
     '@nuxtjs/moment',
+    'nuxt-compress'
   ],
   modules: [
     '@nuxtjs/axios',
