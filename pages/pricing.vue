@@ -23,7 +23,8 @@
             <template v-slot:default>
               <thead>
                 <tr>
-                  <th v-for="(item, index) in headers" :key="index" :class="{ 'text-center': index > 0 }">
+                  <th v-for="(item, index) in headers" :key="index"
+                    :class="{ 'text-center': index > 0, 'selected': item.text == 'advanced' }">
                     <span class="col-head">
                       {{ item.text }}
                     </span>
@@ -47,7 +48,8 @@
               </thead>
               <tbody>
                 <tr v-for="cell in cells" :key="cell.name">
-                  <td v-for="(item, index) in cell" :key="index" :class="index == 'name' ? 'text-left' : 'text-center'">
+                  <td v-for="(item, index) in cell" :key="index"
+                    :class="[(index == 'name' ? 'text-left' : 'text-center'), (index == 'advanced' ? 'selected' : 'not-selected')]">
                     <v-icon v-html="getData(item)" :color="getColor(item)" :size="getSize(item)">
                     </v-icon>
                   </td>
@@ -225,9 +227,13 @@ export default {
       tr {
         th {
           border: none !important;
-          padding: 0 0 30px 0 !important;
+          padding: 16px 0 30px 0 !important;
           text-transform: capitalize;
           vertical-align: bottom;
+
+          &.selected {
+            background-color: #f9f2f2;
+          }
 
           .col-head {
             font-weight: 600;
@@ -264,6 +270,10 @@ export default {
       tr {
         td {
           background: $cw  !important;
+
+          &.selected {
+            background-color: #f9f2f2 !important;
+          }
         }
 
         &:first-child {

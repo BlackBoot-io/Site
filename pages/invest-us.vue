@@ -65,7 +65,6 @@ export default {
 
 .t-image {
   float: right;
-  margin-top: 35px;
 }
 
 </style>
