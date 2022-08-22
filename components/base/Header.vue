@@ -10,11 +10,7 @@
         </NuxtLink>
         <v-spacer></v-spacer>
         <a href="https://token.avanod.com/">
-          <v-btn
-            plain
-            class="btn-main btn-connect responsive px-2"
-            color="black"
-          >
+          <v-btn plain class="btn-main btn-connect responsive px-2" color="black">
             {{ content.connect }}
           </v-btn>
         </a>
@@ -31,50 +27,28 @@
             <NuxtLink v-if="!link.links && index != 0" :to="link.route" class="header-link" :key="link.title">
               {{ link.title }}
             </NuxtLink>
-            <v-menu
-              v-if="link.links && index != 0"
-              open-on-hover
-              offset-y
-              nudge-left="200"
-              :position-y="500"
-              rounded="lg"
-              transition="slide-y-transition"
-              :key="link.title"
-              content-class="drop-menu"
-            >
+            <v-menu v-if="link.links && index != 0" open-on-hover offset-y nudge-left="200" :position-y="500"
+              rounded="lg" transition="slide-y-transition" :key="link.title" content-class="drop-menu">
               <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  v-bind="attrs"
-                  v-on="on"
-                  depressed
-                  text
-                  dark
-                  class="header-sub px-0"
-                >
+                <v-btn v-bind="attrs" v-on="on" depressed text dark class="header-sub px-0">
                   {{ link.title }}
                   <v-icon size="16">mdi-chevron-down</v-icon>
                 </v-btn>
               </template>
               <v-card class="drop-card">
                 <v-row class="inner">
-                  <v-col cols="5" :order="index == $store.state.menu.length-1 ? 2 : 1" class="drop-side">
+                  <v-col cols="5" :order="index == $store.state.menu.length - 1 ? 2 : 1" class="drop-side">
                     <div>
                       <h5 class="drop-title">
-                        {{ index != $store.state.menu.length-1 ? link.title : link.titleSide }}
+                        {{ index != $store.state.menu.length - 1 ? link.title : link.titleSide }}
                       </h5>
                       <ul v-if="link.items" class="drop-items">
-                        <li
-                          v-for="(item, index) in link.items"
-                          :key="index"
-                        >
+                        <li v-for="(item, index) in link.items" :key="index">
                           {{ item }}
                         </li>
                       </ul>
                       <ul v-if="link.linkItems" class="drop-link-items">
-                        <li
-                          v-for="(item, index) in link.linkItems"
-                          :key="index"
-                        >
+                        <li v-for="(item, index) in link.linkItems" :key="index">
                           <a :href="item.route">{{ item.title }}</a>
                         </li>
                       </ul>
@@ -82,7 +56,7 @@
                         {{ link.description }}
                       </p>
                     </div>
-                    <ul v-if="index != $store.state.menu.length-1" class="drop-ex-links">
+                    <ul v-if="index != $store.state.menu.length - 1" class="drop-ex-links">
                       <li>
                         <a href="#">Plans & Pricing</a>
                       </li>
@@ -91,17 +65,15 @@
                       </li>
                     </ul>
                   </v-col>
-                  <v-col cols="7" :order="index == $store.state.menu.length-1 ? 1 : 2" class="drop-main">
-                    <h5 v-if="index == $store.state.menu.length-1" class="drop-title pl-2">
+                  <v-col cols="7" :order="index == $store.state.menu.length - 1 ? 1 : 2" class="drop-main">
+                    <h5 v-if="index == $store.state.menu.length - 1" class="drop-title pl-2">
                       {{ link.title }}
                     </h5>
                     <ul class="drop-links">
-                      <li
-                        v-for="(item, itemIndex) in link.links"
-                        :key="itemIndex"
-                        :class="{'mt-15': index == 4 && itemIndex == 3}"
-                      >
-                        <NuxtLink :to="index == 3 ? item.route + item.title.replace(/\s+/g, '-').toLowerCase() : item.route">
+                      <li v-for="(item, itemIndex) in link.links" :key="itemIndex"
+                        :class="{ 'mt-15': index == 4 && itemIndex == 3 }">
+                        <NuxtLink
+                          :to="index == 3 ? item.route + item.title.replace(/\s+/g, '-').toLowerCase() : item.route">
                           <em v-html="item.icon"></em>
                           <span>
                             <h6>{{ item.title }}</h6>
@@ -119,13 +91,8 @@
         <div class="left">
           <v-menu offset-y transition="slide-y-transition" content-class="header-menu">
             <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                depressed
-                class="btn-main btn-lang"
-                v-bind="attrs"
-                v-on="on"
-              >
-              {{ content.lang }}
+              <v-btn depressed class="btn-main btn-lang" v-bind="attrs" v-on="on">
+                {{ content.lang }}
                 <em v-html="langIcon"></em>
               </v-btn>
             </template>
@@ -149,11 +116,7 @@
             </v-list>
           </v-menu>
           <a href="https://token.avanod.com/">
-            <v-btn
-              outlined
-              depressed
-              class="btn-main btn-connect ml-3"
-            >
+            <v-btn outlined depressed class="btn-main btn-connect ml-3">
               <em v-html="walletIcon" class="mr-1"></em>
               {{ content.connect }}
             </v-btn>
@@ -161,13 +124,7 @@
         </div>
       </v-container>
     </v-app-bar>
-    <v-navigation-drawer
-      absolute
-      temporary
-      v-model="drawer"
-      class="drawer"
-      width="100%"
-    >
+    <v-navigation-drawer absolute temporary v-model="drawer" class="drawer" width="100%">
       <v-expansion-panels>
         <div v-for="(link, index) in $store.state.menu" :key="index" class="drawer-link">
           <NuxtLink v-if="!link.links" :to="link.route" class="drawer-title">
@@ -180,7 +137,8 @@
             <v-expansion-panel-content>
               <v-row>
                 <v-col cols="6" v-for="(item, itemIndex) in link.links" :key="itemIndex">
-                  <NuxtLink :to="index == 3 ? item.route + item.title.replace(/\s+/g, '-').toLowerCase() : item.route" class="drawer-sub">
+                  <NuxtLink :to="index == 3 ? item.route + item.title.replace(/\s+/g, '-').toLowerCase() : item.route"
+                    class="drawer-sub">
                     <em v-html="item.icon" class="mr-2"></em>
                     {{ item.title }}
                   </NuxtLink>
@@ -254,7 +212,7 @@ header {
   transition: 0.5s !important;
   transition-delay: 0s !important;
   height: inherit !important;
-  z-index: 999!important;
+  z-index: 999 !important;
 
   .logo-holder {
     display: flex;
@@ -263,7 +221,7 @@ header {
 
   .v-btn--icon.v-size--default .v-icon,
   .v-btn--fab.v-size--default .v-icon {
-    color: $c2 !important;
+    color: $c2  !important;
   }
 
   .main-bar {
@@ -314,22 +272,22 @@ header {
     .v-btn {
       transition: 0.5s !important;
       font-size: 16px !important;
-      min-height: 46px!important;
-      color: #023047!important;
-	    background: transparent!important;
+      min-height: 46px !important;
+      color: #023047 !important;
+      background: transparent !important;
 
       &.btn-connect {
-        min-width: 116px!important;
-        border: 1px solid #023047!important;
-        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25)!important;
+        min-width: 116px !important;
+        border: 1px solid #023047 !important;
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25) !important;
 
         &.responsive {
-          min-width: auto!important;
-          border: none!important;
-          box-shadow: none!important;
+          min-width: auto !important;
+          border: none !important;
+          box-shadow: none !important;
 
           .v-btn__content {
-            opacity: 1!important;
+            opacity: 1 !important;
           }
         }
       }
@@ -337,7 +295,7 @@ header {
   }
 
   .mdi-menu {
-    color: $cb !important;
+    color: $cb  !important;
   }
 
   .theme--dark.v-btn:hover::before {
@@ -348,13 +306,13 @@ header {
   .header-sub {
     position: relative;
     text-transform: initial !important;
-    color: $cb !important;
-    font-family: $f!important;
+    color: $cb  !important;
+    font-family: $f  !important;
     transition: 0.5s;
     font-weight: 400;
-    font-size: 16px!important;
+    font-size: 16px !important;
     line-height: 60px;
-    height: 60px!important;
+    height: 60px !important;
 
     @include res(md) {
       font-size: 13px !important;
@@ -366,7 +324,7 @@ header {
       position: absolute;
       width: 0;
       transform: translate(-50%, -50%);
-      background: #6d1f7f!important;
+      background: #6d1f7f !important;
       transition: 0.2s;
     }
 
@@ -392,12 +350,12 @@ header {
       font-weight: 700;
 
       &:before {
-       // width: 5px;
-       // height: 5px;
+        // width: 5px;
+        // height: 5px;
       }
 
       &:after {
-       // width: 30px !important;
+        // width: 30px !important;
       }
     }
   }
@@ -413,7 +371,7 @@ header {
 
     .header-link,
     .header-sub {
-      color: $c2 !important;
+      color: $c2  !important;
     }
 
     .right {
@@ -436,7 +394,7 @@ header {
 
   .inner {
     min-width: 270px;
-    border-radius: 8px!important;
+    border-radius: 8px !important;
     padding-top: 0;
 
     .v-subheader {
@@ -455,10 +413,10 @@ header {
     }
 
     .v-list-item {
-      padding: 0!important;
-      border-radius: 8px!important;
-      min-height: 40px!important;
-      margin-bottom: 0!important;
+      padding: 0 !important;
+      border-radius: 8px !important;
+      min-height: 40px !important;
+      margin-bottom: 0 !important;
 
       &:hover {
         background: #E4F8FF;
@@ -469,21 +427,21 @@ header {
       }
 
       .v-list-item__content {
-        padding: 0!important;
+        padding: 0 !important;
 
         .v-list-item__title {
-          min-height: 30px!important;
-          line-height: 3.3!important;
-          font-size: 14px!important;
+          min-height: 30px !important;
+          line-height: 3.3 !important;
+          font-size: 14px !important;
 
           @include res(md) {
-            font-size: 13px!important;
+            font-size: 13px !important;
           }
 
           a {
             width: 100%;
             display: block;
-            border-radius: 8px!important;
+            border-radius: 8px !important;
             display: flex;
             align-items: center;
             font-weight: 500;
@@ -519,29 +477,30 @@ header {
 
   .drawer-link {
     display: flex;
-    width: 100%;;
+    width: 100%;
+    ;
   }
 
   .drawer-title {
     width: 100%;
     padding: 15px 23px !important;
     font-weight: 500;
-    font-size: 20px!important;
-    line-height: 24px!important;
-    color: #5B626E!important;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #5B626E !important;
   }
 
   .drawer-sub {
     font-weight: 600;
     font-size: 15px;
     line-height: 18px;
-    color: $cb!important;
+    color: $cb  !important;
     display: flex;
     align-items: center;
   }
 
   .v-expansion-panel {
-    background: transparent!important;
+    background: transparent !important;
 
     &::before {
       box-shadow: 0 0 0 0 !important;
@@ -553,15 +512,15 @@ header {
   }
 
   .v-expansion-panel--active:not(:first-child),
-  .v-expansion-panel--active + .v-expansion-panel {
+  .v-expansion-panel--active+.v-expansion-panel {
     margin-top: 0;
   }
 
   .v-expansion-panel-header {
     flex-direction: row;
     font-weight: 500;
-    font-size: 20px!important;
-    line-height: 24px!important;
+    font-size: 20px !important;
+    line-height: 24px !important;
     color: #5B626E;
     padding-left: 0;
     padding-right: 0;
@@ -576,30 +535,31 @@ header {
       font-size: 20px !important;
     }
   }
+
   .v-expansion-panel-content {
     font-weight: 500;
     font-size: 16px;
     color: #6E757C;
   }
 
-  .v-expansion-panel--active > .v-expansion-panel-header {
+  .v-expansion-panel--active>.v-expansion-panel-header {
     opacity: 1;
   }
 }
 
 
 .drop-menu {
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06)!important;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06) !important;
 
   .drop-card {
     display: flex;
     width: 520px;
     height: 410px;
-    background: $cw!important;
-    border-radius: 12px!important;
-    
+    background: $cw  !important;
+    border-radius: 12px !important;
+
     .inner {
-      margin: 0!important;
+      margin: 0 !important;
 
       .drop-main {
         padding: 20px 10px 10px 10px;
@@ -624,15 +584,15 @@ header {
         li {
           position: relative;
           font-weight: 400;
-          font-size: 12px;
-          line-height: 16px;
+          font-size: 13px;
+          line-height: 20px;
           margin-bottom: 10px;
           padding-left: 20px;
 
           &:before {
             content: "\F012C";
             font: normal normal normal 24px/1 "Material Design Icons";
-            font-size: 8px;
+            font-size: 14px;
             position: absolute;
             top: 50%;
             left: 5px;
@@ -674,9 +634,10 @@ header {
       }
 
       .drop-description {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 13px;
         line-height: 20px;
+        text-align: justify;
       }
 
       .drop-ex-links {
@@ -733,9 +694,9 @@ header {
             }
 
             em {
-              display: flex!important;
-              align-items: center!important;
-              justify-content: center!important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
               width: 35px;
               height: 35px;
               background: #E4D9EA;
@@ -747,7 +708,7 @@ header {
               display: flex;
               flex-direction: column;
               justify-content: center;
-              
+
               h6 {
                 font-weight: 600;
                 font-size: 14px;
@@ -768,5 +729,4 @@ header {
     }
   }
 }
-
 </style>
