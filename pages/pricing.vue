@@ -98,7 +98,7 @@ export default {
       },
       {
         name: 'Available Networks',
-        free: 'Etherium',
+        free: 'Ethereum',
         standard: 'All Networks',
         startup: 'All Networks',
         advanced: 'All Networks',

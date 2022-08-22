@@ -115,8 +115,8 @@
           img: require('../../static/img/methods/usdt.svg?raw'),
         },
         {
-          name: 'Etherium',
-          img: require('../../static/img/methods/etherium.svg?raw'),
+          name: 'Ethereum',
+          img: require('../../static/img/methods/ethereum.svg?raw'),
         },
         {
           name: 'BNB',
