@@ -192,7 +192,7 @@
   .s-text {
     font-weight: 400;
     font-size: 16px;
-    line-height: 33px;
+    line-height: 30px;
     color: #606060;
     margin-bottom: 25px!important;
 

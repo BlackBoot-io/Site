@@ -33,7 +33,7 @@ export default {
       spaceBetween: 25,
       loop: false,
       autoplay: {
-        delay: 4000,
+        delay: 30000,
         disableOnInteraction: false,
       },
       pagination: {

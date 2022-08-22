@@ -58,7 +58,7 @@
                     </div>
                     <ul v-if="index != $store.state.menu.length - 1" class="drop-ex-links">
                       <li>
-                        <a href="#">Plans & Pricing</a>
+                        <a href="/pricing">Plans & Pricing</a>
                       </li>
                       <li>
                         <a href="#">What we suupport</a>
@@ -553,7 +553,7 @@ header {
 
   .drop-card {
     display: flex;
-    width: 520px;
+    width: 580px;
     height: 410px;
     background: $cw  !important;
     border-radius: 12px !important;
@@ -583,11 +583,12 @@ header {
       .drop-items {
         li {
           position: relative;
-          font-weight: 400;
+          font-weight: normal;
           font-size: 13px;
           line-height: 20px;
           margin-bottom: 10px;
           padding-left: 20px;
+          color: #000;
 
           &:before {
             content: "\F012C";
@@ -718,7 +719,7 @@ header {
 
               p {
                 font-weight: 400;
-                font-size: 10px;
+                font-size: 11px;
                 line-height: 15px;
                 color: #5B5B5B;
               }

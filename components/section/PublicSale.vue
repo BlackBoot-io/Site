@@ -148,6 +148,7 @@
         left: 10px;
         transform: translate(-50%, -50%);
         font-size: 30px;
+        color: #044b80;
 
         @include res($sm) {
           font-size: 20px;
