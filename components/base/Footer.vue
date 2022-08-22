@@ -2,6 +2,22 @@
   <v-footer>
     <v-container fluid class="main">
       <v-container class="top">
+
+        <div class="footerLogos">
+          <div>
+            <h2>Ready to get started?</h2>
+            <p>Flexible. Customizable. Future-Proof. <br> Build it fast. Scale anytime.</p>
+            <a href="#" class="btn-cta">Explore for free</a>
+            <a href="#" class="btn-transparent">Talk to us</a>
+          </div>
+          <div class="logos">
+            <a href="#"><img src="../../static/img/gdpr.svg"></a>
+            <a href="#"><img src="../../static/img/built-on-eth.webp" width="213" height="50" alt="Built On Eth"
+                class="mt-3" /></a>
+
+          </div>
+        </div>
+
         <v-row>
           <v-col cols="12" sm="6" md="12" lg="4">
             <h5 class="d-flex align-center">{{ $store.state.title }}</h5>
@@ -13,7 +29,7 @@
                 </a>
               </li>
             </ul>
-            <img src="../../static/img/built-on-eth.webp" width="213" height="50" alt="Built On Eth" class="mt-3" />
+            <!-- <img src="../../static/img/built-on-eth.webp" width="213" height="50" alt="Built On Eth" class="mt-3" /> -->
           </v-col>
           <v-col cols="6" sm="6" md="4" lg="3">
             <h5>{{ content.menu.first.title }}</h5>
@@ -55,7 +71,7 @@
           <v-col cols="12" sm="12" md="5" class="social">
             <ul>
               <li v-for="(item, index) in content.social.items" :key="index">
-                <a :href="item.link" target="_blank" aria-label="social">
+                <a :href="item.link" target="_blank" aria-label="social" class="social-icons">
                   <em v-html="item.icon"></em>
                 </a>
               </li>
@@ -207,6 +223,63 @@ footer {
   flex-direction: column;
   overflow: hidden;
 
+  .footerLogos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+
+    .logos {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 110%;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 150% !important;
+      color: #fafafa;
+      margin-top: 20px !important;
+      margin-bottom: 50px !important;
+      max-width: 400px;
+    }
+
+    .btn-cta {
+      background-color: rgb(36, 74, 128);
+      border-color: rgb(36, 74, 128);
+      color: white !important;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-transparent {
+      background: #020d1c;
+      border: 1px solid #fff;
+      color: #fff !important;
+      margin-left: 16px;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+
+      &:hover {
+        background: #fff;
+        color: #020d1c !important;
+      }
+    }
+  }
+
   &:before,
   &:after {
     content: "";
@@ -258,7 +331,7 @@ footer {
     }
 
     .top {
-      padding: 60px 15px 25px 15px;
+      padding: 40px 15px 25px 15px;
       position: relative;
       z-index: 9;
 
@@ -313,7 +386,7 @@ footer {
             font-size: 14px;
 
             &:hover {
-               color: #fff !important;
+              color: #fff !important;
             }
 
             &.not-link {
