@@ -13,13 +13,9 @@
       </v-row>
       <v-row class="my-10">
         <v-col cols="12" class="toggle-controls">
-          <p :class="{'strong': !toggle}">Monthly</p>
-          <v-switch
-            v-model="toggle"
-            inset
-            :color="$store.state.cPrimary"
-          ></v-switch>
-          <p :class="{'strong': toggle}">Anually</p>
+          <p :class="{ 'strong': !toggle }">Monthly</p>
+          <v-switch v-model="toggle" inset :color="$store.state.cPrimary"></v-switch>
+          <p :class="{ 'strong': toggle }">Anually</p>
           <span class="toggle-label">Get 2 month free</span>
         </v-col>
         <v-col cols="12" class="pricing-table">
@@ -27,31 +23,21 @@
             <template v-slot:default>
               <thead>
                 <tr>
-                  <th
-                    v-for="(item, index) in headers"
-                    :key="index"
-                    :class="{'text-center': index > 0}"
-                  >
+                  <th v-for="(item, index) in headers" :key="index" :class="{ 'text-center': index > 0 }">
                     <span class="col-head">
                       {{ item.text }}
                     </span>
                     <template v-if="index > 0">
-                      <div v-if="index != headers.length-1" class="col-price">
+                      <div v-if="index != headers.length - 1" class="col-price">
                         ${{ item.price.toLocaleString() }}<span class="duration">/monthly</span>
                       </div>
                       <div v-else class="col-price custom">
                         Custom
                       </div>
                       <div>
-                        <v-btn
-                          v-if="index != 1"
-                          :outlined="index == headers.length-1 ? false : true"
-                          dark
-                          depressed
-                          class="btn-plan btn-main py-3 px-5 mt-3"
-                          :color="$store.state.cPrimary"
-                        >
-                          {{ index == headers.length-1 ? 'Create Plan' : 'Get Started' }}
+                        <v-btn v-if="index != 1" :outlined="index == headers.length - 1 ? false : true" dark depressed
+                          class="btn-plan btn-main py-3 px-5 mt-3" :color="$store.state.cPrimary">
+                          {{ index == headers.length - 1 ? 'Create Plan' : 'Get Started' }}
                         </v-btn>
                         <a v-else href="#" class="link-plan">Get Free API Key</a>
                       </div>
@@ -60,20 +46,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr
-                  v-for="cell in cells"
-                  :key="cell.name"
-                >
-                  <td
-                    v-for="(item, index) in cell"
-                    :key="index"
-                    :class="index == 'name' ? 'text-left' : 'text-center'"
-                  >
-                    <v-icon
-                      v-html="getData(item)" 
-                      :color="getColor(item)"
-                      :size="getSize(item)"
-                      >
+                <tr v-for="cell in cells" :key="cell.name">
+                  <td v-for="(item, index) in cell" :key="index" :class="index == 'name' ? 'text-left' : 'text-center'">
+                    <v-icon v-html="getData(item)" :color="getColor(item)" :size="getSize(item)">
                     </v-icon>
                   </td>
                 </tr>
@@ -204,18 +179,21 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   .v-input--switch {
     margin-left: 18px;
   }
 
   .toggle-label {
-    background: #D1ECFF;
+    background: #4effab94;
     border-radius: 5px;
     font-size: 13px;
     line-height: 16px;
     padding: 5px 8px;
     margin-left: 15px;
+    font-weight: normal;
+    color: black;
+    opacity: 1;
   }
 
   p {
@@ -241,32 +219,32 @@ export default {
 
   .v-data-table {
     line-height: 1.5;
-    background: transparent!important;
+    background: transparent !important;
 
     thead {
       tr {
         th {
-          border: none!important;
-          padding: 30px 0!important;
+          border: none !important;
+          padding: 0 0 30px 0 !important;
           text-transform: capitalize;
           vertical-align: bottom;
 
           .col-head {
             font-weight: 600;
-            font-size: 14px;
+            font-size: 17px;
             line-height: 17px;
             color: #000000;
           }
 
           .col-price {
-            font-weight: 700;
-            font-size: 16px;
+            font-weight: 500;
+            font-size: 22px;
             line-height: 20px;
-            color: #F39221;
-            margin: 10px 0 5px 0;
+            color: #d91717;
+            margin: 16px 0 8px 0;
 
             &.custom {
-              font-weight: 400;
+              font-weight: 600;
               color: $cb;
             }
 
@@ -280,46 +258,51 @@ export default {
     }
 
     tbody {
-      border-radius: 15px!important;
-      border: 1px solid #F1F1F1!important;
+      border-radius: 15px !important;
+      border: 1px solid #F1F1F1 !important;
 
       tr {
         td {
-          background: $cw!important;
+          background: $cw  !important;
         }
 
         &:first-child {
           td {
-            border-top: 1px solid #F1F1F1!important;
+            border-top: 1px solid #F1F1F1 !important;
 
             &:first-child {
-              border-top-left-radius: 16px!important;
+              border-top-left-radius: 16px !important;
             }
+
             &:last-child {
-              border-top-right-radius: 16px!important;
+              border-top-right-radius: 16px !important;
             }
           }
         }
+
         &:last-child {
           td {
-            border-bottom: 1px solid #F1F1F1!important;
+            border-bottom: 1px solid #F1F1F1 !important;
 
             &:first-child {
-              border-bottom-left-radius: 16px!important;
+              border-bottom-left-radius: 16px !important;
             }
+
             &:last-child {
-              border-bottom-right-radius: 16px!important;
+              border-bottom-right-radius: 16px !important;
             }
           }
         }
+
         td {
           &:first-child {
-            border-left: 1px solid #F1F1F1!important;
+            border-left: 1px solid #F1F1F1 !important;
           }
         }
+
         td {
           &:last-child {
-            border-right: 1px solid #F1F1F1!important;
+            border-right: 1px solid #F1F1F1 !important;
           }
         }
       }
@@ -327,21 +310,21 @@ export default {
 
     tr {
       &:hover {
-        background: transparent!important;
+        background: transparent !important;
       }
 
       &:not(:last-child) {
         td {
-          border-bottom: 1px solid #E9EEEE!important;
+          border-bottom: 1px solid #E9EEEE !important;
         }
       }
 
       td {
         text-transform: capitalize;
         height: auto;
-        padding: 20px 15px!important;
+        padding: 20px 15px !important;
         font-weight: 400;
-        font-size: 14px!important;
+        font-size: 14px !important;
         color: #000000;
         line-height: 22px;
 
@@ -352,24 +335,24 @@ export default {
 
         &:first-child {
           min-width: 25%;
-          font-size: 16px!important;
+          font-size: 16px !important;
         }
       }
     }
   }
 
   .btn-plan {
-    font-size: 12px!important;
+    font-size: 12px !important;
   }
 
   .link-plan {
     position: relative;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 12px;
     color: $cb;
     margin: 20px 0 10px 0;
     display: inline-block;
-    color: $cb!important;
+    color: $cb  !important;
 
     &:before {
       content: '';
@@ -382,5 +365,4 @@ export default {
     }
   }
 }
-
 </style>
