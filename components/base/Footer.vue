@@ -11,9 +11,8 @@
             <a href="#" class="btn-transparent">Talk to us</a>
           </div>
           <div class="logos">
-            <a href="#"><img src="../../static/img/gdpr.svg"></a>
             <a href="#"><img src="../../static/img/built-on-eth.svg" width="72" alt="Built On Eth" class="mt-3" /></a>
-
+            <a href="#"><img src="../../static/img/gdpr.svg"></a>
           </div>
         </div>
 
