@@ -230,6 +230,7 @@ footer {
 
     @include res($sm) {
       display: block;
+       margin-bottom: 35px;
     }
 
     div {
