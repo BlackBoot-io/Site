@@ -12,8 +12,7 @@
           </div>
           <div class="logos">
             <a href="#"><img src="../../static/img/gdpr.svg"></a>
-            <a href="#"><img src="../../static/img/built-on-eth.webp" width="213" height="50" alt="Built On Eth"
-                class="mt-3" /></a>
+            <a href="#"><img src="../../static/img/built-on-eth.svg" width="72" alt="Built On Eth" class="mt-3" /></a>
 
           </div>
         </div>
@@ -223,15 +222,37 @@ footer {
   flex-direction: column;
   overflow: hidden;
 
+
+
   .footerLogos {
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
 
+    @include res($sm) {
+      display: block;
+    }
+
+    div {
+      @include res($sm) {
+        width: 100% !important;
+      }
+    }
+
     .logos {
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
+
+      @include res($md) {
+        text-align: center;
+        justify-content: space-around;
+      }
+
+      @include res($sm) {
+        margin-top: 50px;
+        justify-content: space-around;
+      }
     }
 
     h2 {
@@ -241,6 +262,10 @@ footer {
       color: #fff;
       margin: 0;
       padding: 0;
+
+      @include res($sm) {
+        font-size: 32px;
+      }
     }
 
     p {
@@ -250,6 +275,10 @@ footer {
       margin-top: 20px !important;
       margin-bottom: 50px !important;
       max-width: 400px;
+
+      @include res($sm) {
+        font-size: 22px;
+      }
     }
 
     .btn-cta {
@@ -261,6 +290,10 @@ footer {
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
+
+      @include res($sm) {
+        font-size: 14px;
+      }
     }
 
     .btn-transparent {
@@ -272,6 +305,11 @@ footer {
       border-radius: 10px;
       font-size: 16px;
       font-weight: 600;
+
+      @include res($sm) {
+        margin-left: 8px;
+        font-size: 14px;
+      }
 
       &:hover {
         background: #fff;
