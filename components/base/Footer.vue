@@ -17,22 +17,20 @@
         </div>
 
         <v-row>
-          <v-col cols="12" sm="6" md="12" lg="4">
-            <h5 class="d-flex align-center">{{ $store.state.title }}</h5>
+          <v-col cols="6" sm="6" md="12" lg="3">
+            <h5>{{ content.menu.first.title }}</h5>
             <ul>
-              <li v-for="(item, index) in content.contactInfo" :key="index">
-                <a :href="item.link" :class="{ 'not-link': item.link == '#' }">
-                  <em v-html="item.icon" class="mr-2"></em>
-                  {{ item.text }}
-                </a>
+              <li v-for="link in content.menu.first.items" :key="link.name">
+                <NuxtLink :to="link.route" :target="link.targetBlank && '_blank'">
+                  {{ link.name }}
+                </NuxtLink>
               </li>
             </ul>
-            <!-- <img src="../../static/img/built-on-eth.webp" width="213" height="50" alt="Built On Eth" class="mt-3" /> -->
           </v-col>
           <v-col cols="6" sm="6" md="4" lg="3">
             <h5>{{ content.menu.first.title }}</h5>
             <ul>
-              <li v-for="link in content.menu.first.items" :key="link.name">
+              <li v-for="link in content.menu.second.items" :key="link.name">
                 <NuxtLink :to="link.route" :target="link.targetBlank && '_blank'">
                   {{ link.name }}
                 </NuxtLink>
@@ -49,7 +47,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col cols="6" sm="6" md="4" lg="2">
+          <v-col cols="6" sm="6" md="4" lg="3">
             <h5>{{ content.menu.fourth.title }}</h5>
             <ul>
               <li v-for="link in content.menu.fourth.items" :key="link.name">
@@ -87,23 +85,6 @@ export default {
     content: {
       builtOnEth: require('../../static/img/built-on-eth.svg'),
       copyrightIcon: require('../../static/img/icons/copyright.svg?raw'),
-      contactInfo: [
-        {
-          text: "Dubai, UAE.",
-          link: "#",
-          icon: require('../../static/img/icons/location.svg?raw'),
-        },
-        {
-          text: "+971-23456789",
-          link: "#",
-          icon: require('../../static/img/icons/phone.svg?raw'),
-        },
-        {
-          text: "info@avanod.com",
-          link: "mailto:info@avanod.com",
-          icon: require('../../static/img/icons/email.svg?raw'),
-        },
-      ],
       menu: {
         first: {
           title: "Products",
@@ -128,7 +109,7 @@ export default {
             },
           ],
         },
-        third: {
+        second: {
           title: "Use Cases",
           items: [
             {
@@ -153,7 +134,7 @@ export default {
             },
           ],
         },
-        fourth: {
+        third: {
           title: "About",
           items: [
             {
@@ -165,7 +146,12 @@ export default {
               name: "Contact us",
               route: "#",
               icon: "",
-            },
+            }
+          ],
+        },
+        fourth: {
+          title: "Legal",
+          items: [
             {
               name: "Privacy policy",
               route: "#",
@@ -177,7 +163,7 @@ export default {
               icon: "",
             },
           ],
-        },
+        }
       },
       social: {
         items: [
@@ -230,7 +216,7 @@ footer {
 
     @include res($sm) {
       display: block;
-       margin-bottom: 35px;
+      margin-bottom: 35px;
     }
 
     div {

@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" lg="12" class="text-center mb-7">
         <h2 class="title-main dot-green">
-          Some of the <span class="thin">features you can use</span>
+          Some <span class="thin">features you can use</span>
         </h2>
       </v-col>
       <v-col cols="10 offset-1" class="mb-5">

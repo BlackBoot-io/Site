@@ -2,7 +2,7 @@
   <v-container class="ads">
     <v-row>
       <v-col cols="12" class="text-center">
-        <h3 class="title-main dot-green">
+        <h3 class="title-main dot-pink">
           What You <span>Get Working With Us</span>
         </h3>
       </v-col>
