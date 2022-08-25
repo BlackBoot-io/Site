@@ -8,7 +8,7 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../assets/scss/style-ltr.scss'
 
-import '../node_modules/@mdi/font/css/materialdesignicons.css'
+import '../assets/fonts/mdi/scss/materialdesignicons.scss'
 
 import '../node_modules/vuetify/dist/vuetify.css'
 

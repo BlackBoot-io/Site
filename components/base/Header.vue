@@ -58,10 +58,10 @@
                     </div>
                     <ul v-if="index != $store.state.menu.length - 1" class="drop-ex-links">
                       <li>
-                        <a href="/pricing">Plans & Pricing</a>
+                        <NuxtLink to="/pricing">Plans & Pricing</NuxtLink>
                       </li>
                       <li>
-                        <a href="#">What we suupport</a>
+                        <NuxtLink to="/faq">Frequently Asked Questions</NuxtLink>
                       </li>
                     </ul>
                   </v-col>
@@ -646,22 +646,22 @@ header {
           font-weight: 600;
           font-size: 12px;
           line-height: 14px;
-          color: #412971;
+          color: $c1;
           margin-bottom: 10px;
 
           a {
             position: relative;
             display: inline-block;
 
-            &:before {
-              content: "\F005C";
-              font: normal normal normal 24px/1 "Material Design Icons";
-              font-size: 13px;
-              position: absolute;
-              top: 50%;
-              right: -25px;
-              transform: translate(-50%, -50%);
-            }
+            // &:before {
+            //   content: "\F005C";
+            //   font: normal normal normal 24px/1 "Material Design Icons";
+            //   font-size: 13px;
+            //   position: absolute;
+            //   top: 50%;
+            //   right: -25px;
+            //   transform: translate(-50%, -50%);
+            // }
           }
         }
       }

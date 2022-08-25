@@ -21,7 +21,7 @@ export default {
   },
   css: [
     '@/assets/scss/style-ltr.scss',
-    '@mdi/font/css/materialdesignicons.css'
+    '@/assets/fonts/mdi/scss/materialdesignicons.scss'
   ],
   plugins: [
     '@/plugins/axios',

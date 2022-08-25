@@ -6,7 +6,7 @@
           Some <span class="thin">features you can use</span>
         </h2>
       </v-col>
-      <v-col cols="10 offset-1" class="mb-5">
+      <v-col cols="12" md="10 offset-md-1" class="mb-5">
         <v-row>
           <v-col v-for="(future, index) in features" :key="index" cols="12" md="6" class="f-box">
             <em v-html="checkIcon" class="mr-1"></em>
@@ -72,7 +72,7 @@
     @include res($sm) {
       font-size: 16px;
       line-height: 27px;
-      padding-left: 20px;
+      padding: 12px 20px 12px 55px;
       margin-bottom: 0px;
     }
 
@@ -82,7 +82,7 @@
       left: -4px;
 
       @include res($sm) {
-        left: -30px;
+        left: 8px;
       }
     }
 
@@ -94,7 +94,8 @@
       display: block;
 
       @include res($sm) {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 25px;
       }
     }
   }

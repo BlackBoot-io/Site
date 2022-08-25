@@ -11,7 +11,7 @@
       <v-col cols="12" lg="6" v-for="(advantage, index) in advantages" :key="index">
         <div class="ad" :style="`background-color: ${advantage.color}`">
           <div class="a-text">
-            <h5 class="a-title">{{ advantage.title }}</h5>
+            <h4 class="a-title">{{ advantage.title }}</h4>
             <p class="a-desc">{{ advantage.text }}</p>
           </div>
           <span class="a-img" v-html="advantage.image"></span>

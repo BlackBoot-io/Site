@@ -2,23 +2,25 @@
   <v-footer>
     <v-container fluid class="main">
       <v-container class="top">
-
-        <div class="footerLogos">
+        <div class="footer-logos">
           <div>
             <h2>Ready to get started?</h2>
             <p>Flexible. Customizable. Future-Proof. <br> Build it fast. Scale anytime.</p>
-            <a href="#" class="btn-cta">Explore for free</a>
-            <a href="#" class="btn-transparent">Talk to us</a>
+            <a href="#" aria-label="Explore for free" class="btn-cta">Explore for free</a>
+            <a href="#" aria-label="Talk to us" class="btn-transparent">Talk to us</a>
           </div>
           <div class="logos">
-            <a href="#"><img src="../../static/img/built-on-eth.svg" width="72" alt="Built On Eth" class="mt-3" /></a>
-            <a href="#"><img src="../../static/img/gdpr.svg"></a>
+            <a href="#" aria-label="built-on-eth">
+              <img src="../../static/img/built-on-eth.svg" width="72" height="72" alt="Built On Eth" class="mt-3"/>
+            </a>
+            <a href="#" aria-label="gdpr">
+              <img src="../../static/img/gdpr.svg" width="91" height="91" alt="gdpr">
+            </a>
           </div>
         </div>
-
         <v-row>
           <v-col cols="6" sm="6" md="12" lg="3">
-            <h5>{{ content.menu.first.title }}</h5>
+            <h6>{{ content.menu.first.title }}</h6>
             <ul>
               <li v-for="link in content.menu.first.items" :key="link.name">
                 <NuxtLink :to="link.route" :target="link.targetBlank && '_blank'">
@@ -28,7 +30,7 @@
             </ul>
           </v-col>
           <v-col cols="6" sm="6" md="4" lg="3">
-            <h5>{{ content.menu.first.title }}</h5>
+            <h6>{{ content.menu.first.title }}</h6>
             <ul>
               <li v-for="link in content.menu.second.items" :key="link.name">
                 <NuxtLink :to="link.route" :target="link.targetBlank && '_blank'">
@@ -38,7 +40,7 @@
             </ul>
           </v-col>
           <v-col cols="6" sm="6" md="4" lg="3">
-            <h5>{{ content.menu.third.title }}</h5>
+            <h6>{{ content.menu.third.title }}</h6>
             <ul>
               <li v-for="link in content.menu.third.items" :key="link.name">
                 <NuxtLink :to="link.route">
@@ -48,7 +50,7 @@
             </ul>
           </v-col>
           <v-col cols="6" sm="6" md="4" lg="3">
-            <h5>{{ content.menu.fourth.title }}</h5>
+            <h6>{{ content.menu.fourth.title }}</h6>
             <ul>
               <li v-for="link in content.menu.fourth.items" :key="link.name">
                 <NuxtLink :to="link.route">
@@ -207,9 +209,7 @@ footer {
   flex-direction: column;
   overflow: hidden;
 
-
-
-  .footerLogos {
+  .footer-logos {
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
@@ -268,9 +268,9 @@ footer {
     }
 
     .btn-cta {
-      background-color: rgb(36, 74, 128);
-      border-color: rgb(36, 74, 128);
-      color: white !important;
+      background: $c1;
+      border: 1px solid $c1;
+      color: $cw !important;
       border-radius: 10px;
       padding: 16px;
       font-size: 16px;
@@ -280,12 +280,16 @@ footer {
       @include res($sm) {
         font-size: 14px;
       }
+
+      &:hover {
+        background: lighten($c1, 10%);
+      }
     }
 
     .btn-transparent {
-      background: #020d1c;
-      border: 1px solid #fff;
-      color: #fff !important;
+      background: transparent;
+      border: 1px solid $cw;
+      color: $cw !important;
       margin-left: 16px;
       padding: 16px;
       border-radius: 10px;
@@ -298,7 +302,7 @@ footer {
       }
 
       &:hover {
-        background: #fff;
+        background: rgba(255, 255, 255, 0.7);
         color: #020d1c !important;
       }
     }
@@ -312,7 +316,7 @@ footer {
     left: 50px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 9;
+    z-index: 1;
   }
 
   &:before {
@@ -339,7 +343,7 @@ footer {
       left: 50px;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      z-index: 9;
+      z-index: 1;
     }
 
     &:before {
@@ -371,7 +375,7 @@ footer {
         }
       }
 
-      h5 {
+      h6 {
         font-weight: 700;
         font-size: 20px;
         line-height: 24px;

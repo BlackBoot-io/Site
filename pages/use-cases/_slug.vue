@@ -85,6 +85,11 @@ export default {
 .cases-ul {
   margin: 30px 0;
 
+  @include res($sm) {
+    margin: 20px 0;
+    text-align: center;
+  }
+
   li {
     position: relative;
     font-weight: 400;
@@ -95,8 +100,16 @@ export default {
     align-items: center;
     margin-right: 15px;
 
+    @include res($sm) {
+      margin-right: 8px;
+    }
+
     &:not(:first-child) {
       margin-left: 15px;
+
+      @include res($sm) {
+        margin-left: 8px;
+      }
     }
 
     &:not(:last-child) {
@@ -109,6 +122,11 @@ export default {
         width: 1px;
         height: 130%;
         background: #E1E1E1;
+
+        @include res($sm) {
+          right: -8px;
+          height: 80%;
+        }
       }
     }
 
@@ -118,6 +136,11 @@ export default {
       line-height: 30px;
       color: #c74545;
       margin-right: 10px;
+
+      @include res($sm) {
+        margin-right: 5px;
+        font-size: 20px;
+      }
     }
   }
 }

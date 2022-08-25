@@ -56,8 +56,7 @@
   background: #F2FAFD;
 
   @include res($sm) {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding: 40px 0 20px 0;
   }
 
   .benefits-items {

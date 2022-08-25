@@ -160,6 +160,11 @@
   font-size: 18px;
   line-height: 30px;
   text-align: justify;
+
+  @include res($sm) {
+    font-size: 16px;
+    line-height: 27px;
+  }
 }
 
 em {
@@ -177,8 +182,8 @@ em {
   background-repeat: no-repeat;
   background-position: left top;
   min-height: 500px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0!important;
+  padding-right: 0!important;
 
   @include res($md) {
     padding: 12px 0;

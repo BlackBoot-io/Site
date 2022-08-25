@@ -1,26 +1,28 @@
 <template>
-  <div v-swiper="swiperOption" class="team-swiper" @slideChange="memberChange">
+  <Swiper v-swiper="swiperOption" class="team-swiper" @slideChange="memberChange">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="(item, index) in items" :key="index">
+      <SwiperSlide class="swiper-slide" v-for="(item, index) in items" :key="index">
         <div class="t-box">
           <img :src="item.avatar">
           <p>{{ item.role }}</p>
         </div>
-      </div>
+      </SwiperSlide>
     </div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
-  </div>
+  </Swiper>
 </template>
 
 <script>
-import { directive } from "vue-awesome-swiper";
+// import { directive } from "vue-awesome-swiper";
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+// import '@/assets/scss/swiper-bundle.min.css';
 
 export default {
   name: "Slideshow",
-  directives: {
-    swiper: directive,
-  },
+  // directives: {
+  //   swiper: directive,
+  // },
   props: ['items'],
   data: () => ({
     swiperOption: {
@@ -57,6 +59,10 @@ export default {
     memberChange() {
       this.$emit('memberSelected', this.$swiper.realIndex);
     },
+  },
+	components: {
+    Swiper,
+    SwiperSlide
   }
 };
 </script>
