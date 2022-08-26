@@ -144,6 +144,17 @@
                   </NuxtLink>
                 </v-col>
               </v-row>
+              <v-row>
+                <v-col cols="12">
+                  Find Us On:
+                </v-col>
+                <v-col cols="6" v-for="(item, itemIndex) in link.linkItems" :key="itemIndex">
+                  <a :href="item.route" target="_blank" class="drawer-sub">
+                    {{ item.title }}
+                    <v-icon :size="16" class="ml-2">mdi-arrow-top-right</v-icon>
+                  </a>
+                </v-col>
+              </v-row>
             </v-expansion-panel-content>
           </v-expansion-panel>
         </div>

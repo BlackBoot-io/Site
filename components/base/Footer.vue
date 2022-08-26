@@ -2,10 +2,10 @@
   <v-footer>
     <v-container fluid class="main">
       <v-container class="top">
-        <div class="footer-logos">
+        <div class="footer-top">
           <div>
-            <h2>Ready to get started?</h2>
-            <p>Flexible. Customizable. Future-Proof. <br> Build it fast. Scale anytime.</p>
+            <h2 class="footer-head">Ready to get started?</h2>
+            <p class="footer-des">Flexible. Customizable. Future-Proof. <br> Build it fast. Scale anytime.</p>
             <a href="#" aria-label="Explore for free" class="btn-cta">Explore for free</a>
             <a href="#" aria-label="Talk to us" class="btn-transparent">Talk to us</a>
           </div>
@@ -209,7 +209,7 @@ footer {
   flex-direction: column;
   overflow: hidden;
 
-  .footer-logos {
+  .footer-top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
@@ -241,7 +241,7 @@ footer {
       }
     }
 
-    h2 {
+    .footer-head {
       font-weight: 700;
       font-size: 38px;
       line-height: 110%;
@@ -250,11 +250,11 @@ footer {
       padding: 0;
 
       @include res($sm) {
-        font-size: 32px;
+        font-size: 28px;
       }
     }
 
-    p {
+    .footer-des {
       font-size: 24px;
       line-height: 150% !important;
       color: #fafafa;
@@ -263,7 +263,7 @@ footer {
       max-width: 400px;
 
       @include res($sm) {
-        font-size: 22px;
+        font-size: 18px;
       }
     }
 

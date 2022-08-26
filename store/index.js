@@ -138,7 +138,7 @@ export const state = () => ({
 		},
 		{
 			title: "About Us",
-			titleSide: "Social",
+			titleSide: "Find Us On",
 			route: "",
 			icon: "mdi-layers-outline",
 			linkItems: [

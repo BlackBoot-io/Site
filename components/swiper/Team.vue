@@ -1,28 +1,26 @@
 <template>
-  <Swiper v-swiper="swiperOption" class="team-swiper" @slideChange="memberChange">
+  <div v-swiper="swiperOption" class="team-swiper" @slideChange="memberChange">
     <div class="swiper-wrapper">
-      <SwiperSlide class="swiper-slide" v-for="(item, index) in items" :key="index">
+      <div class="swiper-slide" v-for="(item, index) in items" :key="index">
         <div class="t-box">
           <img :src="item.avatar">
           <p>{{ item.role }}</p>
         </div>
-      </SwiperSlide>
+      </div>
     </div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
-  </Swiper>
+  </div>
 </template>
 
 <script>
-// import { directive } from "vue-awesome-swiper";
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-// import '@/assets/scss/swiper-bundle.min.css';
+import { directive } from "vue-awesome-swiper";
 
 export default {
   name: "Slideshow",
-  // directives: {
-  //   swiper: directive,
-  // },
+  directives: {
+    swiper: directive,
+  },
   props: ['items'],
   data: () => ({
     swiperOption: {
@@ -60,10 +58,6 @@ export default {
       this.$emit('memberSelected', this.$swiper.realIndex);
     },
   },
-	components: {
-    Swiper,
-    SwiperSlide
-  }
 };
 </script>
 
@@ -72,7 +66,7 @@ export default {
 @import "~/assets/scss/_mixins.scss";
 
 .team-avatar {
-  text-align: center;
+  text-align: left;
 }
 
 .team-swiper {
@@ -96,6 +90,8 @@ export default {
       text-align: center;
 
       p {
+        font-size: 15px;
+
         @include res(849px) {
           font-size: 14px;
         }
