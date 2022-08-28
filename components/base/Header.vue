@@ -145,7 +145,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="12">
+                <v-col v-if="index == 7" cols="12">
                   Find Us On:
                 </v-col>
                 <v-col cols="6" v-for="(item, itemIndex) in link.linkItems" :key="itemIndex">
