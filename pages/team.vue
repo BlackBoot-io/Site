@@ -80,6 +80,16 @@ export default {
         }
       },
       {
+        name: 'Mohammad Mokhtari',
+        role: 'Co-Founder',
+        description: "Mohammad began his career as a Full-stack developer. Eventually, he seized the opportunity to lead teams and products to success. He worked on several successful projects as a developer and technical team leader. These days, he focuses on the blockchain tech and keeps learning more and more about it.",
+        avatar: require('../static/img/team/mokhtari.jpg'),
+        email: '',
+        socials: {
+          linkedin: "https://www.linkedin.com/in/mohammadmokhtari",
+        }
+      },
+      {
         name: 'Shahrooz Bazrafshan',
         role: 'Software Developer',
         description: "Shahrooz is a developer since 2014 and started to grow with every line of code and study meanwhile. right now he is focusing on web3 and blockchain technologies.",
@@ -97,16 +107,6 @@ export default {
         email: '',
         socials: {
           linkedin: "https://www.linkedin.com/in/navidmontazeripour",
-        }
-      },
-      {
-        name: 'Mohammad Mokhtari',
-        role: 'Co-Founder',
-        description: "Mohammad began his career as a Full-stack developer. Eventually, he seized the opportunity to lead teams and products to success. He worked on several successful projects as a developer and technical team leader. These days, he focuses on the blockchain tech and keeps learning more and more about it.",
-        avatar: require('../static/img/team/mokhtari.jpg'),
-        email: '',
-        socials: {
-          linkedin: "https://www.linkedin.com/in/mohammadmokhtari",
         }
       },
       {
@@ -134,7 +134,7 @@ export default {
       },
       {
         name: 'Esmaeil Rastipour',
-        role: 'Co-Founder & Business Expert',
+        role: 'Business Expert',
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet egestas leo ligula interdum. Neque dolor lectus sit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet.",
         avatar: require('../static/img/team/rastipour.jpg'),
         email: '',
