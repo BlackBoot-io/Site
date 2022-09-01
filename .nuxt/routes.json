@@ -2,43 +2,43 @@
   {
     "name": "faq",
     "path": "/faq",
-    "component": "C:\\\\Users\\\\Mohammad\\\\Repository\\\\Source\\\\Own\\\\BlackBoot\\\\BlackBoot-io\\\\Site\\\\pages\\\\faq.vue",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/faq.vue",
     "chunkName": "pages/faq",
-    "_name": "_933dbf08"
+    "_name": "_94c20ec2"
   },
   {
     "name": "invest-us",
     "path": "/invest-us",
-    "component": "C:\\\\Users\\\\Mohammad\\\\Repository\\\\Source\\\\Own\\\\BlackBoot\\\\BlackBoot-io\\\\Site\\\\pages\\\\invest-us.vue",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/invest-us.vue",
     "chunkName": "pages/invest-us",
-    "_name": "_893c2b48"
+    "_name": "_1657dc3f"
   },
   {
     "name": "pricing",
     "path": "/pricing",
-    "component": "C:\\\\Users\\\\Mohammad\\\\Repository\\\\Source\\\\Own\\\\BlackBoot\\\\BlackBoot-io\\\\Site\\\\pages\\\\pricing.vue",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/pricing.vue",
     "chunkName": "pages/pricing",
-    "_name": "_d50273a8"
+    "_name": "_d8045662"
   },
   {
     "name": "team",
     "path": "/team",
-    "component": "C:\\\\Users\\\\Mohammad\\\\Repository\\\\Source\\\\Own\\\\BlackBoot\\\\BlackBoot-io\\\\Site\\\\pages\\\\team.vue",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/team.vue",
     "chunkName": "pages/team",
-    "_name": "_7fb5da67"
+    "_name": "_683306a4"
   },
   {
     "name": "use-cases-slug",
     "path": "/use-cases/:slug?",
-    "component": "C:\\\\Users\\\\Mohammad\\\\Repository\\\\Source\\\\Own\\\\BlackBoot\\\\BlackBoot-io\\\\Site\\\\pages\\\\use-cases\\\\_slug.vue",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/use-cases/_slug.vue",
     "chunkName": "pages/use-cases/_slug",
-    "_name": "_512a02f7"
+    "_name": "_641834fe"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\Mohammad\\\\Repository\\\\Source\\\\Own\\\\BlackBoot\\\\BlackBoot-io\\\\Site\\\\pages\\\\index.vue",
+    "component": "/Volumes/My Drive/Work/Projects/Others/NFT Market/Site/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_53fd44b8"
+    "_name": "_7b25a01b"
   }
 ]

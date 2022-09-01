@@ -127,9 +127,10 @@ export default {
         role: 'Software Developer',
         description: "Farhad is a full stack developer, working on several company-scaled projects. He got interested in the new horizon of Web3 and Blockchain technologies and spends most of his time researching on it.",
         avatar: require('../static/img/team/zohooralishahi.jpg'),
-        email: '',
+        email: 'farhadzohoorz@gmail.com',
         socials: {
           linkedin: "https://www.linkedin.com/in/farhad-zohooralishahi-1035ab1aa",
+          github: "https://github.com/ferizoozoo",
         }
       },
       {

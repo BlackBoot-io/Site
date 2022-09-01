@@ -2,7 +2,7 @@
   <div class="public-sale">
     <v-row>
       <v-col cols="6" class="left">
-        <h5 class="p-title"> {{ currentSale.title }}</h5>
+        <h3 class="p-title"> {{ currentSale.title }}</h3>
         <p class="p-text">Remaining time to buy</p>
         <a href="https://token.avanod.com/buy-token" target="_blank">
           <v-btn dark depressed class="btn-main" width="100%" :color="$store.state.cPrimary">
@@ -132,7 +132,7 @@
       font-size: 20px;
       line-height: 10px;
       text-transform: capitalize;
-      color: #412971;
+      color: $c1;
       padding-left: 30px;
       margin-top: 10px;
 
@@ -196,7 +196,7 @@
         font-size: 13px;
         line-height: 5px;
         text-transform: capitalize;
-        color: #3498DB;
+        color: $c1;
         padding: 8px;
         margin: 0 5px;
 

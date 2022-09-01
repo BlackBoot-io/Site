@@ -57,7 +57,7 @@ export default {
     memberChange() {
       this.$emit('memberSelected', this.$swiper.realIndex);
     },
-  }
+  },
 };
 </script>
 
@@ -66,7 +66,7 @@ export default {
 @import "~/assets/scss/_mixins.scss";
 
 .team-avatar {
-  text-align: center;
+  text-align: left;
 }
 
 .team-swiper {
@@ -90,6 +90,8 @@ export default {
       text-align: center;
 
       p {
+        font-size: 15px;
+
         @include res(849px) {
           font-size: 14px;
         }

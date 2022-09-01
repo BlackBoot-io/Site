@@ -58,10 +58,10 @@
                     </div>
                     <ul v-if="index != $store.state.menu.length - 1" class="drop-ex-links">
                       <li>
-                        <a href="/pricing">Plans & Pricing</a>
+                        <NuxtLink to="/pricing">Plans & Pricing</NuxtLink>
                       </li>
                       <li>
-                        <a href="#">What we suupport</a>
+                        <NuxtLink to="/faq">Frequently Asked Questions</NuxtLink>
                       </li>
                     </ul>
                   </v-col>
@@ -142,6 +142,17 @@
                     <em v-html="item.icon" class="mr-2"></em>
                     {{ item.title }}
                   </NuxtLink>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col v-if="index == 7" cols="12">
+                  Find Us On:
+                </v-col>
+                <v-col cols="6" v-for="(item, itemIndex) in link.linkItems" :key="itemIndex">
+                  <a :href="item.route" target="_blank" class="drawer-sub">
+                    {{ item.title }}
+                    <v-icon :size="16" class="ml-2">mdi-arrow-top-right</v-icon>
+                  </a>
                 </v-col>
               </v-row>
             </v-expansion-panel-content>
@@ -646,22 +657,22 @@ header {
           font-weight: 600;
           font-size: 12px;
           line-height: 14px;
-          color: #412971;
+          color: $c1;
           margin-bottom: 10px;
 
           a {
             position: relative;
             display: inline-block;
 
-            &:before {
-              content: "\F005C";
-              font: normal normal normal 24px/1 "Material Design Icons";
-              font-size: 13px;
-              position: absolute;
-              top: 50%;
-              right: -25px;
-              transform: translate(-50%, -50%);
-            }
+            // &:before {
+            //   content: "\F005C";
+            //   font: normal normal normal 24px/1 "Material Design Icons";
+            //   font-size: 13px;
+            //   position: absolute;
+            //   top: 50%;
+            //   right: -25px;
+            //   transform: translate(-50%, -50%);
+            // }
           }
         }
       }
