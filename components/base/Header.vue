@@ -57,9 +57,9 @@
                       </p>
                     </div>
                     <ul v-if="index != $store.state.menu.length - 1" class="drop-ex-links">
-                      <li>
+                      <!--<li>
                         <NuxtLink to="/pricing">Plans & Pricing</NuxtLink>
-                      </li>
+                      </li>-->
                       <li>
                         <NuxtLink to="/faq">Frequently Asked Questions</NuxtLink>
                       </li>

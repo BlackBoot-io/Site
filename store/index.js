@@ -131,11 +131,11 @@ export const state = () => ({
 			route: "/invest-us",
 			icon: "mdi-layers-outline",
 		},
-		{
-			title: "Pricing",
-			route: "/pricing",
-			icon: "mdi-layers-outline",
-		},
+		//{
+		//	title: "Pricing",
+		//	route: "/pricing",
+		//	icon: "mdi-layers-outline",
+		//},
 		{
 			title: "About Us",
 			titleSide: "Find Us On",
