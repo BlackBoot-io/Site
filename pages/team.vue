@@ -58,7 +58,7 @@ export default {
     members: [
       {
         name: 'Mehdi Emrani',
-        role: 'Program Manager',
+        role: 'Co-Founder',
         description: "Mehdi has more than 15 years of management and development tech lead experience in exchange brokerages and has multiple successful launches for finance and online trading projects. Nowadays he focuses on NFT and Defi and tries to start a new business based on Blockchain.",
         avatar: require('../static/img/team/emrani.jpg'),
         email: '',
@@ -99,16 +99,16 @@ export default {
           linkedin: "https://www.linkedin.com/in/shahrooz-bazrafshan-78bb5765",
         }
       },
-      {
-        name: 'Navid Montazeripour',
-        role: 'Software Engineer',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet egestas leo ligula interdum. Neque dolor lectus sit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet.",
-        avatar: require('../static/img/team/montazeripour.jpg'),
-        email: '',
-        socials: {
-          linkedin: "https://www.linkedin.com/in/navidmontazeripour",
-        }
-      },
+      //{
+      //  name: 'Navid Montazeripour',
+      //  role: 'Software Engineer',
+      //  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet egestas leo ligula interdum. Neque dolor lectus sit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet.",
+      //  avatar: require('../static/img/team/montazeripour.jpg'),
+      //  email: '',
+      //  socials: {
+      //    linkedin: "https://www.linkedin.com/in/navidmontazeripour",
+      //  }
+      //},
       {
         name: 'Roozbeh Eslami',
         role: 'Front-End Engineer',
@@ -120,27 +120,6 @@ export default {
           twitter: "https://www.twitter.com/roozbeh_eslami",
           instagram: "https://www.instagram.com/roosbeh",
           github: "https://github.com/roozbeheslami"
-        }
-      },
-      {
-        name: 'Farhad Zohoor Alishahi',
-        role: 'Software Developer',
-        description: "Farhad is a full stack developer, working on several company-scaled projects. He got interested in the new horizon of Web3 and Blockchain technologies and spends most of his time researching on it.",
-        avatar: require('../static/img/team/zohooralishahi.jpg'),
-        email: 'farhadzohoorz@gmail.com',
-        socials: {
-          linkedin: "https://www.linkedin.com/in/farhad-zohooralishahi-1035ab1aa",
-          github: "https://github.com/ferizoozoo",
-        }
-      },
-      {
-        name: 'Esmaeil Rastipour',
-        role: 'Business Expert',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet egestas leo ligula interdum. Neque dolor lectus sit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis imperdiet.",
-        avatar: require('../static/img/team/rastipour.jpg'),
-        email: '',
-        socials: {
-          linkedin: "https://www.linkedin.com/in/erastipour",
         }
       },
     ],
